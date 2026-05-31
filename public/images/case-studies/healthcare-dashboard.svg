@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#18181b"/>
+  <rect x="40" y="40" width="480" height="370" rx="8" fill="#27272a"/>
+  <rect x="540" y="40" width="220" height="170" rx="8" fill="#3f3f46"/>
+  <rect x="540" y="230" width="220" height="180" rx="8" fill="#3f3f46"/>
+  <rect x="60" y="60" width="200" height="12" rx="4" fill="#52525b"/>
+  <rect x="60" y="90" width="440" height="280" rx="4" fill="#3f3f46"/>
+  <text x="400" y="430" text-anchor="middle" fill="#a1a1aa" font-family="system-ui" font-size="16">Healthcare Dashboard</text>
+</svg>

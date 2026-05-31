@@ -6,12 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sanity": "sanity dev --config sanity/sanity.config.ts"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
+    "@portabletext/react": "^4.0.3",
+    "@sanity/client": "^7.22.1",
+    "@sanity/image-url": "^1.2.0",
     "next": "16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "resend": "^6.12.4",
+    "sanity": "^3.99.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#18181b"/>
+  <rect x="40" y="40" width="720" height="60" rx="8" fill="#27272a"/>
+  <rect x="40" y="130" width="220" height="280" rx="8" fill="#3f3f46"/>
+  <rect x="280" y="130" width="220" height="280" rx="8" fill="#3f3f46"/>
+  <rect x="520" y="130" width="220" height="280" rx="8" fill="#3f3f46"/>
+  <text x="400" y="75" text-anchor="middle" fill="#a1a1aa" font-family="system-ui" font-size="16">E-Commerce Redesign</text>
+</svg>
