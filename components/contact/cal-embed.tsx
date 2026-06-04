@@ -4,6 +4,7 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
 import { calComUrl } from "@/lib/constants";
+import { colorSemantic } from "@/lib/design-tokens";
 
 function getCalLink(url: string): string {
   try {
@@ -22,7 +23,7 @@ export function CalEmbed() {
       const cal = await getCalApi();
       cal("ui", {
         theme: "dark",
-        styles: { branding: { brandColor: "#D4AF37" } },
+        styles: { branding: { brandColor: colorSemantic.accent } },
       });
     })();
   }, []);

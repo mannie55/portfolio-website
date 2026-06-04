@@ -1,0 +1,207 @@
+{
+  "Border": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.13333334028720856,
+        0.1568627506494522,
+        0.21568627655506134
+      ],
+      "alpha": 1,
+      "hex": "#222837"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:10217:4296",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ],
+      "com.figma.aliasData": {
+        "targetVariableId": "VariableID:00a41eb41ae44d22bea082eac86249d50f4e3739/-1:-1",
+        "targetVariableName": "Color/Rhino Darker",
+        "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+        "targetVariableSetName": "Primitives"
+      }
+    }
+  },
+  "Border light": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.16078431904315948,
+        0.2078431397676468,
+        0.3137255012989044
+      ],
+      "alpha": 1,
+      "hex": "#293550"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:10217:4298",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ],
+      "com.figma.aliasData": {
+        "targetVariableId": "VariableID:004abdb4e1b9bc6886bbca025512259b0af31284/-1:-1",
+        "targetVariableName": "Color/Rhino Dark",
+        "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+        "targetVariableSetName": "Primitives"
+      }
+    }
+  },
+  "border lighter": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.20392157137393951,
+        0.26274511218070984,
+        0.3960784375667572
+      ],
+      "alpha": 1,
+      "hex": "#344365"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:10217:4297",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ],
+      "com.figma.aliasData": {
+        "targetVariableId": "VariableID:4a1dfa30e41bddbb77a23ccd3068ae0a7c8d8bf0/-1:-1",
+        "targetVariableName": "Color/Rhino",
+        "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+        "targetVariableSetName": "Primitives"
+      }
+    }
+  },
+  "border lightest": {
+    "$type": "color",
+    "$value": {
+      "colorSpace": "srgb",
+      "components": [
+        0.27843138575553894,
+        0.37254902720451355,
+        0.5686274766921997
+      ],
+      "alpha": 1,
+      "hex": "#475F91"
+    },
+    "$extensions": {
+      "com.figma.variableId": "VariableID:10217:4299",
+      "com.figma.scopes": [
+        "ALL_SCOPES"
+      ],
+      "com.figma.aliasData": {
+        "targetVariableId": "VariableID:b70f15da866a23e843d276c5462c7810ba76e490/-1:-1",
+        "targetVariableName": "Color/Rhino Lighter",
+        "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+        "targetVariableSetName": "Primitives"
+      }
+    }
+  },
+  "Color Scheme 1": {
+    "Text": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1,
+          1,
+          1
+        ],
+        "alpha": 1,
+        "hex": "#FFFFFF"
+      },
+      "$extensions": {
+        "com.figma.variableId": "VariableID:4175:50367",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:0ff1ce2cfe84e85fa517d127385f452e3250c182/-1:-1",
+          "targetVariableName": "Color/White",
+          "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Foreground": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.13333334028720856,
+          0.1568627506494522,
+          0.21568627655506134
+        ],
+        "alpha": 1,
+        "hex": "#222837"
+      },
+      "$extensions": {
+        "com.figma.variableId": "VariableID:6172:44365",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:00a41eb41ae44d22bea082eac86249d50f4e3739/-1:-1",
+          "targetVariableName": "Color/Rhino Darker",
+          "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Background": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.09019608050584793,
+          0.10196078568696976,
+          0.13333334028720856
+        ],
+        "alpha": 1,
+        "hex": "#171A22"
+      },
+      "$extensions": {
+        "com.figma.variableId": "VariableID:4174:5307",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:60af2c10f86c18c5293460eb13267187e6fa972b/-1:-1",
+          "targetVariableName": "Color/Rhino Darkest",
+          "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    },
+    "Accent": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0.8313725590705872,
+          0.686274528503418,
+          0.21568627655506134
+        ],
+        "alpha": 1,
+        "hex": "#D4AF37"
+      },
+      "$extensions": {
+        "com.figma.variableId": "VariableID:6172:44366",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.aliasData": {
+          "targetVariableId": "VariableID:3332cf6e0ce160bfd48e59a6463d02d60d699497/-1:-1",
+          "targetVariableName": "Color/gold",
+          "targetVariableSetId": "VariableCollectionId:45da6a4a2676aa72e33604e36bf5020ca72be540/-1:-1",
+          "targetVariableSetName": "Primitives"
+        }
+      }
+    }
+  },
+  "$extensions": {
+    "com.figma.modeName": "Mode 1"
+  }
+}

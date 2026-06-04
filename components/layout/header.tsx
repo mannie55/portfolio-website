@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,47 +10,92 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="border-b border-border">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-semibold text-foreground">
-          {siteConfig.name}
+    <header className="border-b border-border bg-surface/70 backdrop-blur-sm">
+      <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page py-6">
+        {/* Brand Logo */}
+        <Link href="/" className="flex-shrink-0" aria-label="Home">
+          <Image
+            src="/images/components/brand_name.svg"
+            alt={siteConfig.name}
+            width={140}
+            height={24}
+            priority
+            className="h-6 w-auto"
+          />
         </Link>
 
-        <ul className="hidden gap-6 md:flex">
-          {navLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="text-sm text-muted hover:text-foreground"
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Desktop: Case Studies Link + Menu Button */}
+        <div className="hidden items-center gap-6 md:flex">
+          <Link
+            href="/case-studies"
+            className="flex items-center gap-2 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
+          >
+            Case Studies
+            <Image
+              src="/images/components/arrow_down_filled.svg"
+              alt=""
+              width={24}
+              height={24}
+              className="h-6 w-6"
+              aria-hidden="true"
+            />
+          </Link>
+          <button
+            type="button"
+            className="flex items-center gap-2"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMobileOpen((open) => !open)}
+          >
+            <span className="text-body-sm font-medium text-foreground">
+              Menu
+            </span>
+            <Image
+              src="/images/components/menu_icon.svg"
+              alt=""
+              width={28}
+              height={31}
+              className="h-8 w-auto"
+              aria-hidden="true"
+            />
+          </button>
+        </div>
 
+        {/* Mobile Menu Button */}
         <button
           type="button"
-          className="rounded-md p-2 text-muted hover:bg-surface-hover md:hidden"
+          className="flex items-center gap-2 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileOpen((open) => !open)}
         >
-          {mobileOpen ? "✕" : "☰"}
+          <span className="text-body-sm font-medium text-foreground">
+            Menu
+          </span>
+          <Image
+            src="/images/components/menu_icon.svg"
+            alt=""
+            width={28}
+            height={31}
+            className="h-8 w-auto"
+            aria-hidden="true"
+          />
         </button>
       </nav>
 
-      {mobileOpen ? (
+      {/* Mobile Navigation */}
+      {mobileOpen && (
         <ul
           id="mobile-nav"
-          className="border-t border-border px-6 py-4 md:hidden"
+          className="border-t border-border px-page py-4 md:hidden"
         >
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
-                className="block py-2 text-sm text-muted hover:text-foreground"
+                className="block py-3 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
                 onClick={() => setMobileOpen(false)}
               >
                 {label}
@@ -57,7 +103,7 @@ export function Header() {
             </li>
           ))}
         </ul>
-      ) : null}
+      )}
     </header>
   );
 }

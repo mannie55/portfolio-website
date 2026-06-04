@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "test": "node scripts/check-design-tokens.mjs",
+    "eval:design-tokens": "node scripts/check-design-tokens.mjs --eval",
     "start": "next start",
     "lint": "eslint",
     "sanity": "sanity dev --config sanity/sanity.config.ts"

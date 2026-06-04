@@ -27,17 +27,17 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
           {study.tools.slice(0, 3).map((tool) => (
             <span
               key={tool}
-              className="rounded-full bg-surface-elevated px-2.5 py-0.5 text-xs text-muted"
+              className="rounded-full bg-surface-elevated px-2.5 py-0.5 text-body-xs text-muted"
             >
               {tool}
             </span>
           ))}
         </div>
-        <h2 className="mt-3 text-lg font-semibold group-hover:text-accent">
+        <h2 className="mt-3 text-h6 font-semibold transition-colors group-hover:text-accent">
           {study.title}
         </h2>
-        <p className="mt-2 flex-1 text-sm text-muted">{study.summary}</p>
-        <p className="mt-4 text-xs text-muted">{study.role}</p>
+        <p className="mt-2 flex-1 text-body-sm text-muted">{study.summary}</p>
+        <p className="mt-4 text-body-xs text-muted">{study.role}</p>
       </div>
     </Link>
   );

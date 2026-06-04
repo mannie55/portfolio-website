@@ -14,7 +14,7 @@ const initialState: ContactFormState = {
 };
 
 const inputClassName =
-  "mt-1.5 w-full rounded-md border border-border bg-surface px-3 py-2 text-sm text-foreground outline-none focus:border-accent focus:ring-1 focus:ring-accent";
+  "mt-1.5 w-full rounded-md border border-border bg-surface px-3 py-2 text-body-sm text-foreground outline-none focus:border-accent focus:ring-1 focus:ring-accent";
 
 export function ContactForm() {
   const [state, formAction, pending] = useActionState(
@@ -25,7 +25,7 @@ export function ContactForm() {
   return (
     <form action={formAction} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium">
+        <label htmlFor="name" className="block text-body-sm font-medium">
           Name
         </label>
         <input
@@ -38,7 +38,7 @@ export function ContactForm() {
         />
       </div>
       <div>
-        <label htmlFor="email" className="block text-sm font-medium">
+        <label htmlFor="email" className="block text-body-sm font-medium">
           Email
         </label>
         <input
@@ -51,7 +51,7 @@ export function ContactForm() {
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium">
+        <label htmlFor="message" className="block text-body-sm font-medium">
           Message
         </label>
         <textarea
@@ -66,7 +66,9 @@ export function ContactForm() {
         <p
           role="status"
           className={
-            state.success ? "text-sm text-success" : "text-sm text-error"
+            state.success
+              ? "text-body-sm text-success"
+              : "text-body-sm text-error"
           }
         >
           {state.message}

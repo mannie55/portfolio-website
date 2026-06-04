@@ -17,19 +17,17 @@ function urlFor(source: SanityImageSource) {
 
 const components: PortableTextComponents = {
   block: {
-    h2: ({ children }) => (
-      <h2 className="text-2xl font-semibold tracking-tight">{children}</h2>
-    ),
-    h3: ({ children }) => (
-      <h3 className="text-xl font-semibold tracking-tight">{children}</h3>
-    ),
+    h2: ({ children }) => <h2 className="text-h3 font-semibold">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-h4 font-semibold">{children}</h3>,
     normal: ({ children }) => (
-      <p className="leading-relaxed text-muted">{children}</p>
+      <p className="text-body text-muted">{children}</p>
     ),
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc space-y-2 pl-5 text-muted">{children}</ul>
+      <ul className="list-disc space-y-2 pl-5 text-body text-muted">
+        {children}
+      </ul>
     ),
   },
   types: {
@@ -51,7 +49,7 @@ const components: PortableTextComponents = {
             />
           </div>
           {value.caption ? (
-            <figcaption className="text-center text-sm text-muted">
+            <figcaption className="text-center text-body-sm text-muted">
               {value.caption}
             </figcaption>
           ) : null}

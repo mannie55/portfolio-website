@@ -9,7 +9,7 @@ type CaseStudyGridProps = {
 export function CaseStudyGrid({ studies }: CaseStudyGridProps) {
   if (studies.length === 0) {
     return (
-      <p className="text-muted">No case studies yet. Check back soon.</p>
+      <p className="text-body text-muted">No case studies yet. Check back soon.</p>
     );
   }
 

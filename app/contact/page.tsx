@@ -20,13 +20,13 @@ export default function ContactPage() {
       />
       <div className="mt-12 grid gap-12 lg:grid-cols-2">
         <section>
-          <h2 className="text-lg font-semibold">Send a message</h2>
+          <h2 className="text-h5 font-semibold">Send a message</h2>
           <div className="mt-6">
             <ContactForm />
           </div>
         </section>
         <section>
-          <h2 className="text-lg font-semibold">Book a call</h2>
+          <h2 className="text-h5 font-semibold">Book a call</h2>
           <div className="mt-6">
             <CalEmbed />
           </div>

@@ -12,15 +12,15 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   const headingClass =
-    Tag === "h1"
-      ? "text-3xl font-semibold tracking-tight sm:text-4xl"
-      : "text-2xl font-semibold tracking-tight";
+    Tag === "h1" ? "text-h2 font-semibold" : "text-h3 font-semibold";
 
   return (
     <div className={className}>
       <Tag className={headingClass}>{title}</Tag>
       {description ? (
-        <p className="mt-3 max-w-2xl text-muted">{description}</p>
+        <p className="mt-3 max-w-container-large text-body text-muted">
+          {description}
+        </p>
       ) : null}
     </div>
   );

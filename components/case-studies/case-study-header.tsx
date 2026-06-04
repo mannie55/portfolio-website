@@ -13,16 +13,16 @@ export function CaseStudyHeader({ study }: CaseStudyHeaderProps) {
         {study.tools.map((tool) => (
           <span
             key={tool}
-            className="rounded-full bg-surface-elevated px-2.5 py-0.5 text-xs text-muted"
+            className="rounded-full bg-surface-elevated px-2.5 py-0.5 text-body-xs text-muted"
           >
             {tool}
           </span>
         ))}
       </div>
-      <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h1 className="mt-4 text-h2 font-semibold">
         {study.title}
       </h1>
-      <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+      <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-muted">
         <div>
           <dt className="inline font-medium text-foreground">Role: </dt>
           <dd className="inline">{study.role}</dd>

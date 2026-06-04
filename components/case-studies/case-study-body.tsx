@@ -14,31 +14,28 @@ export function CaseStudyBody({ blocks }: CaseStudyBodyProps) {
           case "heading":
             if (block.level === 2) {
               return (
-                <h2
-                  key={index}
-                  className="text-2xl font-semibold tracking-tight"
-                >
+                <h2 key={index} className="text-h3 font-semibold">
                   {block.text}
                 </h2>
               );
             }
             return (
-              <h3
-                key={index}
-                className="text-xl font-semibold tracking-tight"
-              >
+              <h3 key={index} className="text-h4 font-semibold">
                 {block.text}
               </h3>
             );
           case "paragraph":
             return (
-              <p key={index} className="leading-relaxed text-muted">
+              <p key={index} className="text-body text-muted">
                 {block.text}
               </p>
             );
           case "list":
             return (
-              <ul key={index} className="list-disc space-y-2 pl-5 text-muted">
+              <ul
+                key={index}
+                className="list-disc space-y-2 pl-5 text-body text-muted"
+              >
                 {block.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
@@ -57,7 +54,7 @@ export function CaseStudyBody({ blocks }: CaseStudyBodyProps) {
                   />
                 </div>
                 {block.caption ? (
-                  <figcaption className="text-center text-sm text-muted">
+                  <figcaption className="text-center text-body-sm text-muted">
                     {block.caption}
                   </figcaption>
                 ) : null}

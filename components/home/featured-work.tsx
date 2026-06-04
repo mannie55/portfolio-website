@@ -16,7 +16,7 @@ export function FeaturedWork({ studies }: FeaturedWorkProps) {
           description="A few projects I'm proud of — click through for the full story."
         />
         <Button href="/case-studies" variant="ghost" className="shrink-0">
-          View all →
+          View all
         </Button>
       </div>
       <div className="mt-10">
