@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import Lottie from "lottie-react";
+import workflowLottie from "@/public/animations/workflow_lottie.json";
 
 // Animation speed in seconds for a full cycle
 const ANIMATION_DURATION = "30s";
@@ -7,9 +11,9 @@ const ANIMATION_DURATION = "30s";
 type AssetItem = {
   id: string;
   label: string;
-  type: "image" | "background";
+  type: "image" | "lottie";
   src?: string;
-  backgroundImage?: string;
+  animationData?: any;
   alt: string;
 };
 
@@ -17,9 +21,9 @@ const assetItems: AssetItem[] = [
   {
     id: "workflow-1",
     label: "Workflows",
-    type: "image",
-    src: "/images/components/discovery_fake_one.png",
-    alt: "Workflow preview",
+    type: "lottie",
+    animationData: workflowLottie,
+    alt: "Workflow animation",
   },
   {
     id: "logo-1",
@@ -58,14 +62,25 @@ const row2Items = [...assetItems, ...assetItems, ...assetItems];
 function AssetCard({ item }: { item: AssetItem }) {
   return (
     <article className="flex h-[4.3125rem] w-[5.625rem] flex-shrink-0 flex-col gap-px">
-      <div className="relative h-[3.5625rem] w-full overflow-hidden rounded-t-[0.625rem]">
-        {item.src && (
-          <Image
-            src={item.src}
-            alt={item.alt}
-            fill
-            className="object-cover"
-          />
+      <div className="relative h-[3.5625rem] w-full overflow-hidden rounded-t-[0.625rem] bg-white">
+        {item.type === "lottie" ? (
+          <div className="flex h-full w-full items-center justify-center bg-slate-50">
+            <Lottie
+              animationData={item.animationData}
+              loop={true}
+              autoplay={true}
+              className="h-full w-full"
+            />
+          </div>
+        ) : (
+          item.src && (
+            <Image
+              src={item.src}
+              alt={item.alt}
+              fill
+              className="object-cover"
+            />
+          )
         )}
       </div>
 
