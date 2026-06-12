@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "node scripts/check-design-tokens.mjs",
+    "test": "node scripts/check-design-tokens.mjs && vitest run",
+    "test:watch": "vitest",
+    "sync-tokens": "node scripts/sync-design-tokens.mjs",
     "eval:design-tokens": "node scripts/check-design-tokens.mjs --eval",
     "start": "next start",
     "lint": "eslint",
@@ -16,6 +18,7 @@
     "@portabletext/react": "^4.0.3",
     "@sanity/client": "^7.22.1",
     "@sanity/image-url": "^1.2.0",
+    "lottie-react": "^2.4.1",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -24,12 +27,17 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "jsdom": "^29.1.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.8"
   }
 }

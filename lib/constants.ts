@@ -1,9 +1,15 @@
 export const siteConfig = {
   name: "Portfolio",
-  description: "Personal portfolio showcasing selected work and case studies.",
+  description: "Helping modern businesses build credible digital experiences that earn trust and drive growth.",
   url: "https://portfolio.example.com",
-  author: "Your Name",
-  title: "Developer & Designer",
+  author: "Nnamdi Ogbonna",
+  title: "Building Digital Presence That Matters",
+} as const;
+
+export const heroContent = {
+  headline: "BUILDING DIGITAL PRESENCE THAT MATTERS",
+  description: "Helping modern businesses build credible digital experiences that earn trust and drive growth.",
+  cta: "Book a strategy call",
 } as const;
 
 export const navLinks = [

@@ -44,6 +44,7 @@ const config: Config = {
         // Text
         "text-default": colorSemantic.text,
         "text-muted": colorSemantic.textMuted,
+        "text-dark": colorSemantic.textDark,
       },
       maxWidth: {
         "container-xxlarge": `${spacingDesktop.maxWidthXxlarge}px`,

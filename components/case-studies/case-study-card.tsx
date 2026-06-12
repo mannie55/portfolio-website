@@ -33,10 +33,10 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             </span>
           ))}
         </div>
-        <h2 className="mt-3 text-h6 font-semibold transition-colors group-hover:text-accent">
+        <h2 className="mt-3 text-h6 transition-colors group-hover:text-accent">
           {study.title}
         </h2>
-        <p className="mt-2 flex-1 text-body-sm text-muted">{study.summary}</p>
+        <p className="mt-2 flex-1 text-body text-muted">{study.summary}</p>
         <p className="mt-4 text-body-xs text-muted">{study.role}</p>
       </div>
     </Link>

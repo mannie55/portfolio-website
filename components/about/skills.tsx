@@ -3,7 +3,7 @@ import { aboutContent } from "@/lib/about";
 export function Skills() {
   return (
     <section>
-      <h2 className="text-h3 font-semibold">Skills & tools</h2>
+      <h2 className="text-h3">Skills & tools</h2>
       <ul className="mt-6 flex flex-wrap gap-2">
         {aboutContent.skills.map((skill) => (
           <li

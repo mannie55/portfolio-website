@@ -21,11 +21,84 @@ export type CaseStudyListBlock = {
   items: string[];
 };
 
+export type CaseStudySectionBlock = {
+  type: "section";
+  title: string;
+  content: string[];
+};
+
+export type CaseStudyChallengeItem = {
+  number: string;
+  title: string;
+  description: string;
+};
+
+export type CaseStudyChallengeBlock = {
+  type: "challenges";
+  title: string;
+  items: CaseStudyChallengeItem[];
+  images: string[];
+  bottomImage?: string;
+};
+
+export type CaseStudySolutionItem = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export type CaseStudySolutionBlock = {
+  type: "solution";
+  title: string;
+  items: CaseStudySolutionItem[];
+  collageImage?: string;
+  gallery: {
+    top: { src: string; alt: string }[];
+    bottom: { src: string; alt: string }[];
+  };
+  quote: {
+    text: string;
+    author: string;
+    role: string;
+  };
+};
+
+export type CaseStudyOutcomeItem = {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  iconAlt: string;
+  iconWrapper: boolean;
+};
+
+export type CaseStudyOutcomesBlock = {
+  type: "outcomes";
+  title: string;
+  items: CaseStudyOutcomeItem[];
+};
+
+export type CaseStudyTechStackBlock = {
+  type: "tech-stack";
+  title: string;
+  items: string[];
+};
+
 export type CaseStudyBlock =
   | CaseStudyHeadingBlock
   | CaseStudyParagraphBlock
   | CaseStudyImageBlock
-  | CaseStudyListBlock;
+  | CaseStudyListBlock
+  | CaseStudySectionBlock
+  | CaseStudyChallengeBlock
+  | CaseStudySolutionBlock
+  | CaseStudyOutcomesBlock
+  | CaseStudyTechStackBlock;
+
+export type CaseStudyMetric = {
+  value: string;
+  description: string;
+};
 
 export type CaseStudy = {
   slug: string;
@@ -33,10 +106,14 @@ export type CaseStudy = {
   summary: string;
   coverImage: string;
   role: string;
+  industry?: string;
+  projectType?: string;
   client?: string;
+  clientLogo?: string;
   tools: string[];
   publishedAt: string;
   featured: boolean;
+  metrics?: CaseStudyMetric[];
   body: CaseStudyBlock[];
 };
 

@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+import { CaseStudyChallenges } from "@/components/case-studies/case-study-challenges";
+import { CaseStudyOutcomes } from "@/components/case-studies/case-study-outcomes";
+import { CaseStudySection } from "@/components/case-studies/case-study-section";
+import { CaseStudySolution } from "@/components/case-studies/case-study-solution";
+import { CaseStudyTechStack } from "@/components/case-studies/case-study-tech-stack";
 import type { CaseStudyBlock } from "@/types/case-study";
 
 type CaseStudyBodyProps = {
@@ -11,16 +16,26 @@ export function CaseStudyBody({ blocks }: CaseStudyBodyProps) {
     <article className="mt-12 max-w-none space-y-6">
       {blocks.map((block, index) => {
         switch (block.type) {
+          case "section":
+            return <CaseStudySection key={index} block={block} />;
+          case "challenges":
+            return <CaseStudyChallenges key={index} block={block} />;
+          case "solution":
+            return <CaseStudySolution key={index} block={block} />;
+          case "outcomes":
+            return <CaseStudyOutcomes key={index} block={block} />;
+          case "tech-stack":
+            return <CaseStudyTechStack key={index} block={block} />;
           case "heading":
             if (block.level === 2) {
               return (
-                <h2 key={index} className="text-h3 font-semibold">
+                <h2 key={index} className="text-h3">
                   {block.text}
                 </h2>
               );
             }
             return (
-              <h3 key={index} className="text-h4 font-semibold">
+              <h3 key={index} className="text-h4">
                 {block.text}
               </h3>
             );
@@ -44,7 +59,7 @@ export function CaseStudyBody({ blocks }: CaseStudyBodyProps) {
           case "image":
             return (
               <figure key={index} className="space-y-3">
-                <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-surface-elevated">
+                <div className="relative aspect-[16/9] overflow-hidden rounded-lg border border-border-light bg-surface-elevated">
                   <Image
                     src={block.src}
                     alt={block.alt}

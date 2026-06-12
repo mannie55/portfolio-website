@@ -19,7 +19,7 @@ export function CaseStudyHeader({ study }: CaseStudyHeaderProps) {
           </span>
         ))}
       </div>
-      <h1 className="mt-4 text-h2 font-semibold">
+      <h1 className="mt-4 text-h2 text-foreground">
         {study.title}
       </h1>
       <dl className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-body-sm text-muted">
@@ -43,7 +43,7 @@ export function CaseStudyHeader({ study }: CaseStudyHeaderProps) {
           </dd>
         </div>
       </dl>
-      <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-lg bg-surface-elevated">
+      <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-lg border border-border-light bg-surface-elevated">
         <Image
           src={study.coverImage}
           alt={study.title}

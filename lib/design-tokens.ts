@@ -43,6 +43,7 @@ export const colorSemantic = {
   // Text colors
   text: colorPrimitives.white,
   textMuted: "rgba(255, 255, 255, 0.90)",
+  textDark: colorPrimitives.rhinoDarkest,
 
   // Background
   background: colorPrimitives.rhinoDarkest,
@@ -70,6 +71,7 @@ export const typographyDesktop = {
   h4: 28,
   h5: 24,
   h6: 22,
+  textXLarge: 24,
   textLarge: 20,
   textMedium: 18,
   textRegular: 16,
@@ -84,6 +86,7 @@ export const typographyMobile = {
   h4: 24,
   h5: 20,
   h6: 18,
+  textXLarge: 20,
   textLarge: 18,
   textMedium: 16,
   textRegular: 16,
@@ -164,47 +167,51 @@ export const uiPrimitives = {
 
 export const typographyStyles = {
   h1: {
-    desktop: { fontSize: `${typographyDesktop.h1}px` },
-    mobile: { fontSize: `${typographyMobile.h1}px` },
+    desktop: { fontSize: `${typographyDesktop.h1 / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.h1 / 16}rem` },
   },
   h2: {
-    desktop: { fontSize: `${typographyDesktop.h2}px` },
-    mobile: { fontSize: `${typographyMobile.h2}px` },
+    desktop: { fontSize: `${typographyDesktop.h2 / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.h2 / 16}rem` },
   },
   h3: {
-    desktop: { fontSize: `${typographyDesktop.h3}px` },
-    mobile: { fontSize: `${typographyMobile.h3}px` },
+    desktop: { fontSize: `${typographyDesktop.h3 / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.h3 / 16}rem` },
   },
   h4: {
-    desktop: { fontSize: `${typographyDesktop.h4}px` },
-    mobile: { fontSize: `${typographyMobile.h4}px` },
+    desktop: { fontSize: `${typographyDesktop.h4 / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.h4 / 16}rem` },
   },
   h5: {
-    desktop: { fontSize: `${typographyDesktop.h5}px` },
-    mobile: { fontSize: `${typographyMobile.h5}px` },
+    desktop: { fontSize: `${typographyDesktop.h5 / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.h5 / 16}rem` },
   },
   h6: {
-    desktop: { fontSize: `${typographyDesktop.h6}px` },
-    mobile: { fontSize: `${typographyMobile.h6}px` },
+    desktop: { fontSize: `${typographyDesktop.h6 / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.h6 / 16}rem` },
+  },
+  textXLarge: {
+    desktop: { fontSize: `${typographyDesktop.textXLarge / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.textXLarge / 16}rem` },
   },
   textLarge: {
-    desktop: { fontSize: `${typographyDesktop.textLarge}px` },
-    mobile: { fontSize: `${typographyMobile.textLarge}px` },
+    desktop: { fontSize: `${typographyDesktop.textLarge / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.textLarge / 16}rem` },
   },
   textMedium: {
-    desktop: { fontSize: `${typographyDesktop.textMedium}px` },
-    mobile: { fontSize: `${typographyMobile.textMedium}px` },
+    desktop: { fontSize: `${typographyDesktop.textMedium / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.textMedium / 16}rem` },
   },
   textRegular: {
-    desktop: { fontSize: `${typographyDesktop.textRegular}px` },
-    mobile: { fontSize: `${typographyMobile.textRegular}px` },
+    desktop: { fontSize: `${typographyDesktop.textRegular / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.textRegular / 16}rem` },
   },
   textSmall: {
-    desktop: { fontSize: `${typographyDesktop.textSmall}px` },
-    mobile: { fontSize: `${typographyMobile.textSmall}px` },
+    desktop: { fontSize: `${typographyDesktop.textSmall / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.textSmall / 16}rem` },
   },
   textTiny: {
-    desktop: { fontSize: `${typographyDesktop.textTiny}px` },
-    mobile: { fontSize: `${typographyMobile.textTiny}px` },
+    desktop: { fontSize: `${typographyDesktop.textTiny / 16}rem` },
+    mobile: { fontSize: `${typographyMobile.textTiny / 16}rem` },
   },
 } as const;

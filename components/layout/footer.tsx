@@ -5,7 +5,7 @@ import { siteConfig, socialLinks } from "@/lib/constants";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-border">
-      <div className="mx-auto flex max-w-container-xxlarge flex-col gap-4 px-page py-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-container-xxlarge flex-col gap-4 px-page xl:px-0 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-body-sm text-muted">
           © {new Date().getFullYear()} {siteConfig.name}
         </p>

@@ -5,13 +5,17 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { navLinks, siteConfig } from "@/lib/constants";
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const scrollDirection = useScrollDirection();
 
   return (
-    <header className="border-b border-border bg-surface/70 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page py-6">
+    <header className={`sticky top-0 z-50 border-b border-border/40 bg-background/60 backdrop-blur-md transition-transform duration-300 ${
+      scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
+    }`}>
+      <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-6">
         {/* Brand Logo */}
         <Link href="/" className="flex-shrink-0" aria-label="Home">
           <Image

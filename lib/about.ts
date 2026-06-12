@@ -1,5 +1,18 @@
 export const aboutContent = {
-  bio: "I'm a developer and designer who builds thoughtful digital products — from concept to launch. I care about performance, accessibility, and craft.",
+  quote: "I believe websites should do more than exist — they should communicate clearly, solve problems, and support business goals.",
+  intro: "HI I'M NNAMDI",
+  bio: "I'm Nnamdi, a frontend developer and designer based in Lagos.\n\nI got into tech in 2023. Started from the ground up: low-level programming in C, software engineering fundamentals, Python, then full-stack development. Somewhere along the way I discovered I genuinely enjoy the frontend side of things, the part where logic meets how something looks and feels. That's where I've stayed.\n\nI work across Figma, React, Next.js, Tailwind, and Webflow. Most of what I do is take a design and build it into something real, clean, functional, and easy to hand off.\n\nOutside of work, I read a lot and I exercise regularly. Both keep me sharp and honest about what it takes to actually show up and do the work.",
+  strengths: [
+    {
+      title: "Design + Engineering Thinking",
+    },
+    {
+      title: "Problem-Driven Development",
+    },
+    {
+      title: "Precision in Execution",
+    },
+  ],
   skills: [
     "TypeScript",
     "React / Next.js",
