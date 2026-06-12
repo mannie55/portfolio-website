@@ -7,6 +7,7 @@ import { Testimonials } from "@/components/home/testimonials";
 import { Footer } from "@/components/layout/footer";
 import { PageContainer } from "@/components/layout/page-container";
 import { DiscoveryComponent } from "@/components/ui/discovery-component";
+import { AssetComponent } from "@/components/ui/asset-component";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export default async function Home() {
@@ -17,16 +18,20 @@ export default async function Home() {
       <PageContainer>
         <div className="flex flex-col">
           <Hero />
-          
+
           {/* Component Preview */}
-          <div className="flex items-center justify-center py-20 bg-slate-50">
+          <div className="flex flex-col items-center justify-center gap-12 bg-slate-50 py-20 lg:flex-row">
             <div className="w-full max-w-[20rem]">
               <DiscoveryComponent />
+            </div>
+            <div className="w-full max-w-[30rem]">
+              <AssetComponent />
             </div>
           </div>
 
           <Services />
-          <FeaturedWork studies={featuredStudies} />
+...
+
           <Testimonials />
           <FAQ />
         </div>
