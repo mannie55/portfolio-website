@@ -164,6 +164,19 @@
   --radius-sm: var(--ds-radius-md);
   --radius-md: var(--ds-radius-lg);
   --radius-lg: var(--ds-radius-lg);
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes marquee-reverse {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  --animate-marquee: marquee var(--duration, 30s) linear infinite;
+  --animate-marquee-reverse: marquee-reverse var(--duration, 30s) linear infinite;
 }
 
 @layer base {

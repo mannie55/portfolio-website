@@ -55,10 +55,6 @@ const assetItems: AssetItem[] = [
   },
 ];
 
-// Duplicate rows to create a seamless infinite scroll
-const row1Items = [...assetItems, ...assetItems, ...assetItems];
-const row2Items = [...assetItems, ...assetItems, ...assetItems];
-
 function AssetCard({ item }: { item: AssetItem }) {
   return (
     <article className="flex h-[4.3125rem] w-[5.625rem] flex-shrink-0 flex-col gap-px">
@@ -93,6 +89,38 @@ function AssetCard({ item }: { item: AssetItem }) {
   );
 }
 
+const MarqueeRow = ({ 
+  items, 
+  direction = "left" 
+}: { 
+  items: AssetItem[], 
+  direction?: "left" | "right" 
+}) => {
+  const animationClass = direction === "left" ? "animate-marquee" : "animate-marquee-reverse";
+  
+  return (
+    <div className="flex overflow-hidden">
+      <div 
+        className={`flex w-max will-change-transform ${animationClass}`}
+        style={{ "--duration": ANIMATION_DURATION } as React.CSSProperties}
+      >
+        {/* First Set */}
+        <div className="flex gap-2 pr-2">
+          {items.map((item, index) => (
+            <AssetCard key={`${item.id}-${index}-1`} item={item} />
+          ))}
+        </div>
+        {/* Second Set (Duplicate for seamless loop) */}
+        <div className="flex gap-2 pr-2">
+          {items.map((item, index) => (
+            <AssetCard key={`${item.id}-${index}-2`} item={item} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const AssetComponent = () => {
   return (
     <section className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-[#e2e7f2] py-4 shadow-sm">
@@ -117,35 +145,8 @@ export const AssetComponent = () => {
 
       {/* Animated Rows */}
       <div className="flex flex-col gap-3">
-        {/* Row 1: Scrolling Left */}
-        <div className="flex overflow-hidden">
-          <div
-            className="flex animate-marquee gap-2 px-1"
-            style={{ "--duration": ANIMATION_DURATION } as React.CSSProperties}
-          >
-            {row1Items.map((item, index) => (
-              <AssetCard
-                key={`${item.id}-r1-${index}`}
-                item={item}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Row 2: Scrolling Right */}
-        <div className="flex overflow-hidden">
-          <div
-            className="flex animate-marquee-reverse gap-2 px-1"
-            style={{ "--duration": ANIMATION_DURATION } as React.CSSProperties}
-          >
-            {row2Items.map((item, index) => (
-              <AssetCard
-                key={`${item.id}-r2-${index}`}
-                item={item}
-              />
-            ))}
-          </div>
-        </div>
+        <MarqueeRow items={assetItems} direction="left" />
+        <MarqueeRow items={assetItems} direction="right" />
       </div>
     </section>
   );
