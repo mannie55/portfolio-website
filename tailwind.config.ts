@@ -71,16 +71,29 @@ const config: Config = {
         divider: `${uiPrimitives.dividerWidth}px`,
       },
       opacity: {
-        30: "0.3",
-        40: "0.4",
-        50: "0.5",
-        60: "0.6",
-        70: "0.7",
-        80: "0.8",
+      30: "0.3",
+      40: "0.4",
+      50: "0.5",
+      60: "0.6",
+      70: "0.7",
+      80: "0.8",
       },
-    },
-  },
-  plugins: [],
-};
-
+      keyframes: {
+      marquee: {
+        "0%": { transform: "translateX(0)" },
+        "100%": { transform: "translateX(-50%)" },
+      },
+      "marquee-reverse": {
+        "0%": { transform: "translateX(-50%)" },
+        "100%": { transform: "translateX(0)" },
+      },
+      },
+      animation: {
+      marquee: "marquee var(--duration, 30s) linear infinite",
+      "marquee-reverse": "marquee-reverse var(--duration, 30s) linear infinite",
+      },
+      },
+      },
+      plugins: [],
+      };
 export default config;
