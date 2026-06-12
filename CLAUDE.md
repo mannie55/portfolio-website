@@ -184,8 +184,8 @@ When in doubt, lean toward more services with sharper boundaries rather than few
 
 At the end of every task, report one of:
 
-- **DONE** — All steps completed. Evidence provided for every claim. Tests + evals in the diff. Skillify checklist green if a failure was promoted. Ready to merge.
-- **DONE_WITH_CONCERNS** — Completed, but with issues Nnamdi should know about. List each concern with severity and a proposed follow-up.
+- **DONE** — All steps completed. Evidence provided for every claim. Tests + evals in the diff. Work is COMMITTED. Ready to merge.
+- **DONE_WITH_CONCERNS** — Completed and COMMITTED, but with issues Nnamdi should know about. List each concern with severity and a proposed follow-up.
 - **BLOCKED** — Cannot proceed. State what's blocking and what was already tried.
 - **NEEDS_CONTEXT** — Missing information required to continue. State exactly what's needed.
 
@@ -195,7 +195,7 @@ At the end of every task, report one of:
 
 Once a task is done, two things happen, no exceptions:
 
-1. **Commit and push.** Stage the work, write a clear commit message, push to GitHub. Don't wait to be asked. Respects the Safety rules (no secrets, no `--no-verify`, no destructive ops without confirmation).
+1. **Commit and push.** You MUST stage the work, write a clear commit message, and commit/push to GitHub after every change. You do not need to wait for explicit instruction to commit once a change is verified; it is the default final step. Respects the Safety rules (no secrets, no destructive ops without confirmation).
 2. **Report what to restart.** Tell Nnamdi exactly which service / system / program needs to be restarted for the change to take effect, with the full list of commands to run. If nothing needs restarting, say so explicitly.
 
 For restart commands that need `sudo`: never run them yourself. List them for Nnamdi to run, clearly marked as his to execute.
@@ -213,6 +213,7 @@ STOP. Name the ambiguity in one sentence. Present 2-3 options with real trade-of
 
 ## Safety
 
+- **Proactive Commits:** Commit after every successful change. This is a foundational workflow requirement.
 - Never commit secrets. If `.env` is touched, verify `.gitignore` before any commit.
 - Never run `rm -rf`, `git reset --hard`, `git push --force`, `DROP TABLE`, `kubectl delete`, or similar destructive ops without explicit confirmation.
 - Never skip pre-commit hooks with `--no-verify`. If a hook fails, fix the underlying issue.
