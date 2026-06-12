@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+1
 const goalRows = [
   {
     id: "business-goals",
