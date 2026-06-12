@@ -58,7 +58,7 @@ const row2Items = [...assetItems, ...assetItems, ...assetItems];
 function AssetCard({ item }: { item: AssetItem }) {
   return (
     <article className="flex h-[4.3125rem] w-[5.625rem] flex-shrink-0 flex-col gap-px">
-      <div className="relative h-[3.5625rem] w-full overflow-hidden rounded-t-[2.5rem]">
+      <div className="relative h-[3.5625rem] w-full overflow-hidden rounded-t-[0.625rem]">
         {item.src && (
           <Image
             src={item.src}
