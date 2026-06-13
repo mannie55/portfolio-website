@@ -98,7 +98,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                     index === 3 ? "sm:border-l md:border-l border-border" : ""
                   }`}
                 >
-                  <div className="text-[2.5rem] md:text-[3.75rem] font-heading text-border-light leading-none">
+                  <div className="text-[2.5rem] md:text-[3.75rem] font-heading text-border-lighter leading-none">
                     {metric.value}
                   </div>
                   <p className="text-body-xs md:text-body-sm text-muted font-light leading-relaxed">

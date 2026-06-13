@@ -41,7 +41,7 @@ export const DiscoveryComponent = () => {
       </div>
 
       {/* Card */}
-      <div className="relative z-10 flex h-full flex-col rounded-[1.25rem] border border-black/10 bg-white px-4 py-2.5 shadow-sm">
+      <div className="relative z-10 flex h-full flex-col rounded-[1.25rem] border border-border bg-white px-4 py-2.5 shadow-sm">
         <div className="flex flex-1 flex-col justify-between">
           {/* Header */}
           <div>
@@ -53,7 +53,7 @@ export const DiscoveryComponent = () => {
               {goalRows.map((row) => (
                 <div
                   key={row.id}
-                  className="flex items-center justify-between border-b border-blueLighter pb-2"
+                  className="flex items-center justify-between border-b border-border pb-2"
                 >
                   <span className="text-[0.5625rem] font-bold text-slate-700">
                     {row.label}

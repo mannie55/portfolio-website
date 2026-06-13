@@ -30,7 +30,7 @@ export function FeaturedWork({ studies }: FeaturedWorkProps) {
         {studies.map((study) => (
           <article
             key={study.slug}
-            className="flex flex-col items-center gap-10 rounded-[1.25rem] border border-border-strong p-6 md:flex-row lg:gap-20"
+            className="flex flex-col items-center gap-10 rounded-[1.25rem] border border-border-lighter p-6 md:flex-row lg:gap-20"
           >
             <div className="flex flex-1 flex-col items-start gap-8">
               <div className="flex w-full flex-col items-start gap-4">

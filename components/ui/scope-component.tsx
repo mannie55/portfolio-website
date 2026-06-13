@@ -28,7 +28,7 @@ const scopeItems = [
 export const ScopeComponent = () => {
   return (
     <article
-      className="relative flex h-[19rem] w-[12.8125rem] flex-col items-center gap-[0.625rem] overflow-hidden rounded-[1.25rem] border border-black/10 bg-white py-[1.25rem] shadow-sm"
+      className="relative flex h-[19rem] w-[12.8125rem] flex-col items-center gap-[0.625rem] overflow-hidden rounded-[1.25rem] border border-border bg-white py-[1.25rem] shadow-sm"
       aria-label="Project scope"
     >
       {/* Illustration container */}

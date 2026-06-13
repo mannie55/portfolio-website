@@ -35,7 +35,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
               key={item.id}
               className="flex flex-col md:flex-row items-start justify-center gap-4 py-8 border-b border-border last:border-0"
             >
-              <div className="text-[1.69375rem] leading-7 text-border-light font-sans font-normal min-w-[2rem]">
+              <div className="text-[1.69375rem] leading-7 text-border-lighter font-sans font-normal min-w-[2rem]">
                 {item.id}
               </div>
               <div className="flex flex-col gap-4 max-w-[36.1875rem]">
@@ -113,7 +113,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
           />
         </div>
         <blockquote className="m-0">
-          <p className="text-h6 md:text-h5 leading-relaxed text-border-light font-normal italic">
+          <p className="text-h6 md:text-h5 leading-relaxed text-border-lighter font-normal italic">
             &ldquo;{block.quote.text}&rdquo;
           </p>
           <figcaption className="mt-4 text-body-sm md:text-base text-muted/60 font-medium not-italic">

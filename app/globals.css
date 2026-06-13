@@ -32,10 +32,9 @@
   --ds-color-blue-lighter: #ecedef;
   --ds-color-blue-gray: #dedfe1;
   --ds-color-gray-light: #ececec;
-  --ds-color-border: var(--ds-color-rhino-darker);
-  --ds-color-border-light: var(--ds-color-rhino-dark);
-  --ds-color-border-lighter: var(--ds-color-rhino);
-  --ds-color-border-lightest: var(--ds-color-rhino-lighter);
+  --ds-color-border: #414348;
+  --ds-color-border-light: #4B4D51;
+  --ds-color-border-lighter: #808080;
   --ds-color-success: #8fd694;
   --ds-color-error: #ff9b9b;
   
@@ -115,9 +114,8 @@
   --color-surface-elevated: var(--ds-color-rhino-dark);
   --color-surface-hover: var(--ds-color-rhino);
   --color-border: var(--ds-color-border);
-  --color-border-subtle: var(--ds-color-border-light);
-  --color-border-strong: var(--ds-color-border-lighter);
-  --color-border-light: var(--ds-color-border-lightest);
+  --color-border-light: var(--ds-color-border-light);
+  --color-border-lighter: var(--ds-color-border-lighter);
   --color-success: var(--ds-color-success);
   --color-error: var(--ds-color-error);
   --color-lavender: var(--ds-color-lavender);

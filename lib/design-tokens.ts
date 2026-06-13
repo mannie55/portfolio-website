@@ -25,6 +25,11 @@ export const colorPrimitives = {
   rhinoDark: "#293550",
   rhinoDarker: "#222837",
   rhinoDarkest: "#171A22",
+
+  // New Border Primitives
+  borderBase: "#414348",
+  borderLight: "#4B4D51",
+  borderLighter: "#808080",
 } as const;
 
 // ============================================================================
@@ -59,10 +64,9 @@ export const colorSemantic = {
   accentForeground: colorPrimitives.white,
 
   // Borders
-  border: colorPrimitives.rhinoDarker,
-  borderLight: colorPrimitives.rhinoDark,
-  borderLighter: colorPrimitives.rhino,
-  borderLightest: colorPrimitives.rhinoLighter,
+  border: colorPrimitives.borderBase,
+  borderLight: colorPrimitives.borderLight,
+  borderLighter: colorPrimitives.borderLighter,
 } as const;
 
 // ============================================================================

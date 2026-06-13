@@ -33,7 +33,7 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-border-subtle p-6 pt-0 md:px-8">
+          <div className="border-t border-border-lighter p-6 pt-0 md:px-8">
             <p className="mt-4 text-body-sm leading-relaxed text-muted md:text-body">
               {item.answer}
             </p>

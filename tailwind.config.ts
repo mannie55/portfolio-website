@@ -44,7 +44,6 @@ const config: Config = {
         border: colorSemantic.border,
         "border-light": colorSemantic.borderLight,
         "border-lighter": colorSemantic.borderLighter,
-        "border-lightest": colorSemantic.borderLightest,
 
         // Text
         "text-default": colorSemantic.text,

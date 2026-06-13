@@ -21,7 +21,7 @@ export function PillButton({
   
   const variantStyles = {
     white: "bg-white text-text-dark",
-    outline: "border border-white/20 bg-transparent text-white hover:bg-white/5",
+    outline: "border border-border bg-transparent text-white hover:bg-white/5",
   };
 
   return (
