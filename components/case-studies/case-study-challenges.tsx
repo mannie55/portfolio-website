@@ -38,11 +38,11 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
               <div className="text-h5 leading-[1.75rem] text-muted font-sans">
                 {item.number}
               </div>
-              <h3 className="text-xl font-medium leading-[1.625rem] text-foreground">
+              <h3 className="text-h6 font-medium leading-[1.625rem] text-foreground">
                 {item.title}
               </h3>
             </div>
-            <p className="text-sm leading-relaxed text-muted font-light">
+            <p className="text-body-sm leading-relaxed text-muted font-light">
               {item.description}
             </p>
           </article>

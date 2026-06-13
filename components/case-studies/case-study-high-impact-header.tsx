@@ -43,7 +43,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
             <h1 className="text-[1.5rem] md:text-[1.75rem] leading-[1.1] md:leading-[1] font-heading text-foreground">
               {study.title}
             </h1>
-            <p className="text-lg md:text-xl leading-[1.4] md:leading-[1.3] text-muted">
+            <p className="text-body-lg md:text-h6 leading-[1.4] md:leading-[1.3] text-muted">
               {study.summary}
             </p>
           </div>
@@ -74,7 +74,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   <dt className="text-body font-medium text-foreground">
                     {detail.label}
                   </dt>
-                  <dd className="text-sm text-muted font-light">
+                  <dd className="text-body-sm text-muted font-light">
                     {detail.value}
                   </dd>
                 </div>
@@ -101,7 +101,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   <div className="text-[2.5rem] md:text-[3.75rem] font-heading text-border-light leading-none">
                     {metric.value}
                   </div>
-                  <p className="text-body-xs md:text-sm text-muted font-light leading-relaxed">
+                  <p className="text-body-xs md:text-body-sm text-muted font-light leading-relaxed">
                     {metric.description}
                   </p>
                 </div>

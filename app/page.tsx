@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer";
 import { PageContainer } from "@/components/layout/page-container";
 import { DiscoveryComponent } from "@/components/ui/discovery-component";
 import { AssetComponent } from "@/components/ui/asset-component";
+import { ScopeComponent } from "@/components/ui/scope-component";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export default async function Home() {
@@ -20,12 +21,15 @@ export default async function Home() {
           <Hero />
 
           {/* Component Preview */}
-          <div className="flex flex-col items-center justify-center gap-12 bg-slate-50 py-20 lg:flex-row">
+          <div className="flex flex-col items-center justify-center gap-12 bg-slate-50 py-20 lg:flex-row lg:flex-wrap">
             <div className="w-full max-w-[20rem]">
               <DiscoveryComponent />
             </div>
             <div className="w-full max-w-[30rem]">
               <AssetComponent />
+            </div>
+            <div className="w-full max-w-[20rem] rounded-[1.25rem] border border-black/10 shadow-sm overflow-hidden">
+              <ScopeComponent />
             </div>
           </div>
 
