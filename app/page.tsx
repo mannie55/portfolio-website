@@ -1,6 +1,6 @@
 import { CTASection } from "@/components/home/cta-section";
 import { FAQ } from "@/components/home/faq";
-import { FeaturedWork } from "@/components/home/featured-work";
+import { DivProject } from "@/components/home/div-project";
 import { Hero } from "@/components/home/hero";
 import { Services } from "@/components/home/services";
 import { Testimonials } from "@/components/home/testimonials";
@@ -20,6 +20,8 @@ export default async function Home() {
 
           <Services />
           <Process />
+
+          <DivProject studies={featuredStudies} />
 
           <Testimonials />
           <FAQ />

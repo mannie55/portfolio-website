@@ -46,6 +46,6 @@ describe("FAQ Component", () => {
 
   test("renders the CTA button", () => {
     render(<FAQ />);
-    expect(screen.getByRole("link", { name: /Book a strategy call/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Send me a message/i })).toBeInTheDocument();
   });
 });

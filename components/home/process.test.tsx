@@ -22,7 +22,7 @@ describe("Process Component", () => {
 
   test("renders the CTA button with correct href and text", () => {
     render(<Process />);
-    const ctaButton = screen.getByRole("link", { name: /Book a strategy call/i });
+    const ctaButton = screen.getByRole("link", { name: /Book a discovery call/i });
     expect(ctaButton).toBeInTheDocument();
     expect(ctaButton).toHaveAttribute("href", "/get-started");
   });

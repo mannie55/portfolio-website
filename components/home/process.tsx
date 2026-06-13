@@ -229,7 +229,7 @@ export const Process = () => {
           {/* Book a strategy call CTA */}
           <AButtonSecondary
             href="/get-started"
-            label="Book a strategy call"
+            label="Book a discovery call"
             className="row-[1_/_2] col-[10_/_13] self-end justify-self-end w-fit h-[53px]"
           />
         </div>

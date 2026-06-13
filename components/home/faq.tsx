@@ -9,7 +9,7 @@ interface FAQRowProps {
   onToggle: () => void;
 }
 
-import { LottieChevron } from "./lottie-chevron";
+import { LottieChevron } from "../ui/lottie-chevron";
 
 function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
   return (
@@ -64,7 +64,7 @@ export function FAQ() {
             title="EVERYTHING YOU NEED TO KNOW."
             description="Got questions? I've got answers. If you don't find what you're looking for, feel free to reach out."
           />
-          <AButtonSecondary label="Book a strategy call" />
+          <AButtonSecondary label="Send me a message" />
         </div>
 
         {/* Right Side: FAQ Accordion */}
