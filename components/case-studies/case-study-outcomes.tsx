@@ -16,7 +16,7 @@ export function CaseStudyOutcomes({ block }: CaseStudyOutcomesProps) {
         <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
           <h2
             id="key-outcomes-heading"
-            className="text-[0.625rem] md:text-xs font-sans font-normal text-foreground whitespace-nowrap"
+            className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
           >
             {block.title}
           </h2>
@@ -44,7 +44,7 @@ export function CaseStudyOutcomes({ block }: CaseStudyOutcomesProps) {
                 />
               </div>
               <div className="flex flex-col gap-4 max-w-[36.1875rem]">
-                <h3 className="text-2xl leading-7 text-foreground font-normal">
+                <h3 className="text-h5 leading-7 text-foreground font-normal">
                   {outcome.title}
                 </h3>
                 <p className="text-base leading-[1.4] text-muted font-light">

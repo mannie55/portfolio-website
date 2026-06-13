@@ -14,7 +14,7 @@ export function CaseStudySection({ block }: CaseStudySectionProps) {
         <div className="relative flex h-[1.8125rem] w-fit min-w-[5.6875rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
           <h2
             id={`${block.title.toLowerCase()}-heading`}
-            className="text-[0.625rem] md:text-xs font-sans font-normal text-foreground whitespace-nowrap"
+            className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
           >
             {block.title}
           </h2>

@@ -11,6 +11,11 @@
 export const colorPrimitives = {
   white: "#FFFFFF",
   gold: "#D4AF37",
+  lavender: "#8D87FF",
+  blueLight: "#E3E8F3",
+  blueLighter: "#ECEDEF",
+  blueGray: "#DEDFE1",
+  grayLight: "#ECECEC",
 
   // Rhino Color Scale (Blue-Gray)
   rhinoLightest: "#516CA7",

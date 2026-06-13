@@ -123,10 +123,10 @@ const MarqueeRow = ({
 
 export const AssetComponent = () => {
   return (
-    <section className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-[#e2e7f2] py-4 shadow-sm">
+    <section className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-blueLight py-4 shadow-sm">
       {/* Search Bar */}
       <div className="relative mx-auto mb-6 flex h-8 w-[13.75rem] overflow-hidden rounded-[0.5rem] bg-white shadow-sm">
-        <div className="flex w-8 items-center justify-center bg-[#516ca7]">
+        <div className="flex w-8 items-center justify-center bg-rhino-lightest">
           <Image
             src="/images/components/search_icon.svg"
             alt="Search"

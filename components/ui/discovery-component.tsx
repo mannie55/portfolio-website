@@ -1,5 +1,5 @@
 import Image from "next/image";
-1
+
 const goalRows = [
   {
     id: "business-goals",
@@ -53,14 +53,14 @@ export const DiscoveryComponent = () => {
               {goalRows.map((row) => (
                 <div
                   key={row.id}
-                  className="flex items-center justify-between border-b border-[#ecedef] pb-2"
+                  className="flex items-center justify-between border-b border-blueLighter pb-2"
                 >
                   <span className="text-[0.5625rem] font-bold text-slate-700">
                     {row.label}
                   </span>
 
                   <div
-                    className={`h-[0.625rem] rounded-full bg-[#dedfe1] ${row.barWidthClass}`}
+                    className={`h-[0.625rem] rounded-full bg-blueGray ${row.barWidthClass}`}
                   />
                 </div>
               ))}

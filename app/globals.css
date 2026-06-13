@@ -115,8 +115,8 @@
   --color-border-light: var(--ds-color-border-lightest);
   --color-success: var(--ds-color-success);
   --color-error: var(--ds-color-error);
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-thunder, var(--font-inter));
+  --font-sans: var(--font-nunito-sans);
+  --font-heading: var(--font-thunder, var(--font-nunito-sans));
   --font-mono: var(--font-geist-mono);
   --text-h1: var(--ds-font-size-h1);
   --text-h1--font-family: var(--font-heading);
@@ -198,5 +198,5 @@
 body {
   background: var(--ds-color-background);
   color: var(--ds-color-text);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-nunito-sans), system-ui, sans-serif;
 }

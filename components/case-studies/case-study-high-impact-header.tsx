@@ -19,7 +19,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
       {/* Breadcrumb Header */}
       <div className="flex w-full max-w-container-xxlarge items-center gap-2.5 mb-8 md:mb-12">
         <div className="flex flex-col items-center justify-center px-4 py-2 bg-surface-elevated rounded-full">
-          <p className="text-[0.625rem] md:text-xs text-foreground whitespace-nowrap">
+          <p className="text-[0.625rem] md:text-body-xs text-foreground whitespace-nowrap">
             Case study — landing page
           </p>
         </div>
@@ -101,7 +101,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   <div className="text-[2.5rem] md:text-[3.75rem] font-heading text-border-light leading-none">
                     {metric.value}
                   </div>
-                  <p className="text-xs md:text-sm text-muted font-light leading-relaxed">
+                  <p className="text-body-xs md:text-sm text-muted font-light leading-relaxed">
                     {metric.description}
                   </p>
                 </div>

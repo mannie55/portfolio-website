@@ -17,6 +17,11 @@ const config: Config = {
         // Primitives
         white: colorPrimitives.white,
         gold: colorPrimitives.gold,
+        lavender: colorPrimitives.lavender,
+        blueLight: colorPrimitives.blueLight,
+        blueLighter: colorPrimitives.blueLighter,
+        blueGray: colorPrimitives.blueGray,
+        grayLight: colorPrimitives.grayLight,
 
         // Rhino scale
         "rhino-lightest": colorPrimitives.rhinoLightest,

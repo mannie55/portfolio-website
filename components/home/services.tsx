@@ -77,11 +77,11 @@ export function Services() {
               <div className="flex flex-col gap-4">
                 <h3
                   id={`${service.id}-title`}
-                  className="font-sans text-2xl font-normal leading-tight text-white/90"
+                  className="font-sans text-h5 font-normal leading-tight text-white/90"
                 >
                   {service.title}
                 </h3>
-                <p className="text-body leading-relaxed text-[#ececec]">
+                <p className="text-body leading-relaxed text-grayLight">
                   {service.description}
                 </p>
               </div>

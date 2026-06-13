@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Nunito_Sans, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 import { Header } from "@/components/layout/header";
@@ -8,8 +8,8 @@ import { colorSemantic } from "@/lib/design-tokens";
 
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const nunitoSans = Nunito_Sans({
+  variable: "--font-nunito-sans",
   subsets: ["latin"],
 });
 
@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistMono.variable} ${thunder.variable} h-full antialiased`}
+      className={`${nunitoSans.variable} ${geistMono.variable} ${thunder.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <Header />

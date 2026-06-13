@@ -16,7 +16,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
         <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
           <h2
             id={`${block.title.toLowerCase().replace(/\s+/g, "-")}-heading`}
-            className="text-[0.625rem] md:text-xs font-sans font-normal text-foreground whitespace-nowrap"
+            className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
           >
             {block.title}
           </h2>
@@ -35,7 +35,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
             className="relative flex flex-col justify-between h-[18.5rem] p-4 rounded-[1.25rem] border border-border bg-surface"
           >
             <div className="flex flex-col gap-2">
-              <div className="text-2xl leading-[1.75rem] text-muted font-sans">
+              <div className="text-h5 leading-[1.75rem] text-muted font-sans">
                 {item.number}
               </div>
               <h3 className="text-xl font-medium leading-[1.625rem] text-foreground">

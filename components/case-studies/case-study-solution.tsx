@@ -16,7 +16,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
         <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
           <h2
             id="solution-heading"
-            className="text-[0.625rem] md:text-xs font-sans font-normal text-foreground whitespace-nowrap"
+            className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
           >
             {block.title}
           </h2>
@@ -39,7 +39,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
                 {item.id}
               </div>
               <div className="flex flex-col gap-4 max-w-[36.1875rem]">
-                <h3 className="text-2xl leading-7 text-foreground font-normal">
+                <h3 className="text-h5 leading-7 text-foreground font-normal">
                   {item.title}
                 </h3>
                 <p className="text-base leading-[1.4] text-muted font-light">
@@ -113,7 +113,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
           />
         </div>
         <blockquote className="m-0">
-          <p className="text-xl md:text-2xl leading-relaxed text-border-light font-normal italic">
+          <p className="text-xl md:text-h5 leading-relaxed text-border-light font-normal italic">
             &ldquo;{block.quote.text}&rdquo;
           </p>
           <figcaption className="mt-4 text-sm md:text-base text-muted/60 font-medium not-italic">
