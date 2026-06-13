@@ -27,6 +27,11 @@
   --ds-color-foreground: var(--ds-color-rhino-darker);
   --ds-color-accent: var(--ds-color-gold);
   --ds-color-accent-foreground: var(--ds-color-white);
+  --ds-color-lavender: #8d87ff;
+  --ds-color-blue-light: #e3e8f3;
+  --ds-color-blue-lighter: #ecedef;
+  --ds-color-blue-gray: #dedfe1;
+  --ds-color-gray-light: #ececec;
   --ds-color-border: var(--ds-color-rhino-darker);
   --ds-color-border-light: var(--ds-color-rhino-dark);
   --ds-color-border-lighter: var(--ds-color-rhino);
@@ -115,6 +120,11 @@
   --color-border-light: var(--ds-color-border-lightest);
   --color-success: var(--ds-color-success);
   --color-error: var(--ds-color-error);
+  --color-lavender: var(--ds-color-lavender);
+  --color-blue-light: var(--ds-color-blue-light);
+  --color-blue-lighter: var(--ds-color-blue-lighter);
+  --color-blue-gray: var(--ds-color-blue-gray);
+  --color-gray-light: var(--ds-color-gray-light);
   --font-sans: var(--font-nunito-sans);
   --font-heading: var(--font-thunder, var(--font-nunito-sans));
   --font-mono: var(--font-geist-mono);
