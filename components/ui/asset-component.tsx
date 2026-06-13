@@ -143,7 +143,7 @@ export const AssetComponent = () => {
 
   return (
     <article 
-      className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-blueLight py-4 shadow-sm"
+      className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-white py-4 shadow-sm"
       aria-label="Asset component"
     >
       {/* Search Bar */}
