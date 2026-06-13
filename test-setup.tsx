@@ -21,3 +21,9 @@ vi.mock("next/link", () => ({
     );
   },
 }));
+
+// Mock lottie-react to avoid canvas getContext error in jsdom
+vi.mock("lottie-react", () => ({
+  __esModule: true,
+  default: () => <div data-testid="mock-lottie" />,
+}));

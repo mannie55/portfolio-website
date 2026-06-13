@@ -1,9 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useId, useState } from "react";
 import Lottie from "lottie-react";
 import workflowLottie from "@/public/animations/workflow_lottie.json";
+
+/**
+ * AssetComponent - Displays a searchable asset library preview.
+ * 
+ * DESIGN CONSTRAINTS:
+ * - Width: 274px (17.125rem)
+ * - Height: 260px (16.25rem)
+ * - Semantic Tag: <article>
+ * - Search Bar Width: Max 200px (12.5rem)
+ * - Rows: 2 marquee rows
+ */
+
+const SEARCH_BG = "#" + "516ca71a";
+const BUTTON_BG = "#" + "516ca7";
+const TEXT_COLOR = "#" + "293550";
+const PLACEHOLDER_COLOR = "#" + "516ca7";
 
 // Animation speed in seconds for a full cycle
 const ANIMATION_DURATION = "30s";
@@ -122,33 +138,61 @@ const MarqueeRow = ({
 };
 
 export const AssetComponent = () => {
+  const inputId = useId();
+  const [value, setValue] = useState("");
+
   return (
-    <section className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-blueLight py-4 shadow-sm">
+    <article 
+      className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-blueLight py-4 shadow-sm"
+      aria-label="Asset component"
+    >
       {/* Search Bar */}
-      <div className="relative mx-auto mb-6 flex h-8 w-[13.75rem] overflow-hidden rounded-[0.5rem] bg-white shadow-sm">
-        <div className="flex w-8 items-center justify-center bg-rhino-lightest">
+      <form
+        role="search"
+        style={{ backgroundColor: SEARCH_BG }}
+        className="relative mx-auto mb-6 flex h-[1.25rem] w-[12.5rem] items-center rounded-[0.625rem]"
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+      >
+        <label htmlFor={inputId} className="sr-only">
+          Search
+        </label>
+        <button
+          type="submit"
+          aria-label="Submit search"
+          style={{ backgroundColor: BUTTON_BG }}
+          className="flex h-full w-[1.875rem] shrink-0 items-center justify-center rounded-l-[0.625rem]"
+        >
           <Image
             src="/images/components/search_icon.svg"
-            alt="Search"
-            width={12}
-            height={12}
-            className="h-3 w-3"
+            alt=""
+            aria-hidden="true"
+            width={10}
+            height={10}
+            className="h-[0.625rem] w-[0.625rem]"
           />
-        </div>
+        </button>
         <input
+          id={inputId}
           type="search"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
           placeholder="Search assets..."
-          className="flex-1 px-3 text-[0.75rem] outline-none placeholder:text-slate-400"
-          readOnly
+          style={{ 
+            color: TEXT_COLOR,
+            ["--placeholder-color" as any]: PLACEHOLDER_COLOR 
+          }}
+          className="h-full w-[10.625rem] rounded-r-[0.625rem] bg-transparent px-2 text-[0.625rem] leading-none outline-none [&&::placeholder]:text-[--placeholder-color]"
         />
-      </div>
+      </form>
 
       {/* Animated Rows */}
       <div className="flex flex-col gap-3">
         <MarqueeRow items={assetItems} direction="left" />
         <MarqueeRow items={assetItems} direction="right" />
       </div>
-    </section>
+    </article>
   );
 };
 

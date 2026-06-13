@@ -9,6 +9,7 @@ import { PageContainer } from "@/components/layout/page-container";
 import { DiscoveryComponent } from "@/components/ui/discovery-component";
 import { AssetComponent } from "@/components/ui/asset-component";
 import { ScopeComponent } from "@/components/ui/scope-component";
+import { Process } from "@/components/home/process";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export default async function Home() {
@@ -28,13 +29,13 @@ export default async function Home() {
             <div className="w-full max-w-[30rem]">
               <AssetComponent />
             </div>
-            <div className="w-full max-w-[20rem] rounded-[1.25rem] border border-black/10 shadow-sm overflow-hidden">
+            <div className="w-full max-w-[20rem]">
               <ScopeComponent />
             </div>
           </div>
 
           <Services />
-...
+          <Process />
 
           <Testimonials />
           <FAQ />

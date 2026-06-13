@@ -125,6 +125,13 @@
   --color-blue-lighter: var(--ds-color-blue-lighter);
   --color-blue-gray: var(--ds-color-blue-gray);
   --color-gray-light: var(--ds-color-gray-light);
+  --color-rhino-lightest: var(--ds-color-rhino-lightest);
+  --color-rhino-lighter: var(--ds-color-rhino-lighter);
+  --color-rhino-light: var(--ds-color-rhino-light);
+  --color-rhino: var(--ds-color-rhino);
+  --color-rhino-dark: var(--ds-color-rhino-dark);
+  --color-rhino-darker: var(--ds-color-rhino-darker);
+  --color-rhino-darkest: var(--ds-color-rhino-darkest);
   --font-sans: var(--font-nunito-sans);
   --font-heading: var(--font-thunder, var(--font-nunito-sans));
   --font-mono: var(--font-geist-mono);
