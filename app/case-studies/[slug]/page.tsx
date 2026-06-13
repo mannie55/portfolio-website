@@ -66,7 +66,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   return (
     <>
       <PageContainer>
-        <div className="py-12">
+        <div className="py-24">
           {study.metrics ? (
             <CaseStudyHighImpactHeader study={study} />
           ) : (
@@ -91,7 +91,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         />
       </PageContainer>
       {/* 100vh Combined Block for CTA and Footer */}
-      <div className="mx-auto flex min-h-screen w-full max-w-container-xxlarge flex-col px-page py-12 xl:px-0">
+      <div className="mx-auto flex min-h-screen w-full max-w-container-xxlarge flex-col px-page py-24 xl:px-0">
         <CTASection title="got a project in mind?" />
         <Footer />
       </div>

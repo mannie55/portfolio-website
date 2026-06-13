@@ -18,7 +18,7 @@ export default function AboutPage() {
     <>
       <PageContainer>
         <div className="py-page lg:py-section-md">
-          <div className="space-y-24">
+          <div className="space-y-48">
             <Bio />
             <Strengths />
             <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_2fr]">

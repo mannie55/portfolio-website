@@ -15,13 +15,13 @@ export default function ContactPage() {
   return (
     <>
       <PageContainer>
-        <div className="py-12">
+        <div className="py-24">
           <SectionHeading
             as="h1"
             title="Contact"
             description="Have a project in mind? Send a message or book a time to chat."
           />
-          <div className="mt-12 grid gap-12 lg:grid-cols-2">
+          <div className="mt-24 grid gap-12 lg:grid-cols-2">
             <section>
               <h2 className="text-h5 font-semibold">Send a message</h2>
               <div className="mt-6">

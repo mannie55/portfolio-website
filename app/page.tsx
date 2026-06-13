@@ -27,7 +27,7 @@ export default async function Home() {
       </PageContainer>
       
       {/* 100vh Combined Block for CTA and Footer */}
-      <div className="mx-auto flex min-h-screen w-full max-w-container-xxlarge flex-col px-page py-12 xl:px-0">
+      <div className="mx-auto flex min-h-screen w-full max-w-container-xxlarge flex-col px-page py-24 xl:px-0">
         <CTASection />
         <Footer />
       </div>
