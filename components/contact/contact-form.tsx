@@ -23,7 +23,10 @@ export function ContactForm() {
   );
 
   return (
-    <form action={formAction} className="space-y-5">
+    <form
+      action={formAction}
+      className="space-y-5 rounded-[20px] bg-surface-elevated p-6 sm:p-8"
+    >
       <div>
         <label htmlFor="name" className="block text-body-sm font-medium">
           Name
