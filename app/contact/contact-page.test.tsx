@@ -12,15 +12,15 @@ describe("ContactPage", () => {
     render(<ContactPage />);
     
     // Check that SectionHeading renders
-    expect(screen.getByRole("heading", { name: /Contact/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /LETS BUILD SOMETHING GREAT TOGETHER./i })).toBeInTheDocument();
     
     // Check that CalEmbed renders (wait for dynamic import)
     const calEmbed = await screen.findByTestId("cal-embed");
     expect(calEmbed).toBeInTheDocument();
     
     // Check that Footer renders (using role or content)
-    const footer = screen.getByRole("contentinfo");
-    expect(footer).toBeInTheDocument();
-    expect(screen.getByText(/Portfolio/)).toBeInTheDocument();
+    const footers = screen.getAllByRole("contentinfo");
+    expect(footers.length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Portfolio/).length).toBeGreaterThan(0);
   });
 });

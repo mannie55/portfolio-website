@@ -32,12 +32,12 @@ export function CalEmbed() {
 
   if (!mounted) {
     return (
-      <div className="min-h-[700px] rounded-[20px] border border-border bg-surface-elevated animate-pulse" />
+      <div className="min-h-[700px] rounded-[20px] bg-surface-elevated animate-pulse" />
     );
   }
 
   return (
-    <div className="min-h-[700px] overflow-hidden rounded-[20px] border border-border">
+    <div className="min-h-[700px] overflow-hidden rounded-[20px]">
       <Cal
         calLink={calLink}
         style={{ width: "100%", height: "100%", minHeight: "700px" }}
