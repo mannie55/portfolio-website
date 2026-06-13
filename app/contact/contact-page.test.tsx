@@ -8,14 +8,15 @@ vi.mock("@/components/contact/cal-embed", () => ({
 }));
 
 describe("ContactPage", () => {
-  test("renders SectionHeading, CalEmbed, and Footer", () => {
+  test("renders SectionHeading, CalEmbed, and Footer", async () => {
     render(<ContactPage />);
     
     // Check that SectionHeading renders
     expect(screen.getByRole("heading", { name: /Contact/i })).toBeInTheDocument();
     
-    // Check that CalEmbed renders
-    expect(screen.getByTestId("cal-embed")).toBeInTheDocument();
+    // Check that CalEmbed renders (wait for dynamic import)
+    const calEmbed = await screen.findByTestId("cal-embed");
+    expect(calEmbed).toBeInTheDocument();
     
     // Check that Footer renders (using role or content)
     const footer = screen.getByRole("contentinfo");
