@@ -4,7 +4,7 @@ import { testimonials } from "@/lib/mock/testimonials";
 
 export function Testimonials() {
   return (
-    <section className="py-12">
+    <section className="py-24">
       <div className="flex flex-col gap-12">
         <SectionHeading
           title="What Clients Say"

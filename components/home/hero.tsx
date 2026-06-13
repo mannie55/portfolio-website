@@ -4,7 +4,7 @@ import { heroContent } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section className="relative py-12">
+    <section className="relative py-24">
       <div className="mx-auto flex flex-col items-center gap-10 lg:flex-row lg:items-end lg:gap-14">
         {/* Left: Author Portrait */}
         <div className="relative h-[30rem] w-full max-w-[31.25rem] overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none">

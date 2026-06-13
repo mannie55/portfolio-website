@@ -42,7 +42,7 @@ const services: Service[] = [
 export function Services() {
   return (
     <section
-      className="relative flex w-full flex-col items-start py-12"
+      className="relative flex w-full flex-col items-start py-24"
       aria-labelledby="services-heading"
     >
       <SectionHeading

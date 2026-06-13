@@ -56,7 +56,7 @@ export function FAQ() {
   };
 
   return (
-    <section className="py-12">
+    <section className="py-24">
       <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
         {/* Left Side: Heading and CTA */}
         <div className="flex flex-col items-start gap-8 lg:sticky lg:top-24 lg:max-w-[25rem]">
