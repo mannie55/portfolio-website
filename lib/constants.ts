@@ -21,7 +21,7 @@ export const navLinks = [
 
 export const email = "hello@example.com";
 
-export const calComUrl = "https://cal.com/yourusername/30min";
+export const calComUrl = "https://cal.com/nnamdi-ogbonna-zli8s4/30min";
 
 export const socialLinks = [
   { href: "https://github.com/yourusername", label: "GitHub" },
