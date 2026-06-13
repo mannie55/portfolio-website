@@ -18,10 +18,10 @@ export default async function Home() {
         <div className="flex flex-col">
           <Hero />
 
+          <DivProject studies={featuredStudies} />
+
           <Services />
           <Process />
-
-          <DivProject studies={featuredStudies} />
 
           <Testimonials />
           <FAQ />

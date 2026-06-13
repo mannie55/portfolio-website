@@ -10,7 +10,7 @@ export function DivProject({ studies }: DivProjectProps) {
   return (
     <section
       aria-labelledby="projects-heading"
-      className="relative flex w-full flex-col items-start py-24"
+      className="relative flex w-full flex-col items-start p-6"
     >
       <div className="flex w-full items-center justify-between gap-4">
         <h2
