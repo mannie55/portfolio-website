@@ -29,10 +29,10 @@ export function CalEmbed() {
   }, []);
 
   return (
-    <div className="min-h-[500px] overflow-hidden rounded-lg border border-border">
+    <div className="min-h-[700px] overflow-hidden rounded-[20px] border border-border">
       <Cal
         calLink={calLink}
-        style={{ width: "100%", height: "100%", minHeight: "500px" }}
+        style={{ width: "100%", height: "100%", minHeight: "700px" }}
         config={{ layout: "month_view", theme: "dark" }}
       />
     </div>
