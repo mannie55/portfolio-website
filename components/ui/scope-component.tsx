@@ -21,42 +21,33 @@ const scopeItems = [
 export const ScopeComponent = (): JSX.Element => {
   return (
     <section
+      className="relative flex h-[19rem] flex-col items-center gap-[0.625rem] overflow-x-hidden bg-white px-0 py-[1.25rem]"
       aria-label="Project scope"
-      className="relative flex flex-col items-center gap-[1.5rem] overflow-hidden bg-white py-[1.25rem]"
     >
-      {/* Background decoration */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[url('/images/bg_grid.svg')] bg-cover bg-center"
-      />
-
-      {/* Illustration */}
-      <div className="relative z-10">
+      <div className="relative ml-[-0.005rem] mr-[-0.005rem] h-[8.2644rem] w-[12.8231rem]">
         <Image
           src="/images/components/skeleton.svg"
           alt=""
           aria-hidden="true"
-          width={206}
-          height={133}
-          className="pointer-events-none select-none"
+          fill
+          className="object-contain"
         />
       </div>
-
-      {/* Scope list */}
-      <div
+      
+      <div 
         role="list"
         aria-label="Scope categories"
-        className="relative z-10 flex w-[11.25rem] flex-col gap-[0.5rem]"
+        className="relative mb-[-0.1394rem] flex h-[7.75rem] w-[11.1875rem] flex-col items-start gap-[0.125rem]"
       >
         {scopeItems.map((item) => (
           <div
             key={item.id}
             role="listitem"
-            className={`flex h-[2.5rem] items-center rounded-md px-[0.75rem] ${item.backgroundClass}`}
+            className={`relative flex h-[2.5rem] w-full items-center gap-[0.625rem] self-stretch rounded-[0.3125rem] px-[0.625rem] py-0 ${item.backgroundClass}`}
           >
-            <span className="text-[0.9375rem] font-medium text-rhino">
+            <div className="relative flex w-fit items-center whitespace-nowrap font-sans text-[0.9375rem] font-medium leading-[1rem] tracking-[0] text-rhino">
               {item.label}
-            </span>
+            </div>
           </div>
         ))}
       </div>
