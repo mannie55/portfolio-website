@@ -13,19 +13,17 @@ type CardBase = {
   className: string;
   titleClassName?: string;
   descriptionClassName?: string;
+  contentClassName?: string;
 };
 
 type ImageCard = CardBase & {
   type: "image";
   imageAlt: string;
   imageClassName: string;
-  contentClassName?: string;
-  contentWrapClassName?: string;
 };
 
 type TextCard = CardBase & {
   type: "text";
-  contentClassName?: string;
 };
 
 const cards: Array<ImageCard | TextCard> = [
@@ -36,11 +34,10 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "We talk through your project, what you have, and what done looks like.",
     className:
-      "relative row-[1_/_2] col-[1_/_7] w-full h-[240.89px] flex items-center justify-between p-6 bg-surface-primary rounded-2xl",
+      "relative row-[1_/_2] col-[1_/_7] w-full h-full flex items-center justify-center gap-8 p-6 bg-surface rounded-2xl",
     imageAlt: "Discovery component",
-    imageClassName:
-      "relative flex-1 max-w-[664px] grow mt-[-4.60px] mb-[-4.60px] aspect-[1.61]",
-    contentClassName: "relative w-[291px] h-[101.77px]",
+    imageClassName: "relative flex items-center justify-center",
+    contentClassName: "flex flex-col items-center text-center gap-2 max-w-[291px]",
   },
   {
     id: "quality-always",
@@ -49,11 +46,12 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "From pixel-perfect design to clean development, I make sure you get the highest standards.",
     className:
-      "row-[2_/_3] col-[1_/_4] h-fit flex-col items-start pt-[50.47px] pb-[48.55px] px-6 bg-white border border-solid border-border-lighter relative w-full flex rounded-2xl",
+      "row-[2_/_3] col-[1_/_4] h-full flex flex-col items-center justify-center p-6 bg-white relative w-full rounded-2xl",
     titleClassName:
-      "relative flex items-center self-stretch mt-[-1.00px] font-sans font-semibold text-rhino text-h5 tracking-[0] leading-[26.4px]",
+      "relative flex items-center justify-center text-center self-stretch mt-[-1.00px] font-sans font-semibold text-text-dark text-h5 tracking-[0] leading-[26.4px]",
     descriptionClassName:
-      "relative self-stretch mt-[-1.00px] font-sans font-normal text-rhino text-body-md tracking-[0] leading-[27px]",
+      "relative flex items-center justify-center text-center self-stretch mt-[-1.00px] font-sans font-normal text-text-dark/90 text-body-md tracking-[0] leading-[27px]",
+    contentClassName: "flex flex-col items-center text-center gap-2 w-full",
   },
   {
     id: "asset-handover",
@@ -62,9 +60,10 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "You send over your files, credentials, and anything I need to get started.",
     className:
-      "row-[2_/_4] col-[4_/_7] h-fit flex-col items-start gap-[49.61px] pt-[51.09px] pb-[44.58px] px-6 bg-surface-primary relative w-full flex rounded-2xl",
+      "row-[2_/_4] col-[4_/_7] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Asset component here",
-    imageClassName: "relative self-stretch w-full flex-[0_0_auto]",
+    imageClassName: "relative flex items-center justify-center w-full",
+    contentClassName: "flex flex-col items-center text-center gap-2 w-full",
   },
   {
     id: "scope-and-rates",
@@ -72,11 +71,10 @@ const cards: Array<ImageCard | TextCard> = [
     title: "Scope And Rates",
     description: "We align on deliverables and pricing before anything moves.",
     className:
-      "row-[1_/_3] col-[7_/_10] h-fit flex-col items-start justify-between pb-[2.27e-13px] pt-[19.4px] px-6 bg-surface-primary relative w-full flex rounded-2xl",
+      "row-[1_/_3] col-[7_/_10] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Scope component here",
-    imageClassName: "relative w-[274px] flex-[0_0_auto]",
-    contentWrapClassName:
-      "flex flex-col items-start gap-[4.88px] pt-0 pb-[25.49px] px-0 relative self-stretch w-full flex-[0_0_auto]",
+    imageClassName: "relative flex items-center justify-center w-full",
+    contentClassName: "flex flex-col items-center text-center gap-2 w-full",
   },
   {
     id: "speed-and-quality",
@@ -85,10 +83,10 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "I work and keep you in the loop progress, milestones, blockers. No radio silence.",
     className:
-      "row-[3_/_4] col-[7_/_13] h-[240.89px] items-center justify-between p-6 bg-surface-primary relative w-full flex rounded-2xl",
+      "row-[3_/_4] col-[7_/_13] w-full h-full flex items-center justify-center gap-8 p-6 bg-surface relative rounded-2xl",
     imageAlt: "Speed and quality",
-    imageClassName: "relative max-w-[664px] w-[307px]",
-    contentClassName: "relative w-[283px] h-[128.77px]",
+    imageClassName: "relative flex items-center justify-center w-[307px]",
+    contentClassName: "flex flex-col items-center text-center gap-2 max-w-[283px]",
   },
   {
     id: "clear-process",
@@ -97,15 +95,16 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "Everything delivered cleanly files, credentials, whatever you need to move forward.",
     className:
-      "row-[2_/_3] col-[10_/_13] h-fit flex-col items-start pt-[63.97px] pb-[62.05px] px-6 bg-surface-primary relative w-full flex rounded-2xl",
+      "row-[2_/_3] col-[10_/_13] h-full flex flex-col items-center justify-center p-6 bg-surface relative w-full rounded-2xl",
+    contentClassName: "flex flex-col items-center text-center gap-2 w-full",
   },
 ];
 
 const defaultDarkTitleClassName =
-  "relative flex items-center self-stretch mt-[-1.00px] font-sans font-semibold text-white text-h5 tracking-[0] leading-[26.4px]";
+  "relative flex items-center justify-center text-center self-stretch mt-[-1.00px] font-sans font-semibold text-white text-h5 tracking-[0] leading-[26.4px]";
 
 const defaultDarkDescriptionClassName =
-  "relative flex items-center self-stretch mt-[-1.00px] font-sans font-normal text-white/90 text-body-md tracking-[0] leading-[27px]";
+  "relative flex items-center justify-center text-center self-stretch mt-[-1.00px] font-sans font-normal text-white/90 text-body-md tracking-[0] leading-[27px]";
 
 export const Process = () => {
   return (
@@ -131,21 +130,17 @@ export const Process = () => {
           {cards.map((card) => {
             if (card.id === "discovery-call" && card.type === "image") {
               return (
-                <article key={card.id} className={card.className}>
+                <article key={card.id} id={card.id} className={card.className}>
                   <div className={card.imageClassName}>
                     <DiscoveryComponent />
                   </div>
                   <div className={card.contentClassName}>
-                    <div className="flex flex-col w-full items-start justify-center absolute top-[-5px] left-0">
-                      <h3 className={card.titleClassName || defaultDarkTitleClassName}>
-                        {card.title}
-                      </h3>
-                    </div>
-                    <div className="flex flex-col w-full items-start justify-center absolute top-[27px] left-0">
-                      <p className={card.descriptionClassName || defaultDarkDescriptionClassName}>
-                        {card.description}
-                      </p>
-                    </div>
+                    <h3 className={card.titleClassName || defaultDarkTitleClassName}>
+                      {card.title}
+                    </h3>
+                    <p className={card.descriptionClassName || defaultDarkDescriptionClassName}>
+                      {card.description}
+                    </p>
                   </div>
                 </article>
               );
@@ -153,11 +148,11 @@ export const Process = () => {
 
             if (card.id === "asset-handover" && card.type === "image") {
               return (
-                <article key={card.id} className={card.className}>
+                <article key={card.id} id={card.id} className={card.className}>
                   <div className={card.imageClassName}>
                     <AssetComponent />
                   </div>
-                  <div className="flex flex-col items-start gap-[4.87px] relative self-stretch w-full flex-[0_0_auto]">
+                  <div className={card.contentClassName}>
                     <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                       {card.title}
                     </h3>
@@ -171,8 +166,8 @@ export const Process = () => {
 
             if (card.id === "scope-and-rates" && card.type === "image") {
               return (
-                <article key={card.id} className={card.className}>
-                  <div className={card.contentWrapClassName}>
+                <article key={card.id} id={card.id} className={card.className}>
+                  <div className={card.contentClassName}>
                     <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                       {card.title}
                     </h3>
@@ -189,18 +184,14 @@ export const Process = () => {
 
             if (card.id === "speed-and-quality" && card.type === "image") {
               return (
-                <article key={card.id} className={card.className}>
+                <article key={card.id} id={card.id} className={card.className}>
                   <div className={card.contentClassName}>
-                    <div className="flex flex-col w-full items-start justify-center absolute top-[-5px] left-0">
-                      <h3 className={card.titleClassName || defaultDarkTitleClassName}>
-                        {card.title}
-                      </h3>
-                    </div>
-                    <div className="flex flex-col w-full items-start justify-center absolute top-[27px] left-0">
-                      <p className={card.descriptionClassName || defaultDarkDescriptionClassName}>
-                        {card.description}
-                      </p>
-                    </div>
+                    <h3 className={card.titleClassName || defaultDarkTitleClassName}>
+                      {card.title}
+                    </h3>
+                    <p className={card.descriptionClassName || defaultDarkDescriptionClassName}>
+                      {card.description}
+                    </p>
                   </div>
                   <div className={card.imageClassName}>
                     <Image
@@ -217,8 +208,8 @@ export const Process = () => {
             }
 
             return (
-              <article key={card.id} className={card.className}>
-                <div className="flex flex-col items-start gap-[4.87px] relative self-stretch w-full flex-[0_0_auto]">
+              <article key={card.id} id={card.id} className={card.className}>
+                <div className={card.contentClassName}>
                   <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                     {card.title}
                   </h3>
