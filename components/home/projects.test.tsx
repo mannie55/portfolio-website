@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { DivProject } from "./div-project";
+import { Projects } from "./projects";
 import { expect, test, describe } from "vitest";
 import type { CaseStudySummary } from "@/types/case-study";
 
@@ -17,14 +17,14 @@ const mockStudies: CaseStudySummary[] = [
   },
 ];
 
-describe("DivProject Component", () => {
+describe("Projects Component", () => {
   test("renders the PROJECTS heading", () => {
-    render(<DivProject studies={mockStudies} />);
+    render(<Projects studies={mockStudies} />);
     expect(screen.getByRole("heading", { name: /PROJECTS/i })).toBeInTheDocument();
   });
 
   test("renders the project card details", () => {
-    render(<DivProject studies={mockStudies} />);
+    render(<Projects studies={mockStudies} />);
     expect(screen.getByText("Test Project One")).toBeInTheDocument();
     expect(screen.getByText("This is a summary of the first test project.")).toBeInTheDocument();
     expect(screen.getByText("React")).toBeInTheDocument();
@@ -32,7 +32,7 @@ describe("DivProject Component", () => {
   });
 
   test("renders View more and View Project links", () => {
-    render(<DivProject studies={mockStudies} />);
+    render(<Projects studies={mockStudies} />);
     
     // View more link
     const viewMoreLink = screen.getByRole("link", { name: /View more/i });

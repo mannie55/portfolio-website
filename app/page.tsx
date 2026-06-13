@@ -1,6 +1,6 @@
 import { CTASection } from "@/components/home/cta-section";
 import { FAQ } from "@/components/home/faq";
-import { DivProject } from "@/components/home/div-project";
+import { Projects } from "@/components/home/projects";
 import { Hero } from "@/components/home/hero";
 import { Services } from "@/components/home/services";
 import { Testimonials } from "@/components/home/testimonials";
@@ -18,7 +18,7 @@ export default async function Home() {
         <div className="flex flex-col">
           <Hero />
 
-          <DivProject studies={featuredStudies} />
+          <Projects studies={featuredStudies} />
 
           <Services />
           <Process />

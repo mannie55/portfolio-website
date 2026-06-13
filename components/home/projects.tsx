@@ -2,11 +2,11 @@ import Image from "next/image";
 import { PillButton } from "@/components/ui/pill-button";
 import type { CaseStudySummary } from "@/types/case-study";
 
-interface DivProjectProps {
+interface ProjectsProps {
   studies: CaseStudySummary[];
 }
 
-export function DivProject({ studies }: DivProjectProps) {
+export function Projects({ studies }: ProjectsProps) {
   return (
     <section
       aria-labelledby="projects-heading"
@@ -54,7 +54,7 @@ export function DivProject({ studies }: DivProjectProps) {
                 <PillButton
                   href={`/case-studies/${project.slug}`}
                   label="View Project"
-                  variant="outline"
+                  variant="white"
                   className="w-fit"
                 />
               </div>
