@@ -1,7 +1,7 @@
 "use client";
 
 import Cal, { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { calComUrl } from "@/lib/constants";
 import { colorSemantic } from "@/lib/design-tokens";
@@ -17,8 +17,10 @@ function getCalLink(url: string): string {
 
 export function CalEmbed() {
   const calLink = getCalLink(calComUrl);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     void (async () => {
       const cal = await getCalApi();
       cal("ui", {
@@ -27,6 +29,12 @@ export function CalEmbed() {
       });
     })();
   }, []);
+
+  if (!mounted) {
+    return (
+      <div className="min-h-[700px] rounded-[20px] border border-border bg-surface-elevated animate-pulse" />
+    );
+  }
 
   return (
     <div className="min-h-[700px] overflow-hidden rounded-[20px] border border-border">

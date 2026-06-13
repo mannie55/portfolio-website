@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 
+import { CalEmbed } from "@/components/contact/cal-embed";
 import { Footer } from "@/components/layout/footer";
 import { PageContainer } from "@/components/layout/page-container";
 import { SectionHeading } from "@/components/ui/section-heading";
-
-const CalEmbed = dynamic(
-  () => import("@/components/contact/cal-embed").then((mod) => mod.CalEmbed),
-  { ssr: false }
-);
 
 export const metadata: Metadata = {
   title: "Contact",
