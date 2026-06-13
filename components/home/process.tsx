@@ -5,6 +5,7 @@ import { DiscoveryComponent } from "@/components/ui/discovery-component";
 import { AssetComponent } from "@/components/ui/asset-component";
 import { ScopeComponent } from "@/components/ui/scope-component";
 import { AButtonSecondary } from "@/components/ui/button-secondary";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 type CardBase = {
   id: string;
@@ -110,21 +111,17 @@ export const Process = () => {
   return (
     <section
       aria-labelledby="process-heading"
-      className="relative flex flex-col items-start py-28"
+      className="relative flex flex-col items-start py-12"
     >
       {/* Background layer using local design theme bg */}
       <div className="absolute inset-0 z-0 bg-rhino-darkest" />
 
-      <div className="relative z-10 flex w-full max-w-[1344px] flex-col gap-[31.55px]">
-        <header className="flex flex-col w-full max-w-[979px] items-start gap-[9.11px]">
-          <div className="h-[18px]" aria-hidden="true" />
-          <h2
-            id="process-heading"
-            className="font-heading text-h2 uppercase text-white leading-none tracking-[-0.60px] whitespace-nowrap"
-          >
-            Straightforward from start to finish.
-          </h2>
-        </header>
+      <div className="relative z-10 flex w-full max-w-[1344px] flex-col gap-12">
+        <SectionHeading
+          id="process-heading"
+          title="STRAIGHTFORWARD FROM START TO FINISH."
+          className="w-full max-w-[979px]"
+        />
 
         <div className="grid grid-cols-12 grid-rows-3 h-[754.67px] gap-4 w-full">
           {cards.map((card) => {
