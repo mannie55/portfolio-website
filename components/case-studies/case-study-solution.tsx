@@ -113,7 +113,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
           />
         </div>
         <blockquote className="m-0">
-          <p className="text-h6 md:text-h5 leading-relaxed text-border-lighter font-normal italic">
+          <p className="text-h6 md:text-h5 leading-relaxed text-rhino-lightest font-normal italic">
             &ldquo;{block.quote.text}&rdquo;
           </p>
           <figcaption className="mt-4 text-body-sm md:text-base text-muted/60 font-medium not-italic">
