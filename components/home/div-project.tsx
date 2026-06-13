@@ -26,7 +26,7 @@ export function DivProject({ studies }: DivProjectProps) {
         {studies.map((project) => (
           <article
             key={project.slug}
-            className="flex flex-col md:flex-row items-center gap-10 md:gap-20 p-6 rounded-[20px] border border-solid border-border bg-surface w-full"
+            className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20 p-6 rounded-[20px] border border-solid border-border bg-surface w-full"
           >
             <div className="flex flex-col flex-1 max-w-[504px] items-start gap-6">
               <div className="flex flex-col items-start gap-4 w-full">

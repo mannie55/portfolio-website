@@ -137,6 +137,19 @@ When in doubt, lean toward more services with sharper boundaries rather than few
 
 ## Frontend design principles — Next.js
 
+### Always read `global.css` first
+
+Before writing any styles, Tailwind classes, or CSS custom properties, read `global.css` (or wherever the global stylesheet lives in the project). This file is the source of truth for:
+
+- Color tokens (`--color-*`, `--surface-*`, etc.)
+- Typography scale and font tokens
+- Spacing and layout variables
+- Any utility classes defined globally
+
+Never hardcode a hex value, font size, or spacing value that already exists as a token in `global.css`. If a token doesn't exist for what you need, add it to `global.css` first, then reference it. Don't invent values inline.
+
+If you can't find `global.css`, run `find . -name "global.css" | head -5` before proceeding. Do not guess token names.
+
 ### Units and spacing
 
 - **Always use `rem` for font sizes, spacing, and layout dimensions.** Never `px` for anything that should scale with user font preferences. `px` is only acceptable for borders (1px), box-shadows, and media query breakpoints.
@@ -230,4 +243,3 @@ STOP. Name the ambiguity in one sentence. Present 2-3 options with real trade-of
 - End responses with the next action, not a recap of what was just done.
 
 When Nnamdi asks for something, the answer is the finished product — not a plan. Tests included. Evals included. Docs included.
-1
