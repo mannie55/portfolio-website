@@ -3,7 +3,6 @@ import { FAQ } from "@/components/home/faq";
 import { Projects } from "@/components/home/projects";
 import { Hero } from "@/components/home/hero";
 import { Services } from "@/components/home/services";
-import { Testimonials } from "@/components/home/testimonials";
 import { Footer } from "@/components/layout/footer";
 import { PageContainer } from "@/components/layout/page-container";
 import { Process } from "@/components/home/process";
@@ -23,7 +22,6 @@ export default async function Home() {
           <Services />
           <Process />
 
-          <Testimonials />
           <FAQ />
         </div>
       </PageContainer>
