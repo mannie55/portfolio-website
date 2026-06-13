@@ -4,7 +4,7 @@ import Image from "next/image";
 import { DiscoveryComponent } from "@/components/ui/discovery-component";
 import { AssetComponent } from "@/components/ui/asset-component";
 import { ScopeComponent } from "@/components/ui/scope-component";
-import { Button } from "@/components/ui/button";
+import { AButtonSecondary } from "@/components/ui/button-secondary";
 
 type CardBase = {
   id: string;
@@ -230,12 +230,11 @@ export const Process = () => {
           })}
 
           {/* Book a strategy call CTA */}
-          <Button
+          <AButtonSecondary
             href="/get-started"
-            className="row-[1_/_2] col-[10_/_13] self-end justify-self-end w-fit h-[53px] rounded-full font-medium"
-          >
-            Book a strategy call
-          </Button>
+            label="Book a strategy call"
+            className="row-[1_/_2] col-[10_/_13] self-end justify-self-end w-fit h-[53px]"
+          />
         </div>
       </div>
     </section>
