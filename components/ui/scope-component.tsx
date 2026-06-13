@@ -28,11 +28,11 @@ const scopeItems = [
 export const ScopeComponent = (): JSX.Element => {
   return (
     <section
-      className="relative flex h-[19rem] flex-col items-center gap-[0.625rem] bg-white py-[1.25rem]"
+      className="relative flex h-[19rem] w-[12.8125rem] flex-col items-center gap-[0.625rem] overflow-hidden bg-white py-[1.25rem]"
       aria-label="Project scope"
     >
       {/* Illustration container */}
-      <div className="relative h-[8.2644rem] w-[12.8231rem] shrink-0">
+      <div className="relative h-[8.2644rem] w-full shrink-0">
         <Image
           src="/images/components/skeleton.svg"
           alt=""
