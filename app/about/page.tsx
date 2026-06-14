@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 
 import { Bio } from "@/components/about/bio";
-import { Experience } from "@/components/about/experience";
+import { Approach } from "@/components/about/approach";
 import { Skills } from "@/components/about/skills";
-import { Strengths } from "@/components/about/strengths";
 import { PageContainer } from "@/components/layout/page-container";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Background, skills, and experience.",
+  description: "Who I am, how I think, and how I work.",
 };
 
 export default function AboutPage() {
@@ -18,13 +17,12 @@ export default function AboutPage() {
       <div className="py-page lg:py-section-md">
         <div className="space-y-48">
           <Bio />
-          <Strengths />
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_2fr]">
             <div className="space-y-16">
               <Skills />
             </div>
             <div>
-              <Experience />
+              <Approach />
             </div>
           </div>
           
