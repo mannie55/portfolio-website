@@ -11,7 +11,7 @@ interface CTASectionProps {
 }
 
 export function CTASection({
-  title = "LET'S BUILD A SITE THAT DRIVES RESULTS",
+  title = "LET'S BUILD SOMETHING THAT ACTUALLY WORKS.",
   ctaLabel = "Book a strategy call",
   ctaHref = "/contact",
   showFooter = true,
@@ -30,7 +30,7 @@ export function CTASection({
       </div>
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center gap-12 text-center md:gap-20">
-        <h2 className="max-w-[70rem] font-heading text-h1 font-semibold leading-[0.95] text-text-dark uppercase">
+        <h2 className="max-w-[70rem] font-heading text-h1 font-medium leading-[0.95] text-text-dark uppercase">
           {title}
         </h2>
 

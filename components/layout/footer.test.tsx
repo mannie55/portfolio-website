@@ -23,19 +23,18 @@ describe("Footer Component", () => {
     render(<Footer />);
 
     // Renders default CTA title
-    expect(screen.getByText(/LET'S BUILD A SITE THAT DRIVES RESULTS/i)).toBeInTheDocument();
+    expect(screen.getByText(/LET'S BUILD SOMETHING THAT ACTUALLY WORKS/i)).toBeInTheDocument();
     
     // Renders base footer links
     expect(screen.getByTestId("base-footer")).toBeInTheDocument();
   });
 
-  test("renders ONLY the base footer (no CTA) on the about page", () => {
+  test("renders the default CTA and base footer on the about page", () => {
     mockUsePathname.mockReturnValue("/about");
     render(<Footer />);
 
-    // Does not render CTA
-    expect(screen.queryByText(/LET'S BUILD A SITE/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/got a project in mind/i)).not.toBeInTheDocument();
+    // Renders default CTA title
+    expect(screen.getByText(/LET'S BUILD SOMETHING THAT ACTUALLY WORKS/i)).toBeInTheDocument();
     
     // Renders base footer
     expect(screen.getByTestId("base-footer")).toBeInTheDocument();
@@ -75,7 +74,7 @@ describe("Footer Component", () => {
     mockUsePathname.mockReturnValue("/some-random-404-path");
     render(<Footer />);
 
-    expect(screen.queryByText(/LET'S BUILD A SITE/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/LET'S BUILD SOMETHING/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/got a project in mind/i)).not.toBeInTheDocument();
     expect(screen.getByTestId("base-footer")).toBeInTheDocument();
   });

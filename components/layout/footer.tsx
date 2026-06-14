@@ -21,7 +21,7 @@ function getCTAConfig(pathname: string): FooterCTAConfig {
   }
   if (pathname === "/about") {
     return {
-      showCTA: false,
+      showCTA: true,
     };
   }
   if (pathname === "/contact") {

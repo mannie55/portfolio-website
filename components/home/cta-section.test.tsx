@@ -14,7 +14,7 @@ vi.mock("next/image", () => ({
 describe("CTASection Component", () => {
   test("renders the default headline correctly", () => {
     render(<CTASection />);
-    expect(screen.getByText(/LET'S BUILD A SITE THAT DRIVES RESULTS/i)).toBeInTheDocument();
+    expect(screen.getByText(/LET'S BUILD SOMETHING THAT ACTUALLY WORKS/i)).toBeInTheDocument();
   });
 
   test("renders a custom headline", () => {
