@@ -3,6 +3,7 @@ import { Nunito_Sans, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import { siteConfig } from "@/lib/constants";
 import { colorSemantic } from "@/lib/design-tokens";
 
@@ -38,11 +39,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
+    images: ["/images/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: ["/images/og-image.jpg"],
   },
 };
 
@@ -64,6 +67,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <Header />
         <main className="flex flex-1 flex-col">{children}</main>
+        <Footer />
       </body>
     </html>
   );
