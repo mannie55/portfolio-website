@@ -3,7 +3,7 @@ import { aboutContent } from "@/lib/about";
 export function Approach() {
   return (
     <section>
-      <h2 className="text-h3">How I Work</h2>
+      <h2 className="text-h2">How I Work</h2>
       <ol className="mt-6 space-y-8">
         {aboutContent.approach.map((item) => (
           <li

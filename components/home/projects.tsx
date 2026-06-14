@@ -15,7 +15,7 @@ export function Projects({ studies }: ProjectsProps) {
       <div className="flex w-full items-center justify-between gap-4">
         <h2
           id="projects-heading"
-          className="font-heading text-h3 text-white uppercase"
+          className="font-heading text-h2 text-white uppercase"
         >
           PROJECTS
         </h2>

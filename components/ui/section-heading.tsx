@@ -15,7 +15,7 @@ export function SectionHeading({
   descriptionClassName,
   id,
 }: SectionHeadingProps) {
-  const headingClass = Tag === "h1" ? "text-h2" : "text-h3";
+  const headingClass = "text-h2";
 
   return (
     <div className={className}>
