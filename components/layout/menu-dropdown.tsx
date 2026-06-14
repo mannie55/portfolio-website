@@ -50,38 +50,19 @@ export function MenuDropdown({ isOpen, onClose }: MenuDropdownProps) {
           isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
       >
-        <nav aria-label="Primary" className="relative flex flex-col items-start w-full p-6">
-          <ul className="relative flex w-full flex-col items-start self-stretch">
-            {navLinks.map(({ href, label }, index) => {
-              const displayLabel = label.toUpperCase() === "ABOUT" ? "ABOUT ME" : label.toUpperCase();
-
-              return (
-                <li
-                  key={href}
-                  className={`relative flex w-full items-center gap-2.5 self-stretch border-b border-border-lighter px-0 py-8 [border-bottom-style:solid] ${
-                    index === 0
-                      ? "mt-[-1.00px] ml-[-1.00px] mr-[-1.00px] flex-[0_0_auto]"
-                      : ""
-                  } ${
-                    index > 0 && index < navLinks.length - 1
-                      ? "ml-[-1.00px] mr-[-1.00px] flex-[0_0_auto]"
-                      : ""
-                  } ${
-                    index === navLinks.length - 1
-                      ? "mb-[-1.00px] ml-[-1.00px] mr-[-1.00px] flex-[0_0_auto]"
-                      : ""
-                  }`}
+        <nav className="w-full">
+          <ul className="flex flex-col w-full">
+            {navLinks.map(({ href, label }) => (
+              <li key={href} className="border-b border-border last:border-b-0">
+                <Link
+                  href={href}
+                  className="block py-8 text-center text-h2 font-heading uppercase text-white hover:text-accent transition-colors"
+                  onClick={onClose}
                 >
-                  <Link
-                    href={href}
-                    className="relative flex w-fit items-center text-h2 font-heading font-medium tracking-[0.02em] text-white hover:text-accent transition-colors focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-                    onClick={onClose}
-                  >
-                    <span className="mt-[-0.50px]">{displayLabel}</span>
-                  </Link>
-                </li>
-              );
-            })}
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
