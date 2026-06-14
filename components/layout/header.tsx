@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { navLinks, siteConfig } from "@/lib/constants";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
+import { MenuDropdown } from "./menu-dropdown";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -89,25 +90,8 @@ export function Header() {
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
-      {mobileOpen && (
-        <ul
-          id="mobile-nav"
-          className="border-t border-border px-page py-4 md:hidden"
-        >
-          {navLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="block py-3 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
-                onClick={() => setMobileOpen(false)}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* Overlay Navigation (Desktop & Mobile) */}
+      <MenuDropdown isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
     </header>
   );
 }
