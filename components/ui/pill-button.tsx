@@ -1,35 +1,46 @@
 import Link from "next/link";
 import Image from "next/image";
 
-interface PillButtonProps {
-  href: string;
+type PillButtonBaseProps = {
   label: string;
   className?: string;
   iconSrc?: string;
   variant?: "white" | "outline";
-}
+  disabled?: boolean;
+};
 
-export function PillButton({
-  href,
-  label,
-  className = "",
-  iconSrc = "/images/components/arrow_right_dark.svg",
-  variant = "white",
-}: PillButtonProps) {
+type PillButtonAsLink = PillButtonBaseProps & {
+  href: string;
+  type?: never;
+};
+
+type PillButtonAsButton = PillButtonBaseProps & {
+  href?: never;
+  type?: "button" | "submit" | "reset";
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+};
+
+type PillButtonProps = PillButtonAsLink | PillButtonAsButton;
+
+export function PillButton(props: PillButtonProps) {
+  const {
+    label,
+    className = "",
+    iconSrc = "/images/components/arrow_right_dark.svg",
+    variant = "white",
+    disabled = false,
+  } = props;
+
   const baseStyles =
-    "inline-flex items-center justify-center gap-3 px-4 py-3 rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2";
+    "inline-flex items-center justify-center gap-3 px-4 py-3 rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
   
   const variantStyles = {
     white: "bg-white text-text-dark",
     outline: "border border-border bg-transparent text-white hover:bg-white/5",
   };
 
-  return (
-    <Link
-      href={href}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-      aria-label={label}
-    >
+  const content = (
+    <>
       <span className="text-body-sm font-medium whitespace-nowrap uppercase tracking-wider">
         {label}
       </span>
@@ -42,6 +53,35 @@ export function PillButton({
           aria-hidden="true"
         />
       </div>
-    </Link>
+    </>
+  );
+
+  const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
+
+  if ("href" in props && props.href) {
+    const { href } = props;
+    return (
+      <Link
+        href={href}
+        className={combinedClassName}
+        aria-label={label}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  const { type = "button", onClick } = props as PillButtonAsButton;
+
+  return (
+    <button
+      type={type}
+      className={combinedClassName}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={label}
+    >
+      {content}
+    </button>
   );
 }

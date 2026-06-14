@@ -20,7 +20,7 @@ export const aboutContent = {
       description: "Good design starts long before Figma opens. If we don't know why we're building it, we're just drawing very expensive rectangles.",
     },
     {
-      title: "Define the Problem",
+      title: "Problem Development",
       description: "Most projects fail because the wrong problem gets solved perfectly. I figure out what actually needs fixing before typing any code.",
     },
     {

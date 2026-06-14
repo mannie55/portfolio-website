@@ -2,10 +2,10 @@ import { render, screen } from "@testing-library/react";
 import AboutPage from "./page";
 import { expect, test, describe, vi } from "vitest";
 
-// Mock the button component
-vi.mock("@/components/ui/button", () => ({
-  Button: ({ children, href }: { children: React.ReactNode; href?: string }) => (
-    <a href={href}>{children}</a>
+// Mock the PillButton component
+vi.mock("@/components/ui/pill-button", () => ({
+  PillButton: ({ label, href }: { label: string; href: string }) => (
+    <a href={href}>{label}</a>
   ),
 }));
 

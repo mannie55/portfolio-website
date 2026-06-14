@@ -6,7 +6,7 @@ import {
   submitContactForm,
   type ContactFormState,
 } from "@/app/contact/actions";
-import { Button } from "@/components/ui/button";
+import { PillButton } from "@/components/ui/pill-button";
 
 const initialState: ContactFormState = {
   success: false,
@@ -77,9 +77,7 @@ export function ContactForm() {
           {state.message}
         </p>
       ) : null}
-      <Button type="submit" disabled={pending}>
-        {pending ? "Sending..." : "Send message"}
-      </Button>
+      <PillButton type="submit" disabled={pending} label={pending ? "Sending..." : "Send message"} />
     </form>
   );
 }
