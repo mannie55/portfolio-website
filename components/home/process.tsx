@@ -35,7 +35,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "We talk through your project, what you have, and what done looks like.",
     className:
-      "relative lg:row-[1_/_2] lg:col-[1_/_7] w-full h-full flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-surface rounded-2xl",
+      "relative lg:row-[1_/_2] lg:col-[1_/_7] w-full h-full flex flex-col md:flex-row items-center justify-center gap-8 p-6 bg-surface rounded-2xl",
     imageAlt: "Discovery component",
     imageClassName: "relative flex items-center justify-center",
     contentClassName: "flex flex-col items-start text-left gap-2 max-w-[291px]",
@@ -61,7 +61,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "You send over your files, credentials, and anything I need to get started.",
     className:
-      "lg:row-[2_/_4] lg:col-[4_/_7] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
+      "lg:row-[2_/_4] lg:col-[4_/_7] h-full flex flex-col md:flex-row items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Asset component here",
     imageClassName: "relative flex items-center justify-center w-full",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
@@ -72,7 +72,7 @@ const cards: Array<ImageCard | TextCard> = [
     title: "Scope And Rates",
     description: "We align on deliverables and pricing before anything moves.",
     className:
-      "lg:row-[1_/_3] lg:col-[7_/_10] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
+      "lg:row-[1_/_3] lg:col-[7_/_10] h-full flex flex-col md:flex-row items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Scope component here",
     imageClassName: "relative flex items-center justify-center w-full",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
@@ -84,7 +84,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "I work and keep you in the loop progress, milestones, blockers. No radio silence.",
     className:
-      "relative lg:row-[3_/_4] lg:col-[7_/_13] w-full h-full flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-surface relative rounded-2xl",
+      "relative lg:row-[3_/_4] lg:col-[7_/_13] w-full h-full flex flex-col md:flex-row items-center justify-center gap-8 p-6 bg-surface relative rounded-2xl",
     imageAlt: "Speed and quality",
     imageClassName: "relative flex items-center justify-center w-[307px]",
     contentClassName: "flex flex-col items-start text-left gap-2 max-w-[283px]",

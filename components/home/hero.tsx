@@ -13,7 +13,7 @@ export function Hero() {
             alt="Portrait of Nnamdi Ogbonna"
             fill
             priority
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="(max-width: 64rem) 100vw, 39.375rem"
           />
         </div>

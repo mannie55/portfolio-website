@@ -50,21 +50,13 @@ export function Services() {
         className="mb-10"
       />
 
-      <div className="grid w-full grid-cols-1 md:grid-cols-2">
+      <div className="grid w-full grid-cols-1">
         {services.map((service, index) => {
-          // Define borders for the 2x2 desktop grid
-          const isLeft = index % 2 === 0;
-          const isTop = index < 2;
-
           return (
             <article
               key={service.id}
-              className={`flex flex-col gap-6 py-4 px-0 md:px-6 border-border ${
+              className={`flex flex-col gap-6 py-4 px-0 border-border ${
                 index === 0 ? "" : "border-t"
-              } ${
-                isTop ? "md:border-t-0" : "md:border-t"
-              } ${
-                isLeft ? "md:border-r" : ""
               }`}
               aria-labelledby={`${service.id}-title`}
             >
