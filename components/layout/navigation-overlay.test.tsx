@@ -77,12 +77,13 @@ describe("NavigationOverlay Component", () => {
     expect(screen.getByText("CASE STUDIES")).toBeInTheDocument();
     expect(screen.getByText("CONTACT")).toBeInTheDocument();
 
-    // Check that the container class has the exact requested layout
+    // Check that the container class has the exact requested layout and background
     const container = screen.getByText("HOME").closest(".max-w-\\[1280px\\]");
     expect(container).toBeInTheDocument();
     expect(container).toHaveClass("mx-auto");
     expect(container).toHaveClass("w-full");
     expect(container).toHaveClass("h-full");
     expect(container).toHaveClass("px-8");
+    expect(container).toHaveClass("bg-surface");
   });
 });

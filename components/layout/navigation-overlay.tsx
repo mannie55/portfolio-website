@@ -66,7 +66,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       >
         Close
       </button>
-      <div className="mx-auto w-full max-w-[1280px] h-full px-8">
+      <div className="mx-auto w-full max-w-[1280px] h-full px-8 bg-surface">
         <MenuDropdown />
       </div>
     </div>
