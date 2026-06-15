@@ -29,7 +29,7 @@ export const colorPrimitives = {
   // New Border Primitives
   borderBase: "#414348",
   borderLight: "#4B4D51",
-  borderLighter: "#808080",
+  borderLighter: "#555555",
 } as const;
 
 // ============================================================================
