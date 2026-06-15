@@ -61,7 +61,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "You send over your files, credentials, and anything I need to get started.",
     className:
-      "lg:row-[2_/_4] lg:col-[4_/_7] h-full flex flex-col md:flex-row items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
+      "lg:row-[2_/_4] lg:col-[4_/_7] h-full flex flex-col md:flex-row lg:flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Asset component here",
     imageClassName: "relative flex items-center justify-center w-full",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
@@ -72,7 +72,7 @@ const cards: Array<ImageCard | TextCard> = [
     title: "Scope And Rates",
     description: "We align on deliverables and pricing before anything moves.",
     className:
-      "lg:row-[1_/_3] lg:col-[7_/_10] h-full flex flex-col md:flex-row items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
+      "lg:row-[1_/_3] lg:col-[7_/_10] h-full flex flex-col md:flex-row lg:flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Scope component here",
     imageClassName: "relative flex items-center justify-center w-full",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
