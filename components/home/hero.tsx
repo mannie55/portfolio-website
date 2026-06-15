@@ -19,7 +19,7 @@ export function Hero() {
         </div>
 
         {/* Right: Content */}
-        <div className="contents lg:flex lg:flex-1 lg:shrink-0 lg:min-w-[30rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
+        <div className="contents lg:flex lg:flex-1 lg:shrink-0 lg:min-w-[42rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
           <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase">
             {heroContent.headline}
           </h1>
