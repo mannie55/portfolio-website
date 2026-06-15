@@ -67,5 +67,22 @@ describe("NavigationOverlay Component", () => {
     unmount();
     expect(document.body.style.overflow).toBe("");
   });
-});
 
+  test("renders all menu links inside a centered 1280px container", () => {
+    render(<NavigationOverlay isOpen={true} />);
+    
+    // Check that menu items are rendered
+    expect(screen.getByText("HOME")).toBeInTheDocument();
+    expect(screen.getByText("ABOUT ME")).toBeInTheDocument();
+    expect(screen.getByText("CASE STUDIES")).toBeInTheDocument();
+    expect(screen.getByText("CONTACT")).toBeInTheDocument();
+
+    // Check that the container class has the exact requested layout
+    const container = screen.getByText("HOME").closest(".max-w-\\[1280px\\]");
+    expect(container).toBeInTheDocument();
+    expect(container).toHaveClass("mx-auto");
+    expect(container).toHaveClass("w-full");
+    expect(container).toHaveClass("h-full");
+    expect(container).toHaveClass("px-8");
+  });
+});
