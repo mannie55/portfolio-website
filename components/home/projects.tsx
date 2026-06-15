@@ -26,9 +26,9 @@ export function Projects({ studies }: ProjectsProps) {
         {studies.map((project) => (
           <article
             key={project.slug}
-            className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20 p-4 md:p-6 rounded-[20px] bg-surface w-full"
+            className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface w-full"
           >
-            <div className="flex flex-col flex-1 max-w-[504px] items-start gap-6">
+            <div className="flex flex-col flex-1 w-full max-w-[504px] md:max-w-none lg:max-w-[504px] items-start gap-6">
               <div className="flex flex-col items-start gap-4 w-full">
                 <h3 className="font-heading text-h4 leading-tight text-white/90">
                   {project.title}
@@ -60,7 +60,7 @@ export function Projects({ studies }: ProjectsProps) {
               </div>
             </div>
             
-            <div className="relative flex-1 w-full max-w-[606px] aspect-[1.515] overflow-hidden rounded-lg">
+            <div className="relative flex-1 w-full max-w-[606px] md:max-w-none lg:max-w-[606px] aspect-[1.515] overflow-hidden rounded-lg">
               <Image
                 src={project.coverImage}
                 alt={`${project.title} preview`}

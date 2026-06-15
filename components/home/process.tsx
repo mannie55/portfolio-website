@@ -51,7 +51,7 @@ const cards: Array<ImageCard | TextCard> = [
     titleClassName:
       "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-semibold text-text-dark text-h5 tracking-[0] leading-[26.4px]",
     descriptionClassName:
-      "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-text-dark/90 text-body-sm lg:text-body-md tracking-[0] leading-[27px]",
+      "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-text-dark/90 text-body-sm md:text-body lg:text-body-md tracking-[0] leading-[27px]",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
   },
   {
@@ -105,7 +105,7 @@ const defaultDarkTitleClassName =
   "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-semibold text-white text-h5 tracking-[0] leading-[26.4px]";
 
 const defaultDarkDescriptionClassName =
-  "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-white/90 text-body-sm lg:text-body-md tracking-[0] leading-[27px]";
+  "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-white/90 text-body-sm md:text-body lg:text-body-md tracking-[0] leading-[27px]";
 
 export const Process = () => {
   return (
