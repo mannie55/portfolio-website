@@ -6,47 +6,74 @@ import { useState } from "react";
 
 import { navLinks, siteConfig } from "@/lib/constants";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
+import { NavigationOverlay } from "./navigation-overlay";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const scrollDirection = useScrollDirection();
 
   return (
-    <header className={`sticky top-0 z-50 border-b border-border/40 bg-background/60 backdrop-blur-md transition-transform duration-300 ${
-      scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
-    }`}>
-      <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-6">
-        {/* Brand Logo */}
-        <Link href="/" className="flex-shrink-0" aria-label="Home">
-          <Image
-            src="/images/components/brand_name.svg"
-            alt={siteConfig.name}
-            width={140}
-            height={24}
-            priority
-            className="h-6 w-auto"
-          />
-        </Link>
-
-        {/* Desktop: Case Studies Link + Menu Button */}
-        <div className="hidden items-center gap-6 md:flex">
-          <Link
-            href="/case-studies"
-            className="flex items-center gap-2 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
-          >
-            Case Studies
+    <>
+      <header className={`sticky top-0 border-b border-border/40 bg-background/60 backdrop-blur-md transition-transform duration-300 ${
+        mobileOpen ? "z-[10000]" : "z-50"
+      } ${
+        scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
+      }`}>
+        <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-6">
+          {/* Brand Logo */}
+          <Link href="/" className="flex-shrink-0" aria-label="Home">
             <Image
-              src="/images/components/arrow_down_filled.svg"
-              alt=""
-              width={24}
+              src="/images/components/brand_name.svg"
+              alt={siteConfig.name}
+              width={140}
               height={24}
-              className="h-6 w-6"
-              aria-hidden="true"
+              priority
+              className="h-6 w-auto"
             />
           </Link>
+
+          {/* Desktop: Case Studies Link + Menu Button */}
+          <div className="hidden items-center gap-6 md:flex">
+            <Link
+              href="/case-studies"
+              className="flex items-center gap-2 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
+            >
+              Case Studies
+              <Image
+                src="/images/components/arrow_down_filled.svg"
+                alt=""
+                width={24}
+                height={24}
+                className="h-6 w-6"
+                aria-hidden="true"
+              />
+            </Link>
+            <button
+              type="button"
+              className="flex items-center gap-2"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMobileOpen((open) => !open)}
+            >
+              <span className="text-body-sm font-medium text-foreground">
+                Menu
+              </span>
+              <Image
+                src="/images/components/menu_icon.svg"
+                alt=""
+                width={28}
+                height={31}
+                className="h-8 w-auto"
+                aria-hidden="true"
+              />
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
           <button
             type="button"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 md:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -64,50 +91,30 @@ export function Header() {
               aria-hidden="true"
             />
           </button>
-        </div>
+        </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          className="flex items-center gap-2 md:hidden"
-          aria-expanded={mobileOpen}
-          aria-controls="mobile-nav"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMobileOpen((open) => !open)}
-        >
-          <span className="text-body-sm font-medium text-foreground">
-            Menu
-          </span>
-          <Image
-            src="/images/components/menu_icon.svg"
-            alt=""
-            width={28}
-            height={31}
-            className="h-8 w-auto"
-            aria-hidden="true"
-          />
-        </button>
-      </nav>
-
-      {/* Mobile Navigation */}
-      {mobileOpen && (
-        <ul
-          id="mobile-nav"
-          className="border-t border-border px-page py-4 md:hidden"
-        >
-          {navLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="block py-3 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
-                onClick={() => setMobileOpen(false)}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </header>
+        {/* Mobile Navigation */}
+        {mobileOpen && (
+          <ul
+            id="mobile-nav"
+            className="border-t border-border px-page py-4 md:hidden"
+          >
+            {navLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="block py-3 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </header>
+      <NavigationOverlay isOpen={mobileOpen} />
+    </>
   );
 }
+
