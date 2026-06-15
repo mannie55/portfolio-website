@@ -23,7 +23,7 @@ export const MenuDropdown = ({ onLinkClick }: { onLinkClick?: () => void }) => {
         {menuItems.map((item) => (
           <li
             key={item.id}
-            className="border-b border-border-lighter py-6"
+            className="border-b border-border-lighter py-8"
           >
             <Link
               href={item.href}
@@ -74,7 +74,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       >
         Close
       </button>
-      <div className="mx-auto w-full max-w-[1280px] h-fit px-8 py-8 bg-surface rounded-[20px]">
+      <div className="mx-auto w-full max-w-[1280px] h-fit px-8 py-16 bg-surface rounded-[20px]">
         <MenuDropdown onLinkClick={onClose} />
       </div>
     </div>
