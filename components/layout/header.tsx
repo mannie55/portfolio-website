@@ -19,7 +19,7 @@ export function Header() {
       } ${
         scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
       }`}>
-        <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page py-6">
+        <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-6">
           {/* Brand Logo */}
           <Link href="/" className="flex-shrink-0" aria-label="Home">
             <Image
