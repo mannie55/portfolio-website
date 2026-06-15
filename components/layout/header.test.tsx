@@ -47,7 +47,7 @@ describe("Header Component with NavigationOverlay", () => {
     fireEvent.click(menuButtons[0]);
 
     // Overlay should now be visible
-    expect(overlay).toHaveClass("block");
+    expect(overlay).toHaveClass("flex");
     expect(overlay).not.toHaveClass("hidden");
 
     // Click it again to close

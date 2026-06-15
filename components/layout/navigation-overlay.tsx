@@ -16,7 +16,7 @@ export const MenuDropdown = () => {
   return (
     <nav
       aria-label="Primary"
-      className="flex h-full flex-col justify-center bg-transparent"
+      className="flex flex-col justify-center bg-transparent"
     >
       <ul className="flex w-full flex-col">
         {menuItems.map((item) => (
@@ -52,8 +52,8 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
   return (
     <div
       data-testid="navigation-overlay"
-      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden ${
-        isOpen ? "block" : "hidden"
+      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col justify-center ${
+        isOpen ? "flex" : "hidden"
       }`}
       aria-hidden={!isOpen}
     >
@@ -66,7 +66,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       >
         Close
       </button>
-      <div className="mx-auto w-full max-w-[1280px] h-full px-8 bg-surface">
+      <div className="mx-auto w-full max-w-[1280px] h-fit px-8 py-16 bg-surface rounded-[20px]">
         <MenuDropdown />
       </div>
     </div>

@@ -22,7 +22,7 @@ describe("NavigationOverlay Component", () => {
     render(<NavigationOverlay isOpen={true} />);
     const overlay = screen.getByTestId("navigation-overlay");
     
-    expect(overlay).toHaveClass("block");
+    expect(overlay).toHaveClass("flex");
     expect(overlay).not.toHaveClass("hidden");
     expect(overlay).toHaveAttribute("aria-hidden", "false");
   });
@@ -82,8 +82,10 @@ describe("NavigationOverlay Component", () => {
     expect(container).toBeInTheDocument();
     expect(container).toHaveClass("mx-auto");
     expect(container).toHaveClass("w-full");
-    expect(container).toHaveClass("h-full");
+    expect(container).toHaveClass("h-fit");
     expect(container).toHaveClass("px-8");
+    expect(container).toHaveClass("py-16");
     expect(container).toHaveClass("bg-surface");
+    expect(container).toHaveClass("rounded-[20px]");
   });
 });
