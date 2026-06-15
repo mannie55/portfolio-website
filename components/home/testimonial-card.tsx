@@ -32,7 +32,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
 
       {/* Quote */}
       <div className="flex-1">
-        <p className="text-body-md leading-relaxed text-muted">
+        <p className="text-body-sm md:text-body-md leading-relaxed text-muted">
           &ldquo;{testimonial.quote}&rdquo;
         </p>
       </div>

@@ -34,7 +34,7 @@ export function FeaturedWork({ studies }: FeaturedWorkProps) {
           >
             <div className="flex flex-1 flex-col items-start gap-8">
               <div className="flex w-full flex-col items-start gap-4">
-                <h3 className="font-heading text-[1.75rem] leading-tight text-white/90">
+                <h3 className="font-heading text-h4 leading-tight text-white/90">
                   {study.title}
                 </h3>
                 <ul
@@ -55,7 +55,7 @@ export function FeaturedWork({ studies }: FeaturedWorkProps) {
               </div>
               
               <div className="flex w-full flex-col gap-6">
-                <p className="text-body leading-relaxed text-foreground-muted">
+                <p className="text-body-sm md:text-body leading-relaxed text-foreground-muted">
                   {study.summary}
                 </p>
                 

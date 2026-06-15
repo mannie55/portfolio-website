@@ -78,14 +78,14 @@
 @media (max-width: 48rem) {
   :root {
     /* START: MOBILE_TOKENS */
-    --ds-font-size-h1: 2.5rem;
-    --ds-font-size-h2: 2.25rem;
+    --ds-font-size-h1: 3rem;
+    --ds-font-size-h2: 3rem;
     --ds-font-size-h3: 2rem;
-    --ds-font-size-h4: 1.5rem;
+    --ds-font-size-h4: 1.25rem;
     --ds-font-size-h5: 1.25rem;
     --ds-font-size-h6: 1.125rem;
     --ds-font-size-text-xl: 1.25rem;
-    --ds-font-size-text-lg: 1.125rem;
+    --ds-font-size-text-lg: 1.25rem;
     --ds-font-size-text-md: 1rem;
     --ds-font-size-text-regular: 1rem;
     --ds-font-size-text-sm: 0.875rem;

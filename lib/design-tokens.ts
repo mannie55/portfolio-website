@@ -89,14 +89,14 @@ export const typographyDesktop = {
 } as const;
 
 export const typographyMobile = {
-  h1: 40,
-  h2: 36,
+  h1: 48,
+  h2: 48,
   h3: 32,
-  h4: 24,
+  h4: 20,
   h5: 20,
   h6: 18,
   textXLarge: 20,
-  textLarge: 18,
+  textLarge: 20,
   textMedium: 16,
   textRegular: 16,
   textSmall: 14,

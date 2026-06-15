@@ -59,7 +59,7 @@ export function Services() {
           return (
             <article
               key={service.id}
-              className={`flex flex-col gap-6 py-4 px-6 ${
+              className={`flex flex-col gap-6 py-4 px-0 md:px-6 ${
                 isLeft ? "md:border-r" : ""
               } ${isTop ? "" : "md:border-t"} border-border`}
               aria-labelledby={`${service.id}-title`}
@@ -81,7 +81,7 @@ export function Services() {
                 >
                   {service.title}
                 </h3>
-                <p className="text-body leading-relaxed text-grayLight">
+                <p className="text-body-sm md:text-body leading-relaxed text-grayLight">
                   {service.description}
                 </p>
               </div>

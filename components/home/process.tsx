@@ -35,7 +35,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "We talk through your project, what you have, and what done looks like.",
     className:
-      "relative row-[1_/_2] col-[1_/_7] w-full h-full flex items-center justify-center gap-8 p-6 bg-surface rounded-2xl",
+      "relative lg:row-[1_/_2] lg:col-[1_/_7] w-full h-full flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-surface rounded-2xl",
     imageAlt: "Discovery component",
     imageClassName: "relative flex items-center justify-center",
     contentClassName: "flex flex-col items-start text-left gap-2 max-w-[291px]",
@@ -47,11 +47,11 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "From pixel-perfect design to clean development, I make sure you get the highest standards.",
     className:
-      "row-[2_/_3] col-[1_/_4] h-full flex flex-col items-center justify-center p-6 bg-white relative w-full rounded-2xl",
+      "lg:row-[2_/_3] lg:col-[1_/_4] h-full flex flex-col items-center justify-center p-6 bg-white relative w-full rounded-2xl",
     titleClassName:
       "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-semibold text-text-dark text-h5 tracking-[0] leading-[26.4px]",
     descriptionClassName:
-      "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-text-dark/90 text-body-md tracking-[0] leading-[27px]",
+      "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-text-dark/90 text-body-sm lg:text-body-md tracking-[0] leading-[27px]",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
   },
   {
@@ -61,7 +61,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "You send over your files, credentials, and anything I need to get started.",
     className:
-      "row-[2_/_4] col-[4_/_7] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
+      "lg:row-[2_/_4] lg:col-[4_/_7] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Asset component here",
     imageClassName: "relative flex items-center justify-center w-full",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
@@ -72,7 +72,7 @@ const cards: Array<ImageCard | TextCard> = [
     title: "Scope And Rates",
     description: "We align on deliverables and pricing before anything moves.",
     className:
-      "row-[1_/_3] col-[7_/_10] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
+      "lg:row-[1_/_3] lg:col-[7_/_10] h-full flex flex-col items-center justify-center gap-6 p-6 bg-surface relative w-full rounded-2xl",
     imageAlt: "Scope component here",
     imageClassName: "relative flex items-center justify-center w-full",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
@@ -84,7 +84,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "I work and keep you in the loop progress, milestones, blockers. No radio silence.",
     className:
-      "row-[3_/_4] col-[7_/_13] w-full h-full flex items-center justify-center gap-8 p-6 bg-surface relative rounded-2xl",
+      "relative lg:row-[3_/_4] lg:col-[7_/_13] w-full h-full flex flex-col sm:flex-row items-center justify-center gap-8 p-6 bg-surface relative rounded-2xl",
     imageAlt: "Speed and quality",
     imageClassName: "relative flex items-center justify-center w-[307px]",
     contentClassName: "flex flex-col items-start text-left gap-2 max-w-[283px]",
@@ -96,7 +96,7 @@ const cards: Array<ImageCard | TextCard> = [
     description:
       "Everything delivered cleanly files, credentials, whatever you need to move forward.",
     className:
-      "row-[2_/_3] col-[10_/_13] h-full flex flex-col items-center justify-center p-6 bg-surface relative w-full rounded-2xl",
+      "lg:row-[2_/_3] lg:col-[10_/_13] h-full flex flex-col items-center justify-center p-6 bg-surface relative w-full rounded-2xl",
     contentClassName: "flex flex-col items-start text-left gap-2 w-full",
   },
 ];
@@ -105,7 +105,7 @@ const defaultDarkTitleClassName =
   "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-semibold text-white text-h5 tracking-[0] leading-[26.4px]";
 
 const defaultDarkDescriptionClassName =
-  "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-white/90 text-body-md tracking-[0] leading-[27px]";
+  "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-white/90 text-body-sm lg:text-body-md tracking-[0] leading-[27px]";
 
 export const Process = () => {
   return (
@@ -123,7 +123,7 @@ export const Process = () => {
           className="w-full max-w-[979px]"
         />
 
-        <div className="grid grid-cols-12 grid-rows-3 h-[754.67px] gap-4 w-full">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-3 lg:h-[754.67px] gap-4 w-full">
           {cards.map((card) => {
             if (card.id === "discovery-call" && card.type === "image") {
               return (
@@ -230,7 +230,7 @@ export const Process = () => {
           <AButtonSecondary
             href="/get-started"
             label="Book a discovery call"
-            className="row-[1_/_2] col-[10_/_13] self-end justify-self-end w-fit h-[53px]"
+            className="lg:row-[1_/_2] lg:col-[10_/_13] lg:self-end lg:justify-self-end w-fit h-[53px]"
           />
         </div>
       </div>

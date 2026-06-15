@@ -21,7 +21,7 @@ export function SectionHeading({
     <div className={className}>
       <Tag id={id} className={headingClass}>{title}</Tag>
       {description ? (
-        <p className={`mt-3 max-w-container-large text-body-lg text-muted ${descriptionClassName || ""}`}>
+        <p className={`mt-3 max-w-container-large text-body-sm md:text-body-lg text-muted ${descriptionClassName || ""}`}>
           {description}
         </p>
       ) : null}

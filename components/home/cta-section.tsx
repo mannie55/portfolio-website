@@ -58,7 +58,7 @@ export function CTASection({
           
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
-            <p className="text-body font-medium text-text-dark/70">
+            <p className="text-body-sm md:text-body font-medium text-text-dark/70">
               Available to take on new projects!
             </p>
           </div>

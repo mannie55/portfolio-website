@@ -10,7 +10,7 @@ export function Projects({ studies }: ProjectsProps) {
   return (
     <section
       aria-labelledby="projects-heading"
-      className="relative flex w-full flex-col items-start p-6"
+      className="relative flex w-full flex-col items-start py-24 px-0 md:px-6"
     >
       <div className="flex w-full items-center justify-between gap-4">
         <h2
@@ -26,11 +26,11 @@ export function Projects({ studies }: ProjectsProps) {
         {studies.map((project) => (
           <article
             key={project.slug}
-            className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20 p-6 rounded-[20px] bg-surface w-full"
+            className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20 p-4 md:p-6 rounded-[20px] bg-surface w-full"
           >
             <div className="flex flex-col flex-1 max-w-[504px] items-start gap-6">
               <div className="flex flex-col items-start gap-4 w-full">
-                <h3 className="font-heading text-[1.75rem] leading-tight text-white/90">
+                <h3 className="font-heading text-h4 leading-tight text-white/90">
                   {project.title}
                 </h3>
                 <ul className="flex flex-wrap gap-3">
@@ -47,7 +47,7 @@ export function Projects({ studies }: ProjectsProps) {
                 </ul>
               </div>
               <div className="flex flex-col items-start gap-6 w-full">
-                <p className="text-body leading-relaxed text-foreground-muted">
+                <p className="text-body-sm md:text-body leading-relaxed text-foreground-muted">
                   {project.summary}
                 </p>
                 
