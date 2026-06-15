@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface NavigationOverlayProps {
   isOpen?: boolean;
+  onClose?: () => void;
 }
 
-export function NavigationOverlay({ isOpen = false }: NavigationOverlayProps) {
+export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlayProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <div
       data-testid="navigation-overlay"
@@ -13,7 +25,17 @@ export function NavigationOverlay({ isOpen = false }: NavigationOverlayProps) {
       }`}
       aria-hidden={!isOpen}
     >
+      <button
+        type="button"
+        data-testid="navigation-overlay-close"
+        className="absolute top-6 right-page text-body-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
+        onClick={onClose}
+        aria-label="Close menu"
+      >
+        Close
+      </button>
       {/* Navigation overlay container - links and animations to be added later */}
     </div>
   );
 }
+

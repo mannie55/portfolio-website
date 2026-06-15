@@ -113,7 +113,7 @@ export function Header() {
           </ul>
         )}
       </header>
-      <NavigationOverlay isOpen={mobileOpen} />
+      <NavigationOverlay isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
     </>
   );
 }
