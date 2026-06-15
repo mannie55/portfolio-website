@@ -47,4 +47,15 @@ describe("CursorFollower Component", () => {
     fireEvent.mouseLeave(document);
     expect(screen.queryByTestId("cursor-follower")).not.toBeInTheDocument();
   });
+
+  test("renders with correct size and mix-blend-difference classes", () => {
+    render(<CursorFollower />);
+    fireEvent.mouseMove(window, { clientX: 100, clientY: 200 });
+
+    const follower = screen.getByTestId("cursor-follower");
+    expect(follower).toHaveClass("h-12");
+    expect(follower).toHaveClass("w-12");
+    expect(follower).toHaveClass("border-white");
+    expect(follower).toHaveClass("mix-blend-difference");
+  });
 });

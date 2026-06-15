@@ -42,7 +42,7 @@ export function CursorFollower() {
   return (
     <div
       data-testid="cursor-follower"
-      className="pointer-events-none fixed left-0 top-0 z-[99999] h-8 w-8 rounded-full border border-accent transition-transform duration-[150ms] ease-out"
+      className="pointer-events-none fixed left-0 top-0 z-[99999] h-12 w-12 rounded-full border border-white mix-blend-difference transition-transform duration-[150ms] ease-out"
       style={{
         transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,
       }}
