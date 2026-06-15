@@ -54,13 +54,13 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
         {block.images.map((src, index) => (
           <figure
             key={index}
-            className={`flex items-center justify-center p-5 border border-border-light bg-transparent
+            className={`flex items-center justify-center p-5 border border-border-light bg-transparent w-full md:flex-1 max-w-[21.25rem]
               ${index === 0 ? "md:rounded-l-[1.25rem]" : ""}
               ${index === block.images.length - 1 ? "md:rounded-r-[1.25rem]" : ""}
               ${index > 0 && index < block.images.length - 1 ? "" : ""}
             `}
           >
-            <div className="relative w-[18.75rem] h-[33.3125rem]">
+            <div className="relative w-full max-w-[18.75rem] aspect-[300/533]">
               <Image
                 src={src}
                 alt={`StaffOS mobile screen ${index + 1}`}
