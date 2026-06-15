@@ -50,7 +50,7 @@ export function Header() {
             </Link>
             <button
               type="button"
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 cursor-pointer"
               aria-expanded={mobileOpen}
               aria-controls="mobile-nav"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -73,7 +73,7 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="flex items-center gap-2 md:hidden"
+            className="flex items-center gap-2 md:hidden cursor-pointer"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}

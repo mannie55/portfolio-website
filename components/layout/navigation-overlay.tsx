@@ -28,7 +28,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       <button
         type="button"
         data-testid="navigation-overlay-close"
-        className="absolute top-6 right-page text-body-sm font-medium text-foreground hover:text-foreground-muted transition-colors"
+        className="absolute top-6 right-page text-body-sm font-medium text-foreground hover:text-foreground-muted transition-colors cursor-pointer"
         onClick={onClose}
         aria-label="Close menu"
       >
