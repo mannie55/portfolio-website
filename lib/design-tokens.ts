@@ -74,7 +74,7 @@ export const colorSemantic = {
 // ============================================================================
 
 export const typographyDesktop = {
-  h1: 140,
+  h1: 130,
   h2: 60,
   h3: 40,
   h4: 28,
