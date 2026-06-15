@@ -59,9 +59,13 @@ export function Services() {
           return (
             <article
               key={service.id}
-              className={`flex flex-col gap-6 py-4 px-0 md:px-6 ${
+              className={`flex flex-col gap-6 py-4 px-0 md:px-6 border-border ${
+                index === 0 ? "" : "border-t"
+              } ${
+                isTop ? "md:border-t-0" : "md:border-t"
+              } ${
                 isLeft ? "md:border-r" : ""
-              } ${isTop ? "" : "md:border-t"} border-border`}
+              }`}
               aria-labelledby={`${service.id}-title`}
             >
               <div className="flex h-10 w-10 items-center justify-start">
