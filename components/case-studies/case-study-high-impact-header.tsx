@@ -113,10 +113,10 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
 
       {/* Design Previews Section */}
       <section
-        className="flex flex-col md:flex-row w-full max-w-container-xxlarge md:h-[28.1875rem] items-end justify-center gap-5 pt-8 px-4 md:px-8 mt-8 md:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden"
+        className="flex flex-col lg:flex-row w-full max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-5 pt-8 px-4 lg:px-8 mt-8 lg:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden"
         aria-label={`${study.client} design previews`}
       >
-        <div className="relative w-full md:w-[29.75rem] h-[15rem] md:h-[23.9375rem] md:ml-[-1.0625rem] aspect-[1.24]">
+        <div className="relative w-full lg:w-[29.75rem] h-[15rem] lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
           <Image
             src="/images/case-studies/staffos_pricing.png"
             alt={`${study.client} pricing section preview`}
@@ -124,7 +124,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
             className="object-contain"
           />
         </div>
-        <div className="relative w-full md:w-[47.875rem] h-[20rem] md:h-[27.3125rem] md:mt-[-1.125rem] md:mr-[-1.0625rem]">
+        <div className="relative w-full lg:w-[47.875rem] h-[20rem] lg:h-[27.3125rem] lg:mt-[-1.125rem] lg:mr-[-1.0625rem]">
           <Image
             src={study.coverImage}
             alt={`${study.client} hero section preview`}
