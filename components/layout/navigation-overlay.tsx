@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect } from "react";
 
 interface NavigationOverlayProps {
@@ -6,13 +7,13 @@ interface NavigationOverlayProps {
 }
 
 const menuItems = [
-  { id: "home", label: "HOME", href: "#home" },
-  { id: "about-me", label: "ABOUT ME", href: "#about-me" },
-  { id: "case-studies", label: "CASE STUDIES", href: "#case-studies" },
-  { id: "contact", label: "CONTACT", href: "#contact" },
+  { id: "home", label: "HOME", href: "/" },
+  { id: "about-me", label: "ABOUT ME", href: "/about" },
+  { id: "case-studies", label: "CASE STUDIES", href: "/case-studies" },
+  { id: "contact", label: "CONTACT", href: "/contact" },
 ];
 
-export const MenuDropdown = () => {
+export const MenuDropdown = ({ onLinkClick }: { onLinkClick?: () => void }) => {
   return (
     <nav
       aria-label="Primary"
@@ -24,12 +25,13 @@ export const MenuDropdown = () => {
             key={item.id}
             className="border-b border-border-lighter py-8"
           >
-            <a
+            <Link
               href={item.href}
+              onClick={onLinkClick}
               className="inline-flex text-h2 font-bold text-white leading-none"
             >
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -67,7 +69,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
         Close
       </button>
       <div className="mx-auto w-full max-w-[1280px] h-fit px-8 py-16 bg-surface rounded-[20px]">
-        <MenuDropdown />
+        <MenuDropdown onLinkClick={onClose} />
       </div>
     </div>
   );

@@ -89,4 +89,25 @@ describe("NavigationOverlay Component", () => {
     expect(container).toHaveClass("bg-surface");
     expect(container).toHaveClass("rounded-[20px]");
   });
+
+  test("menu links have correct href attributes and trigger onClose when clicked", () => {
+    const handleClose = vi.fn();
+    render(<NavigationOverlay isOpen={true} onClose={handleClose} />);
+    
+    const homeLink = screen.getByText("HOME");
+    expect(homeLink).toHaveAttribute("href", "/");
+    
+    const aboutLink = screen.getByText("ABOUT ME");
+    expect(aboutLink).toHaveAttribute("href", "/about");
+
+    const caseLink = screen.getByText("CASE STUDIES");
+    expect(caseLink).toHaveAttribute("href", "/case-studies");
+
+    const contactLink = screen.getByText("CONTACT");
+    expect(contactLink).toHaveAttribute("href", "/contact");
+
+    // Click a link and verify onClose is triggered
+    fireEvent.click(homeLink);
+    expect(handleClose).toHaveBeenCalledTimes(1);
+  });
 });
