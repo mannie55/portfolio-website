@@ -56,7 +56,7 @@ export function Header() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((open) => !open)}
             >
-              <span className="text-body-sm font-medium text-foreground">
+              <span className="text-body font-medium text-foreground">
                 Menu
               </span>
               <Image
@@ -79,7 +79,7 @@ export function Header() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen((open) => !open)}
           >
-            <span className="text-body-sm font-medium text-foreground">
+            <span className="text-body font-medium text-foreground">
               Menu
             </span>
             <Image
