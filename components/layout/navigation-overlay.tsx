@@ -28,7 +28,7 @@ export const MenuDropdown = ({ onLinkClick }: { onLinkClick?: () => void }) => {
             <Link
               href={item.href}
               onClick={onLinkClick}
-              className="inline-flex text-nav-item font-bold text-white leading-none"
+              className="inline-flex text-h2 font-bold text-white leading-none"
             >
               {item.label}
             </Link>
@@ -60,7 +60,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
   return (
     <div
       data-testid="navigation-overlay"
-      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col pt-[7.5rem] px-6 md:px-10 lg:px-12 ${
+      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col pt-[7.5rem] ${
         isOpen ? "flex" : "hidden"
       }`}
       aria-hidden={!isOpen}

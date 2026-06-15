@@ -27,10 +27,14 @@
   --ds-color-foreground: var(--ds-color-rhino-darker);
   --ds-color-accent: var(--ds-color-gold);
   --ds-color-accent-foreground: var(--ds-color-white);
-  --ds-color-border: var(--ds-color-rhino-darker);
-  --ds-color-border-light: var(--ds-color-rhino-dark);
-  --ds-color-border-lighter: var(--ds-color-rhino);
-  --ds-color-border-lightest: var(--ds-color-rhino-lighter);
+  --ds-color-lavender: #8d87ff;
+  --ds-color-blue-light: #e3e8f3;
+  --ds-color-blue-lighter: #ecedef;
+  --ds-color-blue-gray: #dedfe1;
+  --ds-color-gray-light: #ececec;
+  --ds-color-border: #414348;
+  --ds-color-border-light: #4B4D51;
+  --ds-color-border-lighter: #555555;
   --ds-color-success: #8fd694;
   --ds-color-error: #ff9b9b;
   
@@ -40,6 +44,7 @@
   --ds-font-size-h4: 1.75rem;
   --ds-font-size-h5: 1.5rem;
   --ds-font-size-h6: 1.375rem;
+  --ds-font-size-text-xl: 1.5rem;
   --ds-font-size-text-lg: 1.25rem;
   --ds-font-size-text-md: 1.125rem;
   --ds-font-size-text-regular: 1rem;
@@ -56,7 +61,7 @@
   --ds-max-width-small: 30rem;
   --ds-max-width-xsmall: 25rem;
   --ds-max-width-xxsmall: 20rem;
-  --ds-padding-global: 4rem;
+  --ds-padding-global: 2rem;
   --ds-padding-section-lg: 7rem;
   --ds-padding-section-md: 5rem;
   --ds-padding-section-sm: 3rem;
@@ -67,7 +72,6 @@
   --ds-border-width: 0.0625rem;
   --ds-divider-width: 0.0625rem;
   /* END: TOKENS */
-  --ds-font-size-nav-item: var(--ds-font-size-h2);
 }
 
 /* Mobile breakpoint adjustments */
@@ -80,6 +84,7 @@
     --ds-font-size-h4: 1.25rem;
     --ds-font-size-h5: 1.25rem;
     --ds-font-size-h6: 1.125rem;
+    --ds-font-size-text-xl: 1.25rem;
     --ds-font-size-text-lg: 1.25rem;
     --ds-font-size-text-md: 1rem;
     --ds-font-size-text-regular: 1rem;
@@ -93,7 +98,6 @@
     --ds-container-large: 80rem;
     --ds-max-width-xxlarge: 80rem;
     /* END: MOBILE_TOKENS */
-    --ds-font-size-nav-item: 2.75rem;
   }
 }
 
@@ -135,9 +139,6 @@
   --text-h2: var(--ds-font-size-h2);
   --text-h2--font-family: var(--font-heading);
   --text-h2--line-height: 0.95;
-  --text-nav-item: var(--ds-font-size-nav-item);
-  --text-nav-item--font-family: var(--font-heading);
-  --text-nav-item--line-height: 0.95;
   --text-h3: var(--ds-font-size-h3);
   --text-h3--font-family: var(--font-heading);
   --text-h3--line-height: 1.05;
