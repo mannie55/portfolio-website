@@ -27,77 +27,73 @@
   --ds-color-foreground: var(--ds-color-rhino-darker);
   --ds-color-accent: var(--ds-color-gold);
   --ds-color-accent-foreground: var(--ds-color-white);
-  --ds-color-lavender: #8d87ff;
-  --ds-color-blue-light: #e3e8f3;
-  --ds-color-blue-lighter: #ecedef;
-  --ds-color-blue-gray: #dedfe1;
-  --ds-color-gray-light: #ececec;
-  --ds-color-border: #414348;
-  --ds-color-border-light: #4B4D51;
-  --ds-color-border-lighter: #555555;
+  --ds-color-border: var(--ds-color-rhino-darker);
+  --ds-color-border-light: var(--ds-color-rhino-dark);
+  --ds-color-border-lighter: var(--ds-color-rhino);
+  --ds-color-border-lightest: var(--ds-color-rhino-lighter);
   --ds-color-success: #8fd694;
   --ds-color-error: #ff9b9b;
   
-  --ds-font-size-h1: 8.125rem;
-  --ds-font-size-h2: 3.75rem;
-  --ds-font-size-h3: 2.5rem;
-  --ds-font-size-h4: 1.75rem;
-  --ds-font-size-h5: 1.5rem;
-  --ds-font-size-h6: 1.375rem;
-  --ds-font-size-text-xl: 1.5rem;
-  --ds-font-size-text-lg: 1.25rem;
-  --ds-font-size-text-md: 1.125rem;
-  --ds-font-size-text-regular: 1rem;
-  --ds-font-size-text-sm: 0.875rem;
-  --ds-font-size-text-tiny: 0.75rem;
+  --ds-font-size-h1: 140px;
+  --ds-font-size-h2: 60px;
+  --ds-font-size-h3: 40px;
+  --ds-font-size-h4: 28px;
+  --ds-font-size-h5: 24px;
+  --ds-font-size-h6: 22px;
+  --ds-font-size-text-lg: 20px;
+  --ds-font-size-text-md: 18px;
+  --ds-font-size-text-regular: 16px;
+  --ds-font-size-text-sm: 14px;
+  --ds-font-size-text-tiny: 12px;
   
-  --ds-container-large: 85rem;
-  --ds-container-medium: 64rem;
-  --ds-container-small: 48rem;
-  --ds-max-width-xxlarge: 85rem;
-  --ds-max-width-xlarge: 64rem;
-  --ds-max-width-large: 48rem;
-  --ds-max-width-medium: 35rem;
-  --ds-max-width-small: 30rem;
-  --ds-max-width-xsmall: 25rem;
-  --ds-max-width-xxsmall: 20rem;
-  --ds-padding-global: 2rem;
-  --ds-padding-section-lg: 7rem;
-  --ds-padding-section-md: 5rem;
-  --ds-padding-section-sm: 3rem;
+  --ds-container-large: 1360px;
+  --ds-container-medium: 1024px;
+  --ds-container-small: 768px;
+  --ds-max-width-xxlarge: 1360px;
+  --ds-max-width-xlarge: 1024px;
+  --ds-max-width-large: 768px;
+  --ds-max-width-medium: 560px;
+  --ds-max-width-small: 480px;
+  --ds-max-width-xsmall: 400px;
+  --ds-max-width-xxsmall: 320px;
+  --ds-padding-global: 64px;
+  --ds-padding-section-lg: 112px;
+  --ds-padding-section-md: 80px;
+  --ds-padding-section-sm: 48px;
   
-  --ds-radius-sm: 0.5rem;
-  --ds-radius-md: 0.5rem;
-  --ds-radius-lg: 0.5rem;
-  --ds-border-width: 0.0625rem;
-  --ds-divider-width: 0.0625rem;
+  --ds-radius-sm: 8px;
+  --ds-radius-md: 8px;
+  --ds-radius-lg: 8px;
+  --ds-border-width: 1px;
+  --ds-divider-width: 1px;
   /* END: TOKENS */
+  --ds-font-size-nav-item: var(--ds-font-size-h2);
 }
 
 /* Mobile breakpoint adjustments */
 @media (max-width: 48rem) {
   :root {
     /* START: MOBILE_TOKENS */
-    --ds-font-size-h1: 3rem;
-    --ds-font-size-h2: 3rem;
-    --ds-font-size-h3: 2rem;
-    --ds-font-size-h4: 1.25rem;
-    --ds-font-size-h5: 1.25rem;
-    --ds-font-size-h6: 1.125rem;
-    --ds-font-size-text-xl: 1.25rem;
-    --ds-font-size-text-lg: 1.25rem;
-    --ds-font-size-text-md: 1rem;
-    --ds-font-size-text-regular: 1rem;
-    --ds-font-size-text-sm: 0.875rem;
-    --ds-font-size-text-tiny: 0.75rem;
+    --ds-font-size-h1: 48px;
+    --ds-font-size-h2: 48px;
+    --ds-font-size-h3: 32px;
+    --ds-font-size-h4: 20px;
+    --ds-font-size-h5: 20px;
+    --ds-font-size-h6: 18px;
+    --ds-font-size-text-lg: 20px;
+    --ds-font-size-text-md: 16px;
+    --ds-font-size-text-regular: 16px;
+    --ds-font-size-text-sm: 14px;
+    --ds-font-size-text-tiny: 12px;
     
-    --ds-padding-global: 1.25rem;
-    --ds-padding-section-lg: 4rem;
-    --ds-padding-section-md: 3rem;
-    --ds-padding-section-sm: 2rem;
-    --ds-container-large: 80rem;
-    --ds-max-width-xxlarge: 80rem;
+    --ds-padding-global: 20px;
+    --ds-padding-section-lg: 64px;
+    --ds-padding-section-md: 48px;
+    --ds-padding-section-sm: 32px;
+    --ds-container-large: 1280px;
+    --ds-max-width-xxlarge: 1280px;
     /* END: MOBILE_TOKENS */
+    --ds-font-size-nav-item: 2.75rem;
   }
 }
 
@@ -139,6 +135,9 @@
   --text-h2: var(--ds-font-size-h2);
   --text-h2--font-family: var(--font-heading);
   --text-h2--line-height: 0.95;
+  --text-nav-item: var(--ds-font-size-nav-item);
+  --text-nav-item--font-family: var(--font-heading);
+  --text-nav-item--line-height: 0.95;
   --text-h3: var(--ds-font-size-h3);
   --text-h3--font-family: var(--font-heading);
   --text-h3--line-height: 1.05;
