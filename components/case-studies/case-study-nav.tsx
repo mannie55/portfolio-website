@@ -15,7 +15,7 @@ export function CaseStudyNav({ previous, next }: CaseStudyNavProps) {
     >
       <Link
         href="/case-studies"
-        className="text-body-sm text-muted transition-colors hover:text-foreground"
+        className="text-body-sm text-muted"
       >
         All case studies
       </Link>
@@ -23,7 +23,7 @@ export function CaseStudyNav({ previous, next }: CaseStudyNavProps) {
         {previous ? (
           <Link
             href={`/case-studies/${previous.slug}`}
-            className="text-body-sm text-muted transition-colors hover:text-foreground"
+            className="text-body-sm text-muted"
           >
             Previous: {previous.title}
           </Link>
@@ -31,7 +31,7 @@ export function CaseStudyNav({ previous, next }: CaseStudyNavProps) {
         {next ? (
           <Link
             href={`/case-studies/${next.slug}`}
-            className="text-body-sm text-muted transition-colors hover:text-foreground"
+            className="text-body-sm text-muted"
           >
             Next: {next.title}
           </Link>

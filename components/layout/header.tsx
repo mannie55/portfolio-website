@@ -36,7 +36,7 @@ export function Header() {
           <div className="hidden items-center gap-6 md:flex">
             <Link
               href="/case-studies"
-              className="flex items-center gap-2 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
+              className="flex items-center gap-2 text-body-sm font-medium text-foreground-muted"
             >
               Case Studies
               <Image
@@ -103,7 +103,7 @@ export function Header() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="block py-3 text-body-sm font-medium text-foreground-muted transition-colors hover:text-foreground"
+                  className="block py-3 text-body-sm font-medium text-foreground-muted"
                   onClick={() => setMobileOpen(false)}
                 >
                   {label}

@@ -15,7 +15,7 @@ export const AButtonSecondary = ({
   return (
     <Link
       href={href}
-      className={`relative inline-flex max-w-screen-sm items-center justify-center gap-2.5 overflow-hidden rounded-full bg-accent px-4 py-3 no-underline transition-transform hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent ${className}`}
+      className={`relative inline-flex max-w-screen-sm items-center justify-center gap-2.5 overflow-hidden rounded-full bg-accent px-4 py-3 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent ${className}`}
       aria-label={`${label}`}
     >
       <span className="relative inline-flex flex-[0_0_auto] flex-col items-start">

@@ -7,7 +7,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div className="flex flex-col gap-6 rounded-[20px] bg-surface p-5 transition-all duration-300 hover:bg-surface-elevated">
+    <div className="flex flex-col gap-6 rounded-[20px] bg-surface p-5">
       {/* Header: Avatar and Info */}
       <div className="flex items-start gap-3 border-b border-border-lighter pb-5">
         <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-full bg-surface-elevated">

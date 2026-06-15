@@ -11,7 +11,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
   return (
     <Link
       href={`/case-studies/${study.slug}`}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-shadow hover:shadow-md"
+      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-surface-elevated">
         <Image
@@ -33,7 +33,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             </span>
           ))}
         </div>
-        <h2 className="mt-3 text-h6 transition-colors group-hover:text-accent">
+        <h2 className="mt-3 text-h6">
           {study.title}
         </h2>
         <p className="mt-2 flex-1 text-body text-muted">{study.summary}</p>

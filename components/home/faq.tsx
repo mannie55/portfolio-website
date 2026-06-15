@@ -18,7 +18,7 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-surface-elevated md:px-8"
+        className="flex w-full items-center justify-between p-6 text-left md:px-8"
       >
         <span className="text-body font-medium text-white md:text-body-lg">
           {item.question}

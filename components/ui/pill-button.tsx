@@ -32,11 +32,11 @@ export function PillButton(props: PillButtonProps) {
   } = props;
 
   const baseStyles =
-    "inline-flex items-center justify-center gap-3 px-4 py-3 rounded-full transition-all hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
+    "inline-flex items-center justify-center gap-3 px-4 py-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
   
   const variantStyles = {
     white: "bg-white text-text-dark",
-    outline: "border border-border bg-transparent text-white hover:bg-white/5",
+    outline: "border border-border bg-transparent text-white",
   };
 
   const content = (

@@ -31,7 +31,7 @@ export function CaseStudyTechStack({ block }: CaseStudyTechStackProps) {
         {block.items.map((item) => (
           <li
             key={item}
-            className="flex items-center justify-center rounded-full bg-surface-hover px-6 py-3 border border-border transition-colors hover:bg-surface-elevated"
+            className="flex items-center justify-center rounded-full bg-surface-hover px-6 py-3 border border-border"
           >
             <span className="whitespace-nowrap text-base font-light text-foreground">
               {item}

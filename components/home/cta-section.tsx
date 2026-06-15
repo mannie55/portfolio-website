@@ -46,7 +46,6 @@ export function CTASection({
         <footer className="relative z-10 flex w-full flex-col items-center justify-between gap-6 pt-12 md:flex-row md:gap-0">
           <Link
             href="/"
-            className="transition-opacity hover:opacity-80"
           >
             <Image 
               src="/images/components/Brand_name_dark.svg"
