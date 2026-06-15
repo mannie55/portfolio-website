@@ -6,6 +6,7 @@ describe("NavigationOverlay Component", () => {
   beforeEach(() => {
     // Reset body style before each test
     document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
   });
 
   test("is hidden by default", () => {
@@ -16,6 +17,7 @@ describe("NavigationOverlay Component", () => {
     expect(overlay).not.toHaveClass("block");
     expect(overlay).toHaveAttribute("aria-hidden", "true");
     expect(document.body.style.overflow).toBe("");
+    expect(document.body.style.paddingRight).toBe("");
   });
 
   test("is visible when isOpen is true", () => {
@@ -55,18 +57,49 @@ describe("NavigationOverlay Component", () => {
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
 
-  test("disables body scroll when open and restores it when closed or unmounted", () => {
+  test("disables body scroll when open, applies padding-right if scrollbar is present, and restores them when closed or unmounted", () => {
+    // Mock window.innerWidth and document.documentElement.clientWidth to simulate a 16px scrollbar
+    const originalInnerWidth = window.innerWidth;
+    const originalClientWidth = document.documentElement.clientWidth;
+
+    Object.defineProperty(window, "innerWidth", {
+      writable: true,
+      configurable: true,
+      value: 1024,
+    });
+    Object.defineProperty(document.documentElement, "clientWidth", {
+      writable: true,
+      configurable: true,
+      value: 1008,
+    });
+
     const { rerender, unmount } = render(<NavigationOverlay isOpen={true} />);
     expect(document.body.style.overflow).toBe("hidden");
+    expect(document.body.style.paddingRight).toBe("16px");
 
     rerender(<NavigationOverlay isOpen={false} />);
     expect(document.body.style.overflow).toBe("");
+    expect(document.body.style.paddingRight).toBe("");
 
     rerender(<NavigationOverlay isOpen={true} />);
     expect(document.body.style.overflow).toBe("hidden");
+    expect(document.body.style.paddingRight).toBe("16px");
 
     unmount();
     expect(document.body.style.overflow).toBe("");
+    expect(document.body.style.paddingRight).toBe("");
+
+    // Restore original window/document values
+    Object.defineProperty(window, "innerWidth", {
+      writable: true,
+      configurable: true,
+      value: originalInnerWidth,
+    });
+    Object.defineProperty(document.documentElement, "clientWidth", {
+      writable: true,
+      configurable: true,
+      value: originalClientWidth,
+    });
   });
 
   test("renders all menu links inside a centered 1280px container", () => {
