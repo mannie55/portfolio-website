@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { CursorFollower } from "@/components/ui/cursor-follower";
 import { siteConfig } from "@/lib/constants";
 import { colorSemantic } from "@/lib/design-tokens";
 
@@ -68,6 +69,7 @@ export default function RootLayout({
         <Header />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
+        <CursorFollower />
       </body>
     </html>
   );
