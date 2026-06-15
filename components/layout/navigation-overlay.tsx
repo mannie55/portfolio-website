@@ -52,7 +52,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
   return (
     <div
       data-testid="navigation-overlay"
-      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col justify-center ${
+      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col pt-[7.5rem] ${
         isOpen ? "flex" : "hidden"
       }`}
       aria-hidden={!isOpen}

@@ -27,7 +27,7 @@ describe("NavigationOverlay Component", () => {
     expect(overlay).toHaveAttribute("aria-hidden", "false");
   });
 
-  test("has fixed positioning and covers the entire viewport", () => {
+  test("has fixed positioning, covers the entire viewport, and has top padding", () => {
     render(<NavigationOverlay isOpen={true} />);
     const overlay = screen.getByTestId("navigation-overlay");
     
@@ -35,6 +35,7 @@ describe("NavigationOverlay Component", () => {
     expect(overlay).toHaveClass("inset-0");
     expect(overlay).toHaveClass("w-[100vw]");
     expect(overlay).toHaveClass("h-[100vh]");
+    expect(overlay).toHaveClass("pt-[7.5rem]");
   });
 
   test("has high z-index and uses website background color to prevent content underneath from being visible", () => {
