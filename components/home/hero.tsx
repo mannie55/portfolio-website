@@ -7,7 +7,7 @@ export function Hero() {
     <section className="relative py-24">
       <div className="mx-auto grid grid-cols-1 gap-10 lg:flex lg:flex-row lg:items-end lg:gap-14">
         {/* Left: Author Portrait */}
-        <div className="order-2 lg:order-none relative h-[30rem] w-full max-w-[31.25rem] overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none">
+        <div className="order-2 lg:order-none relative h-[30rem] w-full max-w-[31.25rem] overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink">
           <Image
             src="/images/nnamdi_profile.png"
             alt="Portrait of Nnamdi Ogbonna"
@@ -19,7 +19,7 @@ export function Hero() {
         </div>
 
         {/* Right: Content */}
-        <div className="contents lg:flex lg:flex-1 lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
+        <div className="contents lg:flex lg:flex-1 lg:shrink-0 lg:min-w-[30rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
           <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase">
             {heroContent.headline}
           </h1>
