@@ -26,6 +26,16 @@ export function CalEmbed() {
       cal("ui", {
         theme: "dark",
         styles: { branding: { brandColor: colorSemantic.accent } },
+        cssVarsPerTheme: {
+          dark: {
+            "cal-brand": colorSemantic.accent,
+            "cal-brand-color": colorSemantic.accent,
+          },
+          light: {
+            "cal-brand": colorSemantic.accent,
+            "cal-brand-color": colorSemantic.accent,
+          },
+        },
       });
     })();
   }, []);
@@ -41,7 +51,21 @@ export function CalEmbed() {
       <Cal
         calLink={calLink}
         style={{ width: "100%", height: "100%", minHeight: "700px" }}
-        config={{ layout: "month_view", theme: "dark" }}
+        config={{
+          layout: "month_view",
+          theme: "dark",
+          styles: { branding: { brandColor: colorSemantic.accent } },
+          cssVarsPerTheme: {
+            dark: {
+              "cal-brand": colorSemantic.accent,
+              "cal-brand-color": colorSemantic.accent,
+            },
+            light: {
+              "cal-brand": colorSemantic.accent,
+              "cal-brand-color": colorSemantic.accent,
+            },
+          },
+        }}
       />
     </div>
   );
