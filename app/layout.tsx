@@ -55,6 +55,8 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+import { SmoothScroller } from "@/components/layout/smooth-scroller";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,8 +69,10 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <Header />
-        <main className="flex flex-1 flex-col">{children}</main>
-        <Footer />
+        <SmoothScroller>
+          <main className="flex flex-1 flex-col pt-[88px]">{children}</main>
+          <Footer />
+        </SmoothScroller>
         <CursorFollower />
       </body>
     </html>

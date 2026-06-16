@@ -14,7 +14,7 @@ export function Header() {
 
   return (
     <>
-      <header className={`sticky top-0 border-b border-border/40 bg-background/60 backdrop-blur-md transition-transform duration-300 ${
+      <header className={`fixed w-full top-0 border-b border-border/40 bg-background/60 backdrop-blur-md transition-transform duration-300 ${
         mobileOpen ? "z-[10000]" : "z-50"
       } ${
         scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
