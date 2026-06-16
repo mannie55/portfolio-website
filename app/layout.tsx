@@ -70,7 +70,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col">
         <Header />
         <SmoothScroller>
-          <main className="flex flex-1 flex-col pt-[88px]">{children}</main>
+          <main className="flex flex-1 flex-col pt-[72px]">{children}</main>
           <Footer />
         </SmoothScroller>
         <CursorFollower />
