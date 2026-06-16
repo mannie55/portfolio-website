@@ -39,7 +39,7 @@ export function Hero() {
 
             {/* Content */}
             <div className="relative z-10 flex h-full flex-col items-start justify-between gap-8 md:gap-[6.7rem]">
-              <p className="max-w-[40.25rem] text-body-sm md:text-body-lg lg:text-body-xl text-text-dark">
+              <p className="max-w-[40.25rem] text-body md:text-body-lg lg:text-body-xl text-text-dark">
                 {heroContent.description}
               </p>
               <AButtonSecondary label={heroContent.cta} />
