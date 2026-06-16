@@ -230,7 +230,7 @@ export const Process = () => {
           <AButtonSecondary
             href="/get-started"
             label="Book a discovery call"
-            className="hidden lg:inline-flex lg:row-[1_/_2] lg:col-[10_/_13] lg:self-end lg:justify-self-end w-fit h-[53px]"
+            className="lg:row-[1_/_2] lg:col-[10_/_13] lg:self-end lg:justify-self-end w-fit h-[53px]"
           />
         </div>
       </div>
