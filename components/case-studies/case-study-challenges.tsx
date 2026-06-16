@@ -13,7 +13,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
     >
       {/* Header */}
       <header className="relative flex h-[1.8125rem] w-full items-center gap-2.5">
-        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
+        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full bg-surface-elevated px-4 py-2">
           <h2
             id={`${block.title.toLowerCase().replace(/\s+/g, "-")}-heading`}
             className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
@@ -32,7 +32,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
         {block.items.map((item) => (
           <article
             key={item.number}
-            className="relative flex flex-col justify-between h-[18.5rem] p-4 rounded-[1.25rem] border border-border bg-surface"
+            className="relative flex flex-col justify-between h-[18.5rem] p-4 rounded-[1.25rem] bg-surface"
           >
             <div className="flex flex-col gap-2">
               <div className="text-h5 leading-[1.75rem] text-muted font-sans">
@@ -54,7 +54,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
         {block.images.map((src, index) => (
           <figure
             key={index}
-            className={`flex items-center justify-center p-5 border border-border-light bg-transparent w-full md:flex-1 max-w-[21.25rem]
+            className={`flex items-center justify-center p-5 bg-transparent w-full md:flex-1 max-w-[21.25rem]
               ${index === 0 ? "md:rounded-l-[1.25rem]" : ""}
               ${index === block.images.length - 1 ? "md:rounded-r-[1.25rem]" : ""}
               ${index > 0 && index < block.images.length - 1 ? "" : ""}

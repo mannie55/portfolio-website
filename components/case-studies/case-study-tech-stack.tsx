@@ -12,7 +12,7 @@ export function CaseStudyTechStack({ block }: CaseStudyTechStackProps) {
     >
       {/* Header */}
       <header className="relative flex h-[1.8125rem] w-full items-center gap-2.5">
-        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
+        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full bg-surface-elevated px-4 py-2">
           <h2
             id="tech-stack-heading"
             className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
@@ -31,7 +31,7 @@ export function CaseStudyTechStack({ block }: CaseStudyTechStackProps) {
         {block.items.map((item) => (
           <li
             key={item}
-            className="flex items-center justify-center rounded-full bg-surface-hover px-6 py-3 border border-border"
+            className="flex items-center justify-center rounded-full bg-surface-hover px-6 py-3"
           >
             <span className="whitespace-nowrap text-base font-light text-foreground">
               {item}

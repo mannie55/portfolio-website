@@ -13,7 +13,7 @@ export function CaseStudyOutcomes({ block }: CaseStudyOutcomesProps) {
     >
       {/* Header */}
       <header className="relative flex h-[1.8125rem] w-full items-center gap-2.5">
-        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
+        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full bg-surface-elevated px-4 py-2">
           <h2
             id="key-outcomes-heading"
             className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
@@ -33,7 +33,7 @@ export function CaseStudyOutcomes({ block }: CaseStudyOutcomesProps) {
           {block.items.map((outcome) => (
             <article
               key={outcome.id}
-              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8 border-b border-border last:border-0"
+              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8"
             >
               <div className="relative h-8 w-8 shrink-0">
                 <Image

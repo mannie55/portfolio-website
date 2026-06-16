@@ -13,7 +13,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
     >
       {/* Header */}
       <header className="relative flex h-[1.8125rem] w-full items-center gap-2.5">
-        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full border border-border bg-surface-elevated px-4 py-2">
+        <div className="relative flex h-[1.8125rem] w-fit min-w-[6.125rem] flex-col items-center justify-center rounded-full bg-surface-elevated px-4 py-2">
           <h2
             id="solution-heading"
             className="text-[0.625rem] md:text-body-xs font-sans font-normal text-foreground whitespace-nowrap"
@@ -33,7 +33,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
           {block.items.map((item) => (
             <article
               key={item.id}
-              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8 border-b border-border last:border-0"
+              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8"
             >
               <div className="text-[1.69375rem] leading-7 text-border-lighter font-sans font-normal min-w-[2rem]">
                 {item.id}
@@ -66,7 +66,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
       {/* Image Gallery */}
       <div className="flex flex-col w-full max-w-[77.625rem] gap-1 py-8">
         {/* Top Row */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 px-5 py-5 border border-border-light rounded-t-[1.25rem] overflow-hidden bg-background/20">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 px-5 py-5 rounded-t-[1.25rem] overflow-hidden bg-background/20">
           {block.gallery.top.map((image, index) => (
             <div 
               key={index} 
@@ -83,7 +83,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
           ))}
         </div>
         {/* Bottom Row */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 px-5 py-5 border border-border-light rounded-b-[1.25rem] overflow-hidden bg-background/20">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 px-5 py-5 rounded-b-[1.25rem] overflow-hidden bg-background/20">
           {block.gallery.bottom.map((image, index) => (
             <div 
               key={index} 
