@@ -72,6 +72,7 @@
   --ds-border-width: 0.0625rem;
   --ds-divider-width: 0.0625rem;
   /* END: TOKENS */
+  --ds-font-size-nav-item: var(--ds-font-size-h2);
 }
 
 /* Mobile breakpoint adjustments */
@@ -98,6 +99,7 @@
     --ds-container-large: 80rem;
     --ds-max-width-xxlarge: 80rem;
     /* END: MOBILE_TOKENS */
+    --ds-font-size-nav-item: 2.75rem;
   }
 }
 
@@ -139,6 +141,9 @@
   --text-h2: var(--ds-font-size-h2);
   --text-h2--font-family: var(--font-heading);
   --text-h2--line-height: 0.95;
+  --text-nav-item: var(--ds-font-size-nav-item);
+  --text-nav-item--font-family: var(--font-heading);
+  --text-nav-item--line-height: 0.95;
   --text-h3: var(--ds-font-size-h3);
   --text-h3--font-family: var(--font-heading);
   --text-h3--line-height: 1.05;

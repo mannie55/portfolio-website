@@ -23,12 +23,12 @@ export const MenuDropdown = ({ onLinkClick }: { onLinkClick?: () => void }) => {
         {menuItems.map((item) => (
           <li
             key={item.id}
-            className="border-b border-border-lighter py-8"
+            className="border-b border-border-lighter py-6"
           >
             <Link
               href={item.href}
               onClick={onLinkClick}
-              className="inline-flex text-h2 font-bold text-white leading-none"
+              className="inline-flex text-nav-item font-bold text-white leading-none"
             >
               {item.label}
             </Link>
@@ -60,7 +60,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
   return (
     <div
       data-testid="navigation-overlay"
-      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col pt-[7.5rem] ${
+      className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col pt-[7.5rem] px-6 md:px-10 lg:px-12 ${
         isOpen ? "flex" : "hidden"
       }`}
       aria-hidden={!isOpen}
@@ -74,7 +74,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       >
         Close
       </button>
-      <div className="mx-auto w-full max-w-[1280px] h-fit px-8 py-16 bg-surface rounded-[20px]">
+      <div className="mx-auto w-full max-w-[1280px] h-fit px-8 py-8 bg-surface rounded-[20px]">
         <MenuDropdown onLinkClick={onClose} />
       </div>
     </div>
