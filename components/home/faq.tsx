@@ -20,7 +20,7 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
         aria-expanded={isOpen}
         className="flex w-full items-center justify-between p-6 text-left md:px-8"
       >
-        <span className="text-body-lg font-medium text-white">
+        <span className="text-body md:text-body-lg font-medium text-white">
           {item.question}
         </span>
         
