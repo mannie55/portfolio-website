@@ -24,6 +24,7 @@ export function CalEmbed() {
     void (async () => {
       const cal = await getCalApi();
       cal("ui", {
+        // @ts-expect-error - Cal.com types are outdated for "system"
         theme: "system",
         styles: { branding: { brandColor: colorSemantic.accent } },
         cssVarsPerTheme: {
@@ -56,6 +57,7 @@ export function CalEmbed() {
         style={{ width: "100%", height: "100%", minHeight: "700px" }}
         config={{
           layout: "month_view",
+          // @ts-expect-error - Cal.com types are outdated for "system"
           theme: "system",
           // @ts-expect-error - Cal.com types are outdated
           styles: { branding: { brandColor: colorSemantic.accent } },
