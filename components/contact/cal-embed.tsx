@@ -47,7 +47,10 @@ export function CalEmbed() {
   }
 
   return (
-    <div className="min-h-[700px] overflow-hidden rounded-[20px]">
+    <div
+      className="min-h-[700px] overflow-hidden rounded-[20px]"
+      style={{ colorScheme: "light dark" }}
+    >
       <Cal
         calLink={calLink}
         style={{ width: "100%", height: "100%", minHeight: "700px" }}
