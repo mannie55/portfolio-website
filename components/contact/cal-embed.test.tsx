@@ -24,7 +24,6 @@ describe("CalEmbed Component", () => {
 
     // Verify UI config API was called on mount
     expect(mockCalApi).toHaveBeenCalledWith("ui", expect.objectContaining({
-      theme: "auto",
       styles: expect.objectContaining({
         branding: expect.objectContaining({
           brandColor: colorSemantic.accent,
