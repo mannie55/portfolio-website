@@ -9,7 +9,7 @@ export const siteConfig = {
 export const heroContent = {
   headline: "BUILDING DIGITAL PRESENCE THAT MATTERS",
   description: "Helping modern businesses build credible digital experiences that earn trust and drive growth.",
-  cta: "lets talk",
+  cta: "Let's talk",
 } as const;
 
 export const navLinks = [
