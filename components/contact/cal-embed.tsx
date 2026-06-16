@@ -54,7 +54,9 @@ export function CalEmbed() {
         config={{
           layout: "month_view",
           theme: "dark",
+          // @ts-expect-error - Cal.com types are outdated
           styles: { branding: { brandColor: colorSemantic.accent } },
+          // @ts-expect-error - Cal.com types are outdated
           cssVarsPerTheme: {
             dark: {
               "cal-brand": colorSemantic.accent,
