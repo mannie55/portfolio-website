@@ -33,7 +33,7 @@ export function CaseStudyOutcomes({ block }: CaseStudyOutcomesProps) {
           {block.items.map((outcome) => (
             <article
               key={outcome.id}
-              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8"
+              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8 border-b border-border last:border-0"
             >
               <div className="relative h-8 w-8 shrink-0">
                 <Image

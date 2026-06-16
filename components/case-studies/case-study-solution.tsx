@@ -33,7 +33,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
           {block.items.map((item) => (
             <article
               key={item.id}
-              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8"
+              className="flex flex-col md:flex-row items-start justify-center gap-4 py-8 border-b border-border last:border-0"
             >
               <div className="text-[1.69375rem] leading-7 text-border-lighter font-sans font-normal min-w-[2rem]">
                 {item.id}

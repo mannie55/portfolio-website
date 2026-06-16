@@ -54,10 +54,10 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
         {block.images.map((src, index) => (
           <figure
             key={index}
-            className={`flex items-center justify-center p-5 bg-transparent w-full md:flex-1 max-w-[21.25rem]
-              ${index === 0 ? "md:rounded-l-[1.25rem]" : ""}
-              ${index === block.images.length - 1 ? "md:rounded-r-[1.25rem]" : ""}
-              ${index > 0 && index < block.images.length - 1 ? "" : ""}
+            className={`flex items-center justify-center p-5 border border-border-light bg-transparent w-full md:flex-1 max-w-[21.25rem]
+              ${index === 0 ? "rounded-t-[20px] md:rounded-tr-none md:rounded-tl-[20px] md:rounded-bl-[20px]" : ""}
+              ${index === block.images.length - 1 ? "rounded-b-[20px] md:rounded-bl-none md:rounded-tr-[20px] md:rounded-br-[20px]" : ""}
+              ${index > 0 && index < block.images.length - 1 ? "rounded-none" : ""}
             `}
           >
             <div className="relative w-full max-w-[18.75rem] aspect-[300/533]">
