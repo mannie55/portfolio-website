@@ -41,7 +41,7 @@ export function PillButton(props: PillButtonProps) {
 
   const content = (
     <>
-      <span className="text-body-sm md:text-body font-medium whitespace-nowrap uppercase tracking-wider">
+      <span className="text-body-sm md:text-body font-medium whitespace-nowrap tracking-wider">
         {label}
       </span>
       <div className="flex h-[29px] w-[29px] shrink-0 items-center justify-center">
