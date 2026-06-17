@@ -28,10 +28,11 @@ function toSummary(study: CaseStudy): CaseStudySummary {
 }
 
 function sortByDate(studies: CaseStudy[]): CaseStudy[] {
-  return [...studies].sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  );
+  return [...studies].sort((a, b) => {
+    const dateA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+    const dateB = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+    return dateB - dateA;
+  });
 }
 
 async function getCaseStudiesFromSource(): Promise<CaseStudy[]> {

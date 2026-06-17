@@ -34,6 +34,20 @@ export const caseStudy = defineType({
         },
       ],
     }),
+    defineField({
+      name: "featured",
+      title: "Featured",
+      type: "boolean",
+      description: "Show this case study in the projects list on the landing page.",
+      initialValue: false,
+    }),
+    defineField({
+      name: "publishedAt",
+      title: "Published At",
+      type: "datetime",
+      description: "Used to sort case studies (newest first).",
+      validation: (rule) => rule.required(),
+    }),
     
     // Section 1 — Project Overview (Hero)
     defineField({
