@@ -7,8 +7,9 @@ export const caseStudy = defineType({
   fields: [
     defineField({
       name: "title",
-      title: "Title",
+      title: "Document Title (Internal Use)",
       type: "string",
+      description: "e.g. StaffOS Case Study",
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -18,284 +19,285 @@ export const caseStudy = defineType({
       options: { source: "title", maxLength: 96 },
       validation: (rule) => rule.required(),
     }),
+    
+    // Section 1 — Project Overview (Hero)
     defineField({
-      name: "summary",
-      title: "Summary",
-      type: "text",
-      rows: 3,
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: "coverImage",
-      title: "Cover Image",
-      type: "image",
-      options: { hotspot: true },
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: "role",
-      title: "Role",
-      type: "string",
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: "industry",
-      title: "Industry",
-      type: "string",
-      description: "e.g., HR & payroll SaaS, Healthcare, E-Commerce",
-    }),
-    defineField({
-      name: "projectType",
-      title: "Project Type",
-      type: "string",
-      description: "e.g., concept project, client work",
-    }),
-    defineField({
-      name: "client",
-      title: "Client",
-      type: "string",
-    }),
-    defineField({
-      name: "clientLogo",
-      title: "Client Logo",
-      type: "image",
-      options: { hotspot: true },
-    }),
-    defineField({
-      name: "tools",
-      title: "Tools",
-      type: "array",
-      of: [{ type: "string" }],
-    }),
-    defineField({
-      name: "publishedAt",
-      title: "Published At",
-      type: "datetime",
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: "featured",
-      title: "Featured",
-      type: "boolean",
-      initialValue: false,
-    }),
-    defineField({
-      name: "metrics",
-      title: "Key Metrics",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          name: "metric",
-          title: "Metric",
+      name: "projectOverview",
+      title: "Project Overview (Hero)",
+      type: "object",
+      fields: [
+        // Part 1 — Project Identity
+        defineField({
+          name: "clientLogo",
+          title: "Client Logo",
+          type: "image",
+          options: { hotspot: true },
           fields: [
-            { name: "value", type: "string", title: "Value (e.g. 3×, ~40%)", validation: (r) => r.required() },
-            { name: "description", type: "string", title: "Description", validation: (r) => r.required() },
+            {
+              name: "alt",
+              type: "string",
+              title: "Alt Text",
+              validation: (rule) => rule.required(),
+            },
           ],
-        },
+        }),
+        defineField({
+          name: "projectName",
+          title: "Project Name",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        
+        // Part 2 — Project Summary
+        defineField({
+          name: "summaryHeadline",
+          title: "Summary Headline",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: "summaryDescription",
+          title: "Summary Description",
+          type: "text",
+          rows: 3,
+          validation: (rule) => rule.required(),
+        }),
+        
+        // Part 3 — Metadata
+        defineField({
+          name: "company",
+          title: "Company",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: "industry",
+          title: "Industry",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: "myRole",
+          title: "My Role",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: "stack",
+          title: "Stack",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        defineField({
+          name: "projectType",
+          title: "Project Type",
+          type: "string",
+          validation: (rule) => rule.required(),
+        }),
+        
+        // Part 4 — Stats
+        defineField({
+          name: "stats",
+          title: "Stats",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "statItem",
+              title: "Stat Item",
+              fields: [
+                { name: "value", type: "string", title: "Value", validation: (rule) => rule.required() },
+                { name: "label", type: "string", title: "Label", validation: (rule) => rule.required() },
+              ],
+            },
+          ],
+        }),
+        
+        // Part 5 — Hero Images
+        defineField({
+          name: "heroImages",
+          title: "Hero Images",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "heroImageItem",
+              title: "Hero Image Item",
+              fields: [
+                { name: "image", type: "image", title: "Image", options: { hotspot: true }, validation: (rule) => rule.required() },
+                { name: "alt", type: "string", title: "Alt Text", validation: (rule) => rule.required() },
+              ],
+            },
+          ],
+        }),
       ],
     }),
+    
+    // Section 2 — Background
     defineField({
-      name: "body",
-      title: "Body Blocks",
-      type: "array",
-      of: [
-        // Standard rich text blocks (paragraphs, bullet lists, headings)
-        {
-          type: "block",
-          styles: [
-            { title: "Normal", value: "normal" },
-            { title: "H2", value: "h2" },
-            { title: "H3", value: "h3" },
-          ],
-          lists: [{ title: "Bullet", value: "bullet" }],
-        },
-        // Standard standalone images
-        {
-          type: "image",
-          title: "Image",
-          fields: [
-            {
-              name: "caption",
-              type: "string",
-              title: "Caption",
-            },
-          ],
-        },
-        // Custom Block: Section
-        {
-          type: "object",
-          name: "sectionBlock",
-          title: "Section",
-          fields: [
-            { name: "title", type: "string", title: "Section Title", validation: (r) => r.required() },
-            {
-              name: "content",
-              type: "array",
-              title: "Paragraphs",
-              of: [{ type: "string" }],
-              validation: (r) => r.required(),
-            },
-          ],
-        },
-        // Custom Block: Challenges
-        {
-          type: "object",
-          name: "challengesBlock",
+      name: "backgroundSection",
+      title: "Background Section",
+      type: "object",
+      fields: [
+        defineField({
+          name: "body",
+          title: "Body Content (Portable Text)",
+          type: "array",
+          of: [{ type: "block" }],
+          validation: (rule) => rule.required(),
+        }),
+      ],
+    }),
+    
+    // Section 3 — Challenges
+    defineField({
+      name: "challengesSection",
+      title: "Challenges Section",
+      type: "object",
+      fields: [
+        // Part 1 — Challenge Cards
+        defineField({
+          name: "challenges",
           title: "Challenges",
-          fields: [
-            { name: "title", type: "string", title: "Section Title (e.g. The challenge)", validation: (r) => r.required() },
+          type: "array",
+          of: [
             {
-              name: "items",
-              type: "array",
-              title: "Challenge Items",
-              of: [
-                {
-                  type: "object",
-                  fields: [
-                    { name: "number", type: "string", title: "Number (e.g. 01)", validation: (r) => r.required() },
-                    { name: "title", type: "string", title: "Title", validation: (r) => r.required() },
-                    { name: "description", type: "text", title: "Description", validation: (r) => r.required() },
-                  ],
-                },
-              ],
-            },
-            {
-              name: "images",
-              type: "array",
-              title: "Mobile Screen Mockups",
-              of: [{ type: "image", options: { hotspot: true } }],
-              validation: (r) => r.required(),
-            },
-            {
-              name: "bottomImage",
-              type: "image",
-              title: "Bottom Image (Optional)",
-              options: { hotspot: true },
-            },
-          ],
-        },
-        // Custom Block: Solution
-        {
-          type: "object",
-          name: "solutionBlock",
-          title: "Solution",
-          fields: [
-            { name: "title", type: "string", title: "Section Title (e.g. The solution)", validation: (r) => r.required() },
-            {
-              name: "items",
-              type: "array",
-              title: "Solution Items",
-              of: [
-                {
-                  type: "object",
-                  fields: [
-                    { name: "id", type: "string", title: "ID (e.g. 01)", validation: (r) => r.required() },
-                    { name: "title", type: "string", title: "Title", validation: (r) => r.required() },
-                    { name: "description", type: "text", title: "Description", validation: (r) => r.required() },
-                  ],
-                },
-              ],
-            },
-            {
-              name: "collageImage",
-              type: "image",
-              title: "Collage Image (Optional)",
-              options: { hotspot: true },
-            },
-            {
-              name: "gallery",
               type: "object",
-              title: "Gallery Grid",
+              name: "challengeItem",
+              title: "Challenge Item",
               fields: [
-                {
-                  name: "top",
-                  type: "array",
-                  title: "Top Row Images",
-                  of: [
-                    {
-                      type: "image",
-                      options: { hotspot: true },
-                      fields: [{ name: "alt", type: "string", title: "Alt text" }],
-                    },
-                  ],
-                },
-                {
-                  name: "bottom",
-                  type: "array",
-                  title: "Bottom Row Images",
-                  of: [
-                    {
-                      type: "image",
-                      options: { hotspot: true },
-                      fields: [{ name: "alt", type: "string", title: "Alt text" }],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              name: "quote",
-              type: "object",
-              title: "Pull Quote",
-              fields: [
-                { name: "text", type: "text", title: "Quote Text", validation: (r) => r.required() },
-                { name: "author", type: "string", title: "Author", validation: (r) => r.required() },
-                { name: "role", type: "string", title: "Role/Title", validation: (r) => r.required() },
+                { name: "title", type: "string", title: "Title", validation: (rule) => rule.required() },
+                { name: "description", type: "text", title: "Description", validation: (rule) => rule.required() },
               ],
             },
           ],
-        },
-        // Custom Block: Outcomes
-        {
+        }),
+        // Part 2 — Feature Screenshots
+        defineField({
+          name: "screenshots",
+          title: "Feature Screenshots",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "screenshotItem",
+              title: "Screenshot Item",
+              fields: [
+                { name: "image", type: "image", title: "Image", options: { hotspot: true }, validation: (rule) => rule.required() },
+                { name: "alt", type: "string", title: "Alt Text", validation: (rule) => rule.required() },
+              ],
+            },
+          ],
+        }),
+      ],
+    }),
+    
+    // Section 4 — Solution
+    defineField({
+      name: "solutionSection",
+      title: "Solution Section",
+      type: "object",
+      fields: [
+        // Part 1 — Solution Points
+        defineField({
+          name: "solutionPoints",
+          title: "Solution Points",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "solutionPointItem",
+              title: "Solution Point Item",
+              fields: [
+                { name: "title", type: "string", title: "Title", validation: (rule) => rule.required() },
+                { name: "description", type: "text", title: "Description", validation: (rule) => rule.required() },
+              ],
+            },
+          ],
+        }),
+        // Part 2 — Solution Images
+        defineField({
+          name: "solutionImages",
+          title: "Solution Images",
+          type: "array",
+          of: [
+            {
+              type: "object",
+              name: "solutionImageItem",
+              title: "Solution Image Item",
+              fields: [
+                { name: "image", type: "image", title: "Image", options: { hotspot: true }, validation: (rule) => rule.required() },
+                { name: "alt", type: "string", title: "Alt Text", validation: (rule) => rule.required() },
+              ],
+            },
+          ],
+        }),
+        // Part 3 — Closing Quote
+        defineField({
+          name: "quote",
+          title: "Closing Quote",
           type: "object",
-          name: "outcomesBlock",
+          fields: [
+            { name: "quoteText", type: "text", title: "Quote Text", validation: (rule) => rule.required() },
+            { name: "attribution", type: "string", title: "Attribution (Optional)" },
+          ],
+        }),
+      ],
+    }),
+    
+    // Section 5 — Key Outcomes
+    defineField({
+      name: "keyOutcomesSection",
+      title: "Key Outcomes Section",
+      type: "object",
+      fields: [
+        defineField({
+          name: "outcomes",
           title: "Outcomes",
-          fields: [
-            { name: "title", type: "string", title: "Section Title (e.g. Key outcomes)", validation: (r) => r.required() },
+          type: "array",
+          of: [
             {
-              name: "items",
-              type: "array",
-              title: "Outcome Items",
-              of: [
-                {
-                  type: "object",
-                  fields: [
-                    { name: "id", type: "string", title: "ID (e.g. outcome-1)", validation: (r) => r.required() },
-                    { name: "title", type: "string", title: "Title", validation: (r) => r.required() },
-                    { name: "description", type: "text", title: "Description", validation: (r) => r.required() },
-                    { name: "icon", type: "image", title: "Icon Image", validation: (r) => r.required() },
-                    { name: "iconAlt", type: "string", title: "Icon Alt text" },
-                    { name: "iconWrapper", type: "boolean", title: "Wrap Icon?", initialValue: false },
-                  ],
-                },
+              type: "object",
+              name: "outcomeItem",
+              title: "Outcome Item",
+              fields: [
+                { name: "title", type: "string", title: "Title", validation: (rule) => rule.required() },
+                { name: "description", type: "text", title: "Description", validation: (rule) => rule.required() },
               ],
             },
           ],
-        },
-        // Custom Block: Tech Stack
-        {
-          type: "object",
-          name: "techStackBlock",
-          title: "Technology Stack",
-          fields: [
-            { name: "title", type: "string", title: "Section Title (e.g. Technology stack)", validation: (r) => r.required() },
+        }),
+      ],
+    }),
+    
+    // Section 6 — Technology Stack
+    defineField({
+      name: "techStackSection",
+      title: "Technology Stack Section",
+      type: "object",
+      fields: [
+        defineField({
+          name: "stackItems",
+          title: "Stack Items",
+          type: "array",
+          of: [
             {
-              name: "items",
-              type: "array",
-              title: "Stack Items",
-              of: [{ type: "string" }],
-              validation: (r) => r.required(),
+              type: "object",
+              name: "techStackItem",
+              title: "Tech Stack Item",
+              fields: [
+                { name: "label", type: "string", title: "Label", validation: (rule) => rule.required() },
+              ],
             },
           ],
-        },
+        }),
       ],
     }),
   ],
   preview: {
     select: {
-      title: "title",
-      media: "coverImage",
+      title: "projectOverview.projectName",
+      media: "projectOverview.heroImages.0.image",
     },
   },
 });
