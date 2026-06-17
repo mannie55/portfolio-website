@@ -35,10 +35,10 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
               key={item.id}
               className="flex flex-col md:flex-row items-start justify-center gap-4 py-8 border-b border-border last:border-0"
             >
-              <div className="text-[1.69375rem] leading-7 text-border-lighter font-sans font-normal min-w-[2rem]">
+              <div className="text-[1.69375rem] leading-7 text-border-lighter font-sans font-normal w-full md:w-8 shrink-0">
                 {item.id}
               </div>
-              <div className="flex flex-col gap-4 max-w-[36.1875rem]">
+              <div className="flex flex-col gap-4 w-full md:w-[36.1875rem]">
                 <h3 className="text-h5 leading-7 text-foreground font-normal">
                   {item.title}
                 </h3>

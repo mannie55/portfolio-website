@@ -43,7 +43,7 @@ export function CaseStudyOutcomes({ block }: CaseStudyOutcomesProps) {
                   className="object-contain"
                 />
               </div>
-              <div className="flex flex-col gap-4 max-w-[36.1875rem]">
+              <div className="flex flex-col gap-4 w-full md:w-[36.1875rem]">
                 <h3 className="text-h5 leading-7 text-foreground font-normal">
                   {outcome.title}
                 </h3>
