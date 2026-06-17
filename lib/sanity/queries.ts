@@ -15,6 +15,7 @@ type SanityCaseStudy = {
   title: string;
   publishedAt: string;
   featured?: boolean;
+  showcaseImage?: SanityImageSource;
   projectOverview?: {
     clientLogo?: SanityImageSource & { alt?: string };
     projectName?: string;
@@ -56,6 +57,7 @@ const caseStudyFields = `
   title,
   publishedAt,
   featured,
+  showcaseImage,
   projectOverview {
     clientLogo,
     projectName,
@@ -100,7 +102,8 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
   const summaryHeadline = overview?.summaryHeadline ?? doc.title ?? "";
   const summaryDescription = overview?.summaryDescription ?? "";
   
-  // Cover image: Use the first hero image from the overview section if available
+  // Showcase Image and Cover Image
+  const showcaseImage = doc.showcaseImage ? urlFor(doc.showcaseImage) : undefined;
   const firstHeroImage = overview?.heroImages?.[0]?.image;
   const coverImage = firstHeroImage ? urlFor(firstHeroImage) : "";
   
@@ -213,6 +216,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
     title: summaryHeadline,
     summary: summaryDescription,
     coverImage,
+    showcaseImage,
     role: role ?? "",
     industry,
     projectType,

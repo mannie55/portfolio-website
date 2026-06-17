@@ -19,6 +19,21 @@ export const caseStudy = defineType({
       options: { source: "title", maxLength: 96 },
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: "showcaseImage",
+      title: "Product Showcase Image",
+      type: "image",
+      description: "Separate image used on the listing page and landing page project section.",
+      options: { hotspot: true },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alt Text",
+          validation: (rule) => rule.required(),
+        },
+      ],
+    }),
     
     // Section 1 — Project Overview (Hero)
     defineField({
