@@ -7,6 +7,8 @@ interface ProjectsProps {
 }
 
 export function Projects({ studies }: ProjectsProps) {
+  if (studies.length === 0) return null;
+
   return (
     <section
       aria-labelledby="projects-heading"

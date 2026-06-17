@@ -42,4 +42,9 @@ describe("Projects Component", () => {
     const viewProjectLink = screen.getByRole("link", { name: /View Project/i });
     expect(viewProjectLink).toHaveAttribute("href", "/case-studies/test-project-1");
   });
+
+  test("returns null and does not render anything if studies is empty", () => {
+    const { container } = render(<Projects studies={[]} />);
+    expect(container.firstChild).toBeNull();
+  });
 });

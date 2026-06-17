@@ -52,8 +52,7 @@ export async function getAllCaseStudies(): Promise<CaseStudySummary[]> {
 export async function getFeaturedCaseStudies(): Promise<CaseStudySummary[]> {
   const studies = await getCaseStudiesFromSource();
   const featured = studies.filter((study) => study.featured);
-  const displayStudies = featured.length > 0 ? featured : studies;
-  return sortByDate(displayStudies).map(toSummary);
+  return sortByDate(featured).map(toSummary);
 }
 
 export async function getCaseStudyBySlug(
