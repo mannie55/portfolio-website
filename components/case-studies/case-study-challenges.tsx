@@ -35,7 +35,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
             className="relative flex flex-col justify-between h-[18.5rem] p-4 rounded-[1.25rem] bg-surface"
           >
             <div className="flex flex-col gap-2">
-              <div className="text-h5 leading-[1.75rem] text-muted font-sans">
+              <div className="text-h5 leading-[1.75rem] text-border-lighter font-sans">
                 {item.number}
               </div>
               <h3 className="text-h6 font-medium leading-[1.625rem] text-foreground">
