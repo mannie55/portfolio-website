@@ -12,17 +12,18 @@ export function Hero() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
-      // 1. Text slide up (split text reveal)
+      // 1. Character split text reveal (from codepen)
       tl.fromTo(
-        ".hero-word",
-        { yPercent: 105 },
+        ".hero-char",
+        { yPercent: 115 },
         {
           yPercent: 0,
-          duration: 1.2,
-          stagger: 0.08,
-        }
+          duration: 0.5,
+          stagger: 0.05,
+        },
+        0.2 // Delay of 0.2s
       );
 
       // 2. Portrait and Description Box fade up smoothly
@@ -30,7 +31,7 @@ export function Hero() {
         [".hero-portrait", ".hero-description"],
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 1.2, stagger: 0.15 },
-        "-=0.9" // Start slightly before text reveal finishes
+        "-=0.2" // Start relative to timeline
       );
     },
     { scope: containerRef }
@@ -53,12 +54,14 @@ export function Hero() {
 
         {/* Right: Content */}
         <div className="contents lg:flex lg:flex-1 lg:shrink-0 lg:min-w-[42rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
-          <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.3em] gap-y-[0.1em]">
-            {heroContent.headline.split(" ").map((word, i) => (
-              <span key={i} className="inline-block overflow-hidden pb-[0.05em]">
-                <span className="hero-word inline-block">
-                  {word}
-                </span>
+          <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase flex flex-wrap">
+            {heroContent.headline.split(" ").map((word, wordIndex) => (
+              <span key={wordIndex} className="inline-block overflow-hidden pb-[0.05em] whitespace-nowrap mr-[0.3em] last:mr-0">
+                {word.split("").map((char, charIndex) => (
+                  <span key={charIndex} className="hero-char inline-block">
+                    {char}
+                  </span>
+                ))}
               </span>
             ))}
           </h1>
