@@ -41,9 +41,9 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   />
                 </div>
               )}
-              <span className="font-heading text-h5 md:text-h4 leading-none text-foreground uppercase tracking-wider">
+              <h2 className="font-heading text-h5 md:text-h4 leading-none text-foreground uppercase tracking-wider">
                 {study.projectName || study.client}
-              </span>
+              </h2>
             </div>
           )}
           <div className="flex flex-col items-start gap-4 md:gap-8 max-w-full md:max-w-[42rem]">
