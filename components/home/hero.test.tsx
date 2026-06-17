@@ -6,7 +6,10 @@ import { expect, test, describe } from "vitest";
 describe("Hero Component", () => {
   test("renders the headline correctly", () => {
     render(<Hero />);
-    expect(screen.getByText(heroContent.headline)).toBeInTheDocument();
+    const heading = screen.getByRole("heading", { level: 1 });
+    expect(heading).toBeInTheDocument();
+    expect(heading.textContent).toContain("BUILDING");
+    expect(heading.textContent).toContain("MATTERS");
   });
 
   test("renders the description box content", () => {

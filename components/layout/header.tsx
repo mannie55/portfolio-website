@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import { navLinks, siteConfig } from "@/lib/constants";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
@@ -11,6 +13,18 @@ import { NavigationOverlay } from "./navigation-overlay";
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const scrollDirection = useScrollDirection();
+  const navRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        navRef.current,
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", delay: 0.1 }
+      );
+    },
+    { scope: navRef }
+  );
 
   return (
     <>
@@ -19,7 +33,7 @@ export function Header() {
       } ${
         scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
       }`}>
-        <nav className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-4">
+        <nav ref={navRef} className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-4 opacity-0">
           {/* Brand Logo */}
           <Link href="/" className="flex-shrink-0" aria-label="Home">
             <Image

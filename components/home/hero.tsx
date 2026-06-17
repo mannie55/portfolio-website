@@ -1,13 +1,42 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { AButtonSecondary } from "@/components/ui/button-secondary";
 import { heroContent } from "@/lib/constants";
 
 export function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      // 1. Text slide up (split text reveal)
+      tl.to(".hero-word", {
+        yPercent: 0,
+        duration: 1.2,
+        stagger: 0.08,
+      });
+
+      // 2. Portrait and Description Box fade up smoothly
+      tl.fromTo(
+        [".hero-portrait", ".hero-description"],
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.2, stagger: 0.15 },
+        "-=0.9" // Start slightly before text reveal finishes
+      );
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="relative py-24">
+    <section ref={containerRef} className="relative py-24">
       <div className="mx-auto grid grid-cols-1 gap-10 lg:flex lg:flex-row lg:items-end lg:gap-14">
         {/* Left: Author Portrait */}
-        <div className="order-2 lg:order-none relative h-[30rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink">
+        <div className="hero-portrait order-2 lg:order-none relative h-[30rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink opacity-0">
           <Image
             src="/images/nnamdi_profile.png"
             alt="Portrait of Nnamdi Ogbonna"
@@ -20,12 +49,18 @@ export function Hero() {
 
         {/* Right: Content */}
         <div className="contents lg:flex lg:flex-1 lg:shrink-0 lg:min-w-[42rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
-          <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase">
-            {heroContent.headline}
+          <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.3em] gap-y-[0.1em]">
+            {heroContent.headline.split(" ").map((word, i) => (
+              <span key={i} className="inline-block overflow-hidden pb-[0.05em]">
+                <span className="hero-word inline-block translate-y-[105%]">
+                  {word}
+                </span>
+              </span>
+            ))}
           </h1>
 
           {/* Description Box */}
-          <div className="order-3 lg:order-none relative flex h-full w-full max-w-[42rem] md:max-w-none lg:max-w-[42rem] flex-auto overflow-hidden rounded-[1.25rem] bg-surface p-4">
+          <div className="hero-description order-3 lg:order-none relative flex h-full w-full max-w-[42rem] md:max-w-none lg:max-w-[42rem] flex-auto overflow-hidden rounded-[1.25rem] bg-surface p-4 opacity-0">
             {/* Grid Background */}
             <div className="absolute inset-0 z-0">
               <Image
@@ -38,7 +73,7 @@ export function Hero() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 flex h-full flex-col items-start justify-between gap-8 md:gap-[6.7rem]">
+            <div className="relative z-10 flex h-full flex-col items-start justify-between gap-8 md:gap-[6.7rem] w-full">
               <p className="max-w-[40.25rem] text-body md:text-body-lg lg:text-body-xl text-text-dark">
                 {heroContent.description}
               </p>
