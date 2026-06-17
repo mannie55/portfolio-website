@@ -15,11 +15,15 @@ export function Hero() {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       // 1. Text slide up (split text reveal)
-      tl.to(".hero-word", {
-        yPercent: 0,
-        duration: 1.2,
-        stagger: 0.08,
-      });
+      tl.fromTo(
+        ".hero-word",
+        { yPercent: 105 },
+        {
+          yPercent: 0,
+          duration: 1.2,
+          stagger: 0.08,
+        }
+      );
 
       // 2. Portrait and Description Box fade up smoothly
       tl.fromTo(
@@ -52,7 +56,7 @@ export function Hero() {
           <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.3em] gap-y-[0.1em]">
             {heroContent.headline.split(" ").map((word, i) => (
               <span key={i} className="inline-block overflow-hidden pb-[0.05em]">
-                <span className="hero-word inline-block translate-y-[105%]">
+                <span className="hero-word inline-block">
                   {word}
                 </span>
               </span>
