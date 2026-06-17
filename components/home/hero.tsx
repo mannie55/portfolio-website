@@ -16,21 +16,22 @@ export function Hero() {
 
       // 1. Text slide up (split text reveal)
       tl.fromTo(
-        ".hero-word",
-        { yPercent: 105 },
+        ".hero-char",
+        { yPercent: 115 },
         {
           yPercent: 0,
-          duration: 1.2,
-          stagger: 0.08,
-        }
+          duration: 0.4,
+          stagger: 0.03,
+        },
+        0.2 // Delay of 0.2s before character animation begins
       );
 
       // 2. Portrait and Description Box fade up smoothly
       tl.fromTo(
         [".hero-portrait", ".hero-description"],
         { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1.2, stagger: 0.15 },
-        "-=0.9" // Start slightly before text reveal finishes
+        { opacity: 1, y: 0, duration: 1.0, stagger: 0.15 },
+        "-=0.2" // Start slightly before or as text reveal finishes
       );
     },
     { scope: containerRef }
@@ -57,7 +58,11 @@ export function Hero() {
             {heroContent.headline.split(" ").map((word, i) => (
               <span key={i} className="inline-block overflow-hidden pb-[0.05em]">
                 <span className="hero-word inline-block">
-                  {word}
+                  {word.split("").map((char, charIndex) => (
+                    <span key={charIndex} className="hero-char inline-block">
+                      {char}
+                    </span>
+                  ))}
                 </span>
               </span>
             ))}
