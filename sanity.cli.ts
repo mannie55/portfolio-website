@@ -5,4 +5,5 @@ export default defineCliConfig({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "ruboxzxa",
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
   },
+  studioHost: 'nnamdiogbonna'
 });
