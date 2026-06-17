@@ -109,6 +109,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
   
   const clientLogo = overview?.clientLogo ? urlFor(overview?.clientLogo) : undefined;
   const client = overview?.company;
+  const projectName = overview?.projectName;
   const industry = overview?.industry;
   const role = overview?.myRole;
   const projectType = overview?.projectType;
@@ -222,6 +223,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
     projectType,
     client,
     clientLogo,
+    projectName,
     tools,
     publishedAt: doc.publishedAt,
     featured: doc.featured ?? false,

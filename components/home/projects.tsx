@@ -30,7 +30,7 @@ export function Projects({ studies }: ProjectsProps) {
             key={project.slug}
             className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface border border-border w-full"
           >
-            <div className="flex flex-col flex-1 w-full max-w-[504px] md:max-w-none lg:max-w-[504px] items-start gap-6">
+            <div className="flex flex-col flex-1 w-full max-w-[504px] md:max-w-none lg:max-w-[504px] items-start gap-12">
               <div className="flex flex-col items-start gap-4 w-full">
                 <h3 className="font-heading text-h4 leading-tight text-white/90">
                   {project.title}

@@ -11,6 +11,7 @@ export const mockCaseStudies: CaseStudy[] = [
     industry: "HR & payroll SaaS",
     projectType: "concept project",
     client: "StaffOS",
+    projectName: "StaffOS",
     clientLogo: "/images/case-studies/staffos logo.svg",
     tools: ["Figma", "Webflow"],
     publishedAt: "2026-06-08T00:00:00.000Z",

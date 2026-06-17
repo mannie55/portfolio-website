@@ -29,14 +29,21 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
       <div className="flex flex-col items-center gap-8 w-full max-w-container-xxlarge">
         {/* Main Title Section */}
         <div className="flex flex-col md:flex-row w-full items-start justify-between gap-6">
-          {study.clientLogo && (
-            <div className="relative w-32 h-8 md:w-48 md:h-12">
-              <Image
-                src={study.clientLogo}
-                alt={`${study.client} logo`}
-                fill
-                className="object-contain object-left"
-              />
+          {(study.clientLogo || study.projectName || study.client) && (
+            <div className="flex items-center gap-3 md:gap-4 shrink-0">
+              {study.clientLogo && (
+                <div className="relative w-8 h-8 md:w-10 md:h-10 shrink-0">
+                  <Image
+                    src={study.clientLogo}
+                    alt={`${study.client || study.projectName} logo`}
+                    fill
+                    className="object-contain object-left"
+                  />
+                </div>
+              )}
+              <span className="font-heading text-h5 md:text-h4 leading-none text-foreground uppercase tracking-wider">
+                {study.projectName || study.client}
+              </span>
             </div>
           )}
           <div className="flex flex-col items-start gap-4 md:gap-8 max-w-full md:max-w-[42rem]">
