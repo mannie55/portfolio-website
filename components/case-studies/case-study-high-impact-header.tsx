@@ -26,7 +26,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
         <div className="flex-grow h-px bg-border rounded-full" />
       </div>
 
-      <div className="flex flex-col items-center gap-8 w-full max-w-container-xxlarge">
+      <div className="flex flex-col items-center gap-12 w-full max-w-container-xxlarge">
         {/* Main Title Section */}
         <div className="flex flex-col md:flex-row w-full items-start justify-between gap-6">
           {(study.clientLogo || study.projectName || study.client) && (
@@ -41,16 +41,16 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   />
                 </div>
               )}
-              <h2 className="font-heading text-h5 md:text-h4 leading-none text-foreground uppercase tracking-wider">
+              <span className="font-heading text-h3 md:text-h2 leading-none text-foreground uppercase tracking-wider">
                 {study.projectName || study.client}
-              </h2>
+              </span>
             </div>
           )}
           <div className="flex flex-col items-start gap-4 md:gap-8 max-w-full md:max-w-[42rem]">
-            <h1 className="text-[1.5rem] md:text-[1.75rem] leading-[1.1] md:leading-[1] font-heading text-foreground">
+            <h1 className="text-h3 md:text-h3 leading-[1.1] md:leading-[1] font-heading text-foreground  font-medium">
               {study.title}
             </h1>
-            <p className="text-body-lg md:text-h6 leading-[1.4] md:leading-[1.3] text-muted">
+            <p className="text-body-lg md:text-h6 leading-[1.4] md:leading-[1.3] text-muted font">
               {study.summary}
             </p>
           </div>
