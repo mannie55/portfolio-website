@@ -57,6 +57,53 @@ export function Projects({ studies }: ProjectsProps) {
         });
       });
 
+      // Match media for Mobile only (max-width: 1023px)
+      mm.add("(max-width: 1023px)", () => {
+        const wrappers = gsap.utils.toArray<HTMLElement>(".project-card-wrapper");
+        
+        wrappers.forEach((wrapper) => {
+          const card = wrapper.querySelector("article");
+          const content = wrapper.querySelector(".project-card-content");
+          if (!card) return;
+
+          // Scale and fade in the card itself on scroll
+          gsap.fromTo(
+            card,
+            { scale: 0.8, opacity: 0 },
+            {
+              scale: 1,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: wrapper,
+                start: "top 85%",
+                once: true,
+              },
+            }
+          );
+
+          // Fade up the text content inside the card
+          if (content) {
+            gsap.fromTo(
+              content,
+              { opacity: 0, y: 50 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: wrapper,
+                  start: "top 85%",
+                  once: true,
+                },
+              }
+            );
+          }
+        });
+      });
+
       return () => mm.revert();
     },
     { scope: containerRef }
@@ -118,7 +165,7 @@ export function Projects({ studies }: ProjectsProps) {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="flex flex-col flex-1 w-full max-w-[504px] md:max-w-none lg:max-w-[504px] items-start gap-12">
+              <div className="flex flex-col flex-1 w-full max-w-[504px] md:max-w-none lg:max-w-[504px] items-start gap-12 project-card-content">
                 <div className="flex flex-col items-start gap-4 w-full">
                   <h3 className="font-heading text-h4 leading-tight text-white/90">
                     {project.title}
