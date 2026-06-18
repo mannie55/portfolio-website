@@ -1,4 +1,9 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { PillButton } from "@/components/ui/pill-button";
 import type { CaseStudySummary } from "@/types/case-study";
 
@@ -7,10 +12,47 @@ interface ProjectsProps {
 }
 
 export function Projects({ studies }: ProjectsProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      // Set initial state of all project card buttons
+      gsap.set(".project-card-button", { opacity: 0, y: 20 });
+    },
+    { scope: containerRef }
+  );
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
+    const button = e.currentTarget.querySelector(".project-card-button");
+    if (button) {
+      gsap.to(button, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+    }
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    const button = e.currentTarget.querySelector(".project-card-button");
+    if (button) {
+      gsap.to(button, {
+        opacity: 0,
+        y: 20,
+        duration: 0.3,
+        ease: "power2.inOut",
+        overwrite: "auto",
+      });
+    }
+  };
+
   if (studies.length === 0) return null;
 
   return (
     <section
+      ref={containerRef}
       aria-labelledby="projects-heading"
       className="relative flex w-full flex-col items-start py-24 px-0 md:px-6"
     >
@@ -29,6 +71,8 @@ export function Projects({ studies }: ProjectsProps) {
           <article
             key={project.slug}
             className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface border border-border w-full"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <div className="flex flex-col flex-1 w-full max-w-[504px] md:max-w-none lg:max-w-[504px] items-start gap-12">
               <div className="flex flex-col items-start gap-4 w-full">
@@ -57,7 +101,7 @@ export function Projects({ studies }: ProjectsProps) {
                   href={`/case-studies/${project.slug}`}
                   label="View Project"
                   variant="white"
-                  className="w-fit"
+                  className="project-card-button w-fit"
                 />
               </div>
             </div>
