@@ -1,7 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FAQItem } from "@/types/faq";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LottieChevron } from "../ui/lottie-chevron";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 interface FAQRowProps {
   item: FAQItem;
@@ -9,11 +17,24 @@ interface FAQRowProps {
   onToggle: () => void;
 }
 
-import { LottieChevron } from "../ui/lottie-chevron";
-
 function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
+  const answerRef = useRef<HTMLParagraphElement>(null);
+
+  useGSAP(
+    () => {
+      if (isOpen) {
+        gsap.fromTo(
+          answerRef.current,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.5, ease: "power2.out" }
+        );
+      }
+    },
+    { dependencies: [isOpen] }
+  );
+
   return (
-    <div className="flex flex-col overflow-hidden rounded-[1.25rem] bg-surface transition-all duration-300">
+    <div className="faq-card flex flex-col overflow-hidden rounded-[1.25rem] bg-surface">
       <button
         type="button"
         onClick={onToggle}
@@ -34,7 +55,10 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
       >
         <div className="overflow-hidden">
           <div className="border-t border-border-lighter p-6 pt-0 md:px-8">
-            <p className="mt-4 text-body-sm leading-relaxed text-muted md:text-body">
+            <p
+              ref={answerRef}
+              className="mt-4 text-body-sm leading-relaxed text-muted md:text-body"
+            >
               {item.answer}
             </p>
           </div>
@@ -50,13 +74,39 @@ import { faqData } from "@/lib/mock/faq";
 
 export function FAQ() {
   const [openId, setOpenId] = useState<string | null>(faqData[0].id);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const toggleItem = (id: string) => {
     setOpenId(openId === id ? null : id);
   };
 
+  useGSAP(
+    () => {
+      const cards = gsap.utils.toArray<HTMLElement>(".faq-card");
+
+      cards.forEach((card) => {
+        gsap.fromTo(
+          card,
+          { scale: 0.8, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              once: true,
+            },
+          }
+        );
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <section className="py-24">
+    <section ref={containerRef} className="py-24">
       <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
         {/* Left Side: Heading and CTA */}
         <div className="flex flex-col items-start gap-8 lg:sticky lg:top-24 lg:max-w-[25rem]">
