@@ -21,12 +21,12 @@ export function Projects({ studies }: ProjectsProps) {
 
   useGSAP(
     () => {
-      // Set initial state of all project card buttons
-      gsap.set(".project-card-button", { opacity: 0, y: 20 });
-
       // Match media for Desktop only (min-width: 1024px)
       const mm = gsap.matchMedia();
       mm.add("(min-width: 1024px)", () => {
+        // Set initial state of all project card buttons only on desktop
+        gsap.set(".project-card-button", { opacity: 0, y: 20 });
+
         const wrappers = gsap.utils.toArray<HTMLElement>(".project-card-wrapper");
         
         wrappers.forEach((wrapper, index) => {
@@ -110,6 +110,7 @@ export function Projects({ studies }: ProjectsProps) {
   );
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
+    if (window.innerWidth < 1024) return;
     const button = e.currentTarget.querySelector(".project-card-button");
     if (button) {
       gsap.to(button, {
@@ -123,6 +124,7 @@ export function Projects({ studies }: ProjectsProps) {
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    if (window.innerWidth < 1024) return;
     const button = e.currentTarget.querySelector(".project-card-button");
     if (button) {
       gsap.to(button, {
