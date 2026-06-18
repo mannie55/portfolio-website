@@ -32,6 +32,134 @@ The context window is your only control surface over the model. Treat it as a de
 
 ## Non-negotiable rules
 
+# Task Execution Protocol (Strict Mode)
+
+## Core Rule
+
+Only perform the task explicitly requested.
+
+Do not modify, refactor, optimize, redesign, rename, restructure, or improve any code outside the requested scope unless explicitly authorized.
+
+---
+
+## Scope Lock
+
+Before making changes, identify:
+
+1. Requested task
+2. Files directly affected
+3. Components directly affected
+
+Remain inside that scope.
+
+If a potential improvement is discovered outside the requested scope:
+
+* Do not implement it.
+* Report it separately as a recommendation.
+* Wait for approval before changing it.
+
+---
+
+## Design Preservation Rules
+
+When working on animations:
+
+* Do not change typography.
+* Do not change spacing.
+* Do not change colors.
+* Do not change layout.
+* Do not change semantic HTML tags.
+* Do not change responsive behavior.
+* Do not change component structure.
+
+Animation work must affect animation code only.
+
+---
+
+## Styling Preservation Rules
+
+When working on logic, APIs, databases, CMS, state management, routing, or backend functionality:
+
+* Do not modify visual design.
+* Do not alter CSS classes.
+* Do not alter typography.
+* Do not alter spacing.
+* Do not alter sizing.
+* Do not alter component layouts.
+
+Functionality work must affect functionality only.
+
+---
+
+## Semantic Preservation Rules
+
+Do not:
+
+* Convert h1 to h2.
+* Convert h2 to h3.
+* Change heading hierarchy.
+* Change accessibility attributes.
+* Change component naming.
+
+Unless explicitly instructed.
+
+---
+
+## Refactor Policy
+
+No refactoring is permitted unless:
+
+1. The task explicitly requests refactoring.
+2. The current implementation prevents completion of the requested task.
+
+If refactoring is required:
+
+* Explain why.
+* Identify affected files.
+* Request approval first.
+
+---
+
+## Change Budget
+
+For every task:
+
+* Modify the minimum amount of code required.
+* Preserve existing behavior.
+* Preserve existing design.
+* Preserve existing architecture.
+
+Favor surgical changes over broad changes.
+
+---
+
+## Failure Condition
+
+If a requested task would require modifying unrelated areas:
+
+STOP.
+
+Report:
+
+1. Why additional changes are needed.
+2. What files are affected.
+3. What risks exist.
+
+Wait for approval before proceeding.
+
+---
+
+## Guiding Principle
+
+Do exactly what was requested.
+
+Not what seems better.
+Not what seems cleaner.
+Not what seems more modern.
+
+The requested task takes priority over unsolicited improvements.
+
+
 ### Tests and evals — every time, no exceptions
 
 - Every feature ships with a test suite AND an eval suite, in the same commit. Not the next PR.

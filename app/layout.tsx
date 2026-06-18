@@ -56,6 +56,7 @@ export const viewport: Viewport = {
 };
 
 import { SmoothScroller } from "@/components/layout/smooth-scroller";
+import { GlobalTextReveal } from "@/components/layout/global-text-reveal";
 
 export default function RootLayout({
   children,
@@ -74,6 +75,7 @@ export default function RootLayout({
           <Footer />
         </SmoothScroller>
         <CursorFollower />
+        <GlobalTextReveal />
       </body>
     </html>
   );

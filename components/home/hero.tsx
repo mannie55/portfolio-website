@@ -12,16 +12,16 @@ export function Hero() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
       // 1. Text slide up (split text reveal)
       tl.fromTo(
         ".hero-char",
-        { yPercent: 115 },
+        { yPercent: 120 },
         {
           yPercent: 0,
           duration: 0.4,
-          stagger: 0.03,
+          stagger: 0.02,
         },
         0.2 // Delay of 0.2s before character animation begins
       );
@@ -31,7 +31,7 @@ export function Hero() {
         [".hero-portrait", ".hero-description"],
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 1.0, stagger: 0.15 },
-        "-=0.2" // Start slightly before or as text reveal finishes
+        "0.2" // Start slightly before or as text reveal finishes
       );
     },
     { scope: containerRef }
