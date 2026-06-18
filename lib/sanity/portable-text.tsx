@@ -4,12 +4,12 @@ import {
   type PortableTextComponents,
 } from "@portabletext/react";
 import Image from "next/image";
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { createImageUrlBuilder } from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url";
 
 import { sanityClient } from "@/lib/sanity/client";
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = createImageUrlBuilder(sanityClient);
 
 function urlFor(source: SanityImageSource) {
   return builder.image(source).width(1200).url();
