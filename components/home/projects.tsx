@@ -161,7 +161,7 @@ export function Projects({ studies }: ProjectsProps) {
             style={{ zIndex: index + 1 }}
           >
             <article
-              className="group flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface border border-border w-full"
+              className="group flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface w-full"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
