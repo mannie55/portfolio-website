@@ -1,11 +1,19 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DiscoveryComponent } from "@/components/ui/discovery-component";
 import { AssetComponent } from "@/components/ui/asset-component";
 import { ScopeComponent } from "@/components/ui/scope-component";
 import { AButtonSecondary } from "@/components/ui/button-secondary";
 import { SectionHeading } from "@/components/ui/section-heading";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 type CardBase = {
   id: string;
@@ -108,8 +116,58 @@ const defaultDarkDescriptionClassName =
   "relative flex items-center justify-start text-left self-stretch mt-[-1.00px] font-sans font-normal text-white/90 text-body-sm md:text-body lg:text-body-md tracking-[0] leading-[27px]";
 
 export const Process = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const cards = gsap.utils.toArray<HTMLElement>(".process-card");
+
+      cards.forEach((card) => {
+        const content = card.querySelector(".process-card-content");
+
+        gsap.fromTo(
+          card,
+          { scale: 0.8, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top center",
+              end: "center center",
+              scrub: true,
+            },
+          }
+        );
+
+        if (content) {
+          gsap.fromTo(
+            content,
+            { opacity: 0, y: 50 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top center",
+                end: "center center",
+                scrub: true,
+              },
+            }
+          );
+        }
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
     <section
+      ref={containerRef}
       aria-labelledby="process-heading"
       className="relative flex flex-col items-start py-24"
     >
@@ -127,11 +185,11 @@ export const Process = () => {
           {cards.map((card) => {
             if (card.id === "discovery-call" && card.type === "image") {
               return (
-                <article key={card.id} id={card.id} className={card.className}>
+                <article key={card.id} id={card.id} className={`${card.className} process-card`}>
                   <div className={card.imageClassName}>
                     <DiscoveryComponent />
                   </div>
-                  <div className={card.contentClassName}>
+                  <div className={`${card.contentClassName} process-card-content`}>
                     <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                       {card.title}
                     </h3>
@@ -145,11 +203,11 @@ export const Process = () => {
 
             if (card.id === "asset-handover" && card.type === "image") {
               return (
-                <article key={card.id} id={card.id} className={card.className}>
+                <article key={card.id} id={card.id} className={`${card.className} process-card`}>
                   <div className={card.imageClassName}>
                     <AssetComponent />
                   </div>
-                  <div className={card.contentClassName}>
+                  <div className={`${card.contentClassName} process-card-content`}>
                     <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                       {card.title}
                     </h3>
@@ -163,8 +221,8 @@ export const Process = () => {
 
             if (card.id === "scope-and-rates" && card.type === "image") {
               return (
-                <article key={card.id} id={card.id} className={card.className}>
-                  <div className={card.contentClassName}>
+                <article key={card.id} id={card.id} className={`${card.className} process-card`}>
+                  <div className={`${card.contentClassName} process-card-content`}>
                     <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                       {card.title}
                     </h3>
@@ -181,8 +239,8 @@ export const Process = () => {
 
             if (card.id === "speed-and-quality" && card.type === "image") {
               return (
-                <article key={card.id} id={card.id} className={card.className}>
-                  <div className={card.contentClassName}>
+                <article key={card.id} id={card.id} className={`${card.className} process-card`}>
+                  <div className={`${card.contentClassName} process-card-content`}>
                     <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                       {card.title}
                     </h3>
@@ -205,8 +263,8 @@ export const Process = () => {
             }
 
             return (
-              <article key={card.id} id={card.id} className={card.className}>
-                <div className={card.contentClassName}>
+              <article key={card.id} id={card.id} className={`${card.className} process-card`}>
+                <div className={`${card.contentClassName} process-card-content`}>
                   <h3 className={card.titleClassName || defaultDarkTitleClassName}>
                     {card.title}
                   </h3>
