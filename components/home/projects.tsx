@@ -70,7 +70,7 @@ export function Projects({ studies }: ProjectsProps) {
         {studies.map((project) => (
           <article
             key={project.slug}
-            className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface border border-border w-full"
+            className="group flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface border border-border w-full"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -111,7 +111,7 @@ export function Projects({ studies }: ProjectsProps) {
                 src={project.coverImage}
                 alt={`${project.title} preview`}
                 fill
-                className="object-cover transition-transform duration-500 hover:scale-105"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 606px"
               />
             </div>
