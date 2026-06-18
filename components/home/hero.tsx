@@ -14,6 +14,9 @@ export function Hero() {
     () => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
+      // Ensure the title container is visible once GSAP hydration begins
+      tl.set(".hero-title", { opacity: 1 });
+
       // 1. Text slide up (split text reveal)
       tl.fromTo(
         ".hero-char",
@@ -54,7 +57,7 @@ export function Hero() {
 
         {/* Right: Content */}
         <div className="contents lg:flex lg:flex-1 lg:shrink-0 lg:min-w-[42rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
-          <h1 className="order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.3em] gap-y-[0.1em]">
+          <h1 className="hero-title order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.3em] gap-y-[0.1em] opacity-0">
             {heroContent.headline.split(" ").map((word, i) => (
               <span key={i} className="inline-block overflow-hidden pb-[0.05em]">
                 <span className="hero-word inline-block">
