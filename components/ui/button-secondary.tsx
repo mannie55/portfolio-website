@@ -15,7 +15,7 @@ export const AButtonSecondary = ({
   return (
     <Link
       href={href}
-      className={`relative inline-flex max-w-screen-sm items-center justify-center gap-2.5 overflow-hidden rounded-full bg-accent px-4 py-3 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent ${className}`}
+      className={`relative inline-flex max-w-screen-sm items-center justify-center gap-2.5 overflow-hidden rounded-full bg-accent px-4 py-3 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent group ${className}`}
       aria-label={`${label}`}
     >
       <span className="relative inline-flex flex-[0_0_auto] flex-col items-start">
@@ -23,7 +23,7 @@ export const AButtonSecondary = ({
           {label}
         </span>
       </span>
-      <span className="flex-shrink-0">
+      <span className="flex-shrink-0 transition-transform duration-200 ease-in-out group-hover:translate-x-1">
         <Image
           src="/images/components/phone_icon.svg"
           alt=""

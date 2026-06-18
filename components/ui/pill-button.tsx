@@ -32,7 +32,7 @@ export function PillButton(props: PillButtonProps) {
   } = props;
 
   const baseStyles =
-    "inline-flex items-center justify-center gap-3 px-4 py-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer";
+    "inline-flex items-center justify-center gap-3 px-4 py-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer group";
   
   const variantStyles = {
     white: "bg-white text-text-dark",
@@ -44,7 +44,7 @@ export function PillButton(props: PillButtonProps) {
       <span className="text-body-sm md:text-body font-medium whitespace-nowrap tracking-wider">
         {label}
       </span>
-      <div className="flex h-[29px] w-[29px] shrink-0 items-center justify-center">
+      <div className="flex h-[29px] w-[29px] shrink-0 items-center justify-center transition-transform duration-200 ease-in-out group-hover:translate-x-1">
         <Image
           src={iconSrc}
           alt=""
