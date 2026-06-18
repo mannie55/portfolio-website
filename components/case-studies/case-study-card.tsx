@@ -11,7 +11,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
   return (
     <Link
       href={`/case-studies/${study.slug}`}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface"
+      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface case-study-card"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-surface-elevated">
         <Image
@@ -22,7 +22,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-5 case-study-card-content">
         <div className="flex flex-wrap gap-2">
           {study.tools.slice(0, 3).map((tool) => (
             <span
@@ -33,7 +33,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             </span>
           ))}
         </div>
-        <h2 className="mt-3 text-h6">
+        <h2 className="mt-3 text-h6 no-reveal">
           {study.title}
         </h2>
         <p className="mt-2 flex-1 text-body text-muted">{study.summary}</p>
