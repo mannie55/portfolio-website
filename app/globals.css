@@ -238,3 +238,55 @@ body {
     margin-top: 6rem !important;
   }
 }
+
+/* Navbar Toggle Icon Animation */
+.navbar-toggle-icon {
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  user-select: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggle-icon .line {
+  fill: none;
+  transition-delay: 400ms, 0ms;
+  transition-property: stroke, stroke-dasharray, stroke-dashoffset;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+  stroke: var(--ds-color-text, #FFFFFF);
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.navbar-toggle-icon .line.top {
+  stroke-dasharray: 40 139;
+}
+
+.navbar-toggle-icon .line.bottom {
+  stroke-dasharray: 20 180;
+  stroke-dashoffset: -20px;
+}
+
+.navbar-toggle-icon.active {
+  transform: rotate(45deg);
+}
+
+.navbar-toggle-icon.active .line {
+  stroke: #FFFFFF;
+}
+
+.navbar-toggle-icon.active .line.top {
+  stroke-dashoffset: -98px;
+}
+
+.navbar-toggle-icon.active .line.bottom {
+  stroke-dashoffset: -138px;
+}
+
+.navbar-toggle-icon:not(.active):hover .line.bottom {
+  stroke-dasharray: 40 180;
+  stroke-dashoffset: 0px;
+}
