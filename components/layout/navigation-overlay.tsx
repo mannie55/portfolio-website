@@ -48,23 +48,6 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
   const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (isOpen) {
-      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-      if (scrollbarWidth > 0) {
-        document.body.style.paddingRight = `${scrollbarWidth}px`;
-      }
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.paddingRight = "";
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.paddingRight = "";
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
-  useEffect(() => {
     const handleResize = () => {
       if (isOpen && circleRef.current) {
         const getVpdrScale = () => {
@@ -76,7 +59,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           const vpd = Math.sqrt(vph + vpw);
           return (vpd * 2) / circleWidth;
         };
-        gsap.to(circleRef.current, { scale: getVpdrScale(), duration: 0.5, ease: "expo.out" });
+        gsap.to(circleRef.current, { scale: getVpdrScale(), duration: 0.1, ease: "expo.out" });
       }
     };
 
@@ -106,6 +89,17 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       };
 
       if (isOpen) {
+        // Lock body scroll and set padding-right to body and header to prevent layout shifts
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        if (scrollbarWidth > 0) {
+          document.body.style.paddingRight = `${scrollbarWidth}px`;
+          const header = document.querySelector("header");
+          if (header) {
+            header.style.paddingRight = `${scrollbarWidth}px`;
+          }
+        }
+        document.body.style.overflow = "hidden";
+
         // OPENING ANIMATION
         // Make the container itself transparent so the expanding circle is visible
         gsap.set(containerRef.current, { display: "flex", backgroundColor: "transparent" });
@@ -149,6 +143,14 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           1.0
         );
       } else {
+        // Release body scroll lock and restore padding immediately on close
+        document.body.style.paddingRight = "";
+        document.body.style.overflow = "";
+        const header = document.querySelector("header");
+        if (header) {
+          header.style.paddingRight = "";
+        }
+
         // CLOSING ANIMATION
         const tl = gsap.timeline({
           onComplete: () => {
@@ -192,6 +194,16 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           0.4
         );
       }
+
+      // Cleanup function to restore styles on unmount
+      return () => {
+        document.body.style.paddingRight = "";
+        document.body.style.overflow = "";
+        const header = document.querySelector("header");
+        if (header) {
+          header.style.paddingRight = "";
+        }
+      };
     },
     { dependencies: [isOpen], scope: containerRef }
   );
