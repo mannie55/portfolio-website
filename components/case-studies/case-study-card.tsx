@@ -11,7 +11,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
   return (
     <Link
       href={`/case-studies/${study.slug}`}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface case-study-card"
+      className="group flex flex-col h-full overflow-hidden rounded-lg border border-border bg-surface case-study-card"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-surface-elevated">
         <Image

@@ -16,7 +16,7 @@ export function CaseStudyGrid({ studies }: CaseStudyGridProps) {
   return (
     <ul className="grid gap-8 sm:grid-cols-2">
       {studies.map((study) => (
-        <li key={study.slug}>
+        <li key={study.slug} className="h-full">
           <CaseStudyCard study={study} />
         </li>
       ))}
