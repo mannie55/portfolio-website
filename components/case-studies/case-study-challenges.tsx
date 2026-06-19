@@ -32,7 +32,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
         {block.items.map((item) => (
           <article
             key={item.number}
-            className="relative flex flex-col justify-between h-[18.5rem] p-4 rounded-[1.25rem] bg-surface"
+            className="relative flex flex-col justify-between gap-6 h-full min-h-[18.5rem] p-4 rounded-[1.25rem] bg-surface"
           >
             <div className="flex flex-col gap-2">
               <div className="text-h5 leading-[1.75rem] text-border-lighter font-sans">
