@@ -30,7 +30,7 @@ export const MenuDropdown = ({ onLinkClick }: { onLinkClick?: () => void }) => {
             <Link
               href={item.href}
               onClick={onLinkClick}
-              className="inline-flex text-nav-item font-bold text-white leading-none"
+              className="inline-flex text-nav-item font-bold text-white leading-none transition-opacity duration-300 hover:opacity-70"
             >
               {item.label}
             </Link>
