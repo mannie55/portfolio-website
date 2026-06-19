@@ -117,8 +117,10 @@ describe("NavigationOverlay Component", () => {
     expect(container).toHaveClass("mx-auto");
     expect(container).toHaveClass("w-full");
     expect(container).toHaveClass("h-fit");
-    expect(container).toHaveClass("px-8");
-    expect(container).toHaveClass("py-8");
+    expect(container).toHaveClass("px-6");
+    expect(container).toHaveClass("py-6");
+    expect(container).toHaveClass("md:px-8");
+    expect(container).toHaveClass("md:py-8");
     expect(container).toHaveClass("bg-surface");
     expect(container).toHaveClass("rounded-[20px]");
   });

@@ -11,7 +11,7 @@ export function CaseStudyNav({ previous, next }: CaseStudyNavProps) {
   return (
     <nav
       aria-label="Case study navigation"
-      className="mt-16 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between"
+      className="mt-16 flex flex-col gap-4 border-t border-border pt-8 sm:flex-row sm:justify-between case-study-reveal"
     >
       <Link
         href="/case-studies"

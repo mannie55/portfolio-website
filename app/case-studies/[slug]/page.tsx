@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { CaseStudyBody } from "@/components/case-studies/case-study-body";
-import { CaseStudyHeader } from "@/components/case-studies/case-study-header";
-import { CaseStudyHighImpactHeader } from "@/components/case-studies/case-study-high-impact-header";
-import { CaseStudyNav } from "@/components/case-studies/case-study-nav";
+import { CaseStudyDetailsContent } from "@/components/case-studies/case-study-details-content";
 import { PageContainer } from "@/components/layout/page-container";
 import {
   getAdjacentCaseStudies,
@@ -63,15 +60,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
   return (
     <PageContainer>
-      <div className="py-24">
-        {study.metrics ? (
-          <CaseStudyHighImpactHeader study={study} />
-        ) : (
-          <CaseStudyHeader study={study} />
-        )}
-        <CaseStudyBody blocks={study.body} />
-        <CaseStudyNav previous={previous} next={next} />
-      </div>
+      <CaseStudyDetailsContent
+        study={study}
+        previous={previous}
+        next={next}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

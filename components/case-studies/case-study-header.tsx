@@ -8,7 +8,7 @@ type CaseStudyHeaderProps = {
 
 export function CaseStudyHeader({ study }: CaseStudyHeaderProps) {
   return (
-    <header>
+    <header className="case-study-reveal">
       <div className="flex flex-wrap gap-2">
         {study.tools.map((tool) => (
           <span

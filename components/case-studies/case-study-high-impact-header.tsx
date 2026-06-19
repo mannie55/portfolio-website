@@ -17,7 +17,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
   return (
     <header className="flex flex-col items-center relative py-8 md:py-12">
       {/* Breadcrumb Header */}
-      <div className="flex w-full max-w-container-xxlarge items-center gap-2.5 mb-8 md:mb-12">
+      <div className="flex w-full max-w-container-xxlarge items-center gap-2.5 mb-8 md:mb-12 case-study-reveal">
         <div className="flex flex-col items-center justify-center px-4 py-2 bg-surface-elevated rounded-full">
           <p className="text-[0.625rem] md:text-body-xs text-foreground whitespace-nowrap">
             Case study — landing page
@@ -28,7 +28,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
 
       <div className="flex flex-col items-center gap-12 w-full max-w-container-xxlarge">
         {/* Main Title Section */}
-        <div className="flex flex-col md:flex-row w-full items-start justify-between gap-6">
+        <div className="flex flex-col md:flex-row w-full items-start justify-between gap-6 case-study-reveal">
           {(study.clientLogo || study.projectName || study.client) && (
             <div className="flex items-center gap-3 md:gap-4 shrink-0">
               {study.clientLogo && (
@@ -57,7 +57,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
         </div>
 
         {/* Project Overview (Details & Metrics) */}
-        <section className="flex flex-col items-center w-full">
+        <section className="flex flex-col items-center w-full case-study-reveal">
           {/* Details Row */}
           <div className="flex w-full border-b border-border">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 w-full">
@@ -120,7 +120,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
 
       {/* Design Previews Section */}
       <section
-        className="flex flex-col lg:flex-row w-full max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-5 pt-8 px-4 lg:px-8 mt-8 lg:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden"
+        className="flex flex-col lg:flex-row w-full max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-5 pt-8 px-4 lg:px-8 mt-8 lg:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden case-study-reveal"
         aria-label={`${study.client} design previews`}
       >
         <div className="relative w-full lg:w-[29.75rem] h-[15rem] lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
