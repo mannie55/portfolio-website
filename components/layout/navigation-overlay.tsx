@@ -30,7 +30,7 @@ export const MenuDropdown = ({ onLinkClick }: { onLinkClick?: () => void }) => {
             <Link
               href={item.href}
               onClick={onLinkClick}
-              className="inline-flex text-nav-item font-bold text-white leading-none transition-opacity duration-300 hover:opacity-70"
+              className="inline-flex text-nav-item font-bold text-white leading-none"
             >
               {item.label}
             </Link>
@@ -234,7 +234,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       />
       <div
         ref={contentRef}
-        className="mx-auto w-full max-w-[1280px] h-fit px-8 py-8 bg-surface rounded-[20px] z-10 relative"
+        className="mx-auto w-full max-w-[1280px] h-fit px-6 py-6 md:px-8 md:py-8 bg-surface rounded-[20px] z-10 relative"
       >
         <MenuDropdown onLinkClick={onClose} />
       </div>
