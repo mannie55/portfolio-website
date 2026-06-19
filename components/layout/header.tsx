@@ -39,10 +39,10 @@ export function Header() {
             <Image
               src="/images/components/brand_name.svg"
               alt={siteConfig.name}
-              width={187}
+              width={150}
               height={32}
               priority
-              className="h-8 w-auto"
+              className="h-4 md:h-8 w-auto"
             />
           </Link>
 
