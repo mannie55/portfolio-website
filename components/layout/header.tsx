@@ -28,12 +28,12 @@ export function Header() {
 
   return (
     <>
-      <header className={`fixed w-full top-0 border-b border-border/40 bg-background/60 backdrop-blur-md transition-transform duration-300 ${
+      <header className={`fixed w-full top-0 bg-background/60 backdrop-blur-md transition-transform duration-300 ${
         mobileOpen ? "z-[10000]" : "z-50"
       } ${
         scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
       }`}>
-        <nav ref={navRef} className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-4 opacity-0">
+        <nav ref={navRef} className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-2 opacity-0">
           {/* Brand Logo */}
           <Link href="/" className="flex-shrink-0" aria-label="Home">
             <Image
@@ -42,7 +42,7 @@ export function Header() {
               width={150}
               height={32}
               priority
-              className="h-4 md:h-8 w-auto"
+              className="h-4 md:h-7 w-auto"
             />
           </Link>
 
