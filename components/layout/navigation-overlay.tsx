@@ -111,11 +111,11 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
         tl.set(contentRef.current, { opacity: 0, y: 30 });
         tl.set(".navigation-overlay-item", { y: 25, opacity: 0 });
         
-        // Scale up the circle background
+        // Scale up the circle background (punchy initial start, smooth deceleration)
         tl.to(circleRef.current, {
           scale: getVpdrScale(),
-          duration: 1.5,
-          ease: "expo.inOut",
+          duration: 0.8,
+          ease: "power3.out",
         });
 
         // Animate content container fade in and items stagger
@@ -124,10 +124,10 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.5,
             ease: "power2.out",
           },
-          0.8
+          0.2
         );
 
         tl.fromTo(
@@ -136,11 +136,11 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           {
             y: 0,
             opacity: 1,
-            duration: 0.5,
-            stagger: 0.1,
+            duration: 0.4,
+            stagger: 0.05,
             ease: "power2.out",
           },
-          1.0
+          0.3
         );
       } else {
         // Release body scroll lock and restore padding immediately on close
@@ -165,8 +165,8 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           {
             y: 25,
             opacity: 0,
-            duration: 0.5,
-            stagger: -0.1,
+            duration: 0.3,
+            stagger: -0.04,
             ease: "power2.in",
           }
         );
@@ -177,10 +177,10 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           {
             opacity: 0,
             y: 30,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power2.in",
           },
-          0.2
+          0.1
         );
 
         // Scale down the circle
@@ -188,10 +188,10 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           circleRef.current,
           {
             scale: 0,
-            duration: 1.0,
-            ease: "expo.inOut",
+            duration: 0.6,
+            ease: "power3.inOut",
           },
-          0.4
+          0.2
         );
       }
 
