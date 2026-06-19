@@ -39,29 +39,15 @@ export function Header() {
             <Image
               src="/images/components/brand_name.svg"
               alt={siteConfig.name}
-              width={140}
-              height={24}
+              width={187}
+              height={32}
               priority
-              className="h-6 w-auto"
+              className="h-8 w-auto"
             />
           </Link>
 
-          {/* Desktop: Case Studies Link + Menu Button */}
+          {/* Desktop Menu Button */}
           <div className="hidden items-center gap-6 md:flex">
-            <Link
-              href="/case-studies"
-              className="flex items-center gap-2 text-body-sm font-medium text-foreground-muted"
-            >
-              Case Studies
-              <Image
-                src="/images/components/arrow_down_filled.svg"
-                alt=""
-                width={24}
-                height={24}
-                className="h-6 w-6"
-                aria-hidden="true"
-              />
-            </Link>
             <button
               type="button"
               className="flex items-center gap-2 cursor-pointer"
@@ -70,11 +56,8 @@ export function Header() {
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((open) => !open)}
             >
-              <span className="text-body font-medium text-foreground">
-                Menu
-              </span>
               <div className={`navbar-toggle-icon ${mobileOpen ? "active" : ""}`} aria-hidden="true">
-                <svg viewBox="0 0 100 100" width="32" height="32" className="h-8 w-auto">
+                <svg viewBox="0 0 100 100" width="40" height="40" className="h-10 w-auto">
                   <path className="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
                   <path className="line middle" d="m 30,50 h 40" />
                   <path className="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
@@ -92,11 +75,8 @@ export function Header() {
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobileOpen((open) => !open)}
           >
-            <span className="text-body font-medium text-foreground">
-              Menu
-            </span>
             <div className={`navbar-toggle-icon ${mobileOpen ? "active" : ""}`} aria-hidden="true">
-              <svg viewBox="0 0 100 100" width="32" height="32" className="h-8 w-auto">
+              <svg viewBox="0 0 100 100" width="40" height="40" className="h-10 w-auto">
                 <path className="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
                 <path className="line middle" d="m 30,50 h 40" />
                 <path className="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
