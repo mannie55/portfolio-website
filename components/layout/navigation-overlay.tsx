@@ -114,7 +114,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
         // Scale up the circle background (punchy initial start, smooth deceleration)
         tl.to(circleRef.current, {
           scale: getVpdrScale(),
-          duration: 0.8,
+          duration: 0.5,
           ease: "power3.out",
         });
 
@@ -124,10 +124,10 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           {
             opacity: 1,
             y: 0,
-            duration: 0.5,
+            duration: 0.3,
             ease: "power2.out",
           },
-          0.2
+          0.1
         );
 
         tl.fromTo(
@@ -136,11 +136,11 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
           {
             y: 0,
             opacity: 1,
-            duration: 0.4,
-            stagger: 0.05,
+            duration: 0.3,
+            stagger: 0.03,
             ease: "power2.out",
           },
-          0.3
+          0.15
         );
       } else {
         // Release body scroll lock and restore padding immediately on close
@@ -227,12 +227,11 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
       <button
         type="button"
         data-testid="navigation-overlay-close"
-        className="absolute top-6 right-page text-body-sm font-medium text-foreground cursor-pointer z-10"
+        className="hidden"
+        style={{ display: "none" }}
         onClick={onClose}
         aria-label="Close menu"
-      >
-        Close
-      </button>
+      />
       <div
         ref={contentRef}
         className="mx-auto w-full max-w-[1280px] h-fit px-8 py-8 bg-surface rounded-[20px] z-10 relative"
