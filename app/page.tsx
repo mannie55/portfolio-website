@@ -10,7 +10,7 @@ const Process = dynamic(() => import("@/components/home/process").then((mod) => 
 const FAQ = dynamic(() => import("@/components/home/faq").then((mod) => mod.FAQ));
 
 export const metadata: Metadata = {
-  title: "Nnamdi Ogbonna | Product Designer & Frontend Developer Portfolio",
+  title: "Nnamdi Ogbonna | Fullstack developer | webflow designer",
   description: "Helping modern businesses build credible digital experiences that earn trust, drive conversion, and power growth.",
 };
 
@@ -38,7 +38,7 @@ export default async function Home() {
             "name": "Nnamdi Ogbonna",
             "url": "https://mannie55.github.io/portfolio-website",
             "email": "ogbonnannamdi.pro@gmail.com",
-            "jobTitle": "Product Designer & Frontend Developer",
+            "jobTitle": "Fullstack developer | webflow designer",
             "sameAs": [
               "https://github.com/mannie55/",
               "https://www.linkedin.com/in/nnamdiogbonna/"
