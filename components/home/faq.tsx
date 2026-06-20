@@ -25,8 +25,8 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
       if (isOpen) {
         gsap.fromTo(
           answerRef.current,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.5, ease: "power2.out" }
+          { opacity: 0, y: -15 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
         );
       }
     },
@@ -73,7 +73,7 @@ import { AButtonSecondary } from "@/components/ui/button-secondary";
 import { faqData } from "@/lib/mock/faq";
 
 export function FAQ() {
-  const [openId, setOpenId] = useState<string | null>(faqData[0].id);
+  const [openId, setOpenId] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const toggleItem = (id: string) => {
@@ -84,7 +84,7 @@ export function FAQ() {
     () => {
       const cards = gsap.utils.toArray<HTMLElement>(".faq-card");
 
-      cards.forEach((card) => {
+      cards.forEach((card, index) => {
         gsap.fromTo(
           card,
           { scale: 0.8, opacity: 0 },
@@ -97,6 +97,14 @@ export function FAQ() {
               trigger: card,
               start: "top 85%",
               once: true,
+              onEnter: () => {
+                if (index === 0) {
+                  // Slight delay to allow the card entry animation to establish
+                  setTimeout(() => {
+                    setOpenId(faqData[0].id);
+                  }, 300);
+                }
+              },
             },
           }
         );

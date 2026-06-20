@@ -27,16 +27,20 @@ describe("FAQ Component", () => {
   test("expands and collapses items correctly", () => {
     render(<FAQ />);
     
-    // First item is open by default in my implementation
     const firstItem = faqData[0];
     const firstButton = screen.getByText(firstItem.question.replace(/\s+/g, " ")).closest('button');
+    // Starts closed
+    expect(firstButton).toHaveAttribute('aria-expanded', 'false');
+
+    // Click to open first item
+    fireEvent.click(firstButton!);
     expect(firstButton).toHaveAttribute('aria-expanded', 'true');
- 
+
     // Click another item
     const secondItem = faqData[1];
     const secondButton = screen.getByText(secondItem.question.replace(/\s+/g, " ")).closest('button');
     fireEvent.click(secondButton!);
- 
+
     // Now second should be open, first closed
     expect(secondButton).toHaveAttribute('aria-expanded', 'true');
     expect(firstButton).toHaveAttribute('aria-expanded', 'false');
