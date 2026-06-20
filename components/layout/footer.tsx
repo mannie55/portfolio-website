@@ -77,7 +77,8 @@ export function Footer() {
                   {iconSrc ? (
                     <Image
                       src={iconSrc}
-                      alt={`${label} icon`}
+                      alt=""
+                      aria-hidden="true"
                       width={32}
                       height={32}
                       className="h-8 w-8 rounded-[10px]"

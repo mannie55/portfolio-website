@@ -36,9 +36,11 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
   return (
     <div className="faq-card flex flex-col overflow-hidden rounded-[1.25rem] bg-surface">
       <button
+        id={`faq-btn-${item.id}`}
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
+        aria-controls={`faq-content-${item.id}`}
         className="flex w-full items-center justify-between gap-4 p-6 text-left md:px-8"
       >
         <span className="text-body md:text-body-lg font-medium text-white">
@@ -49,6 +51,9 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
       </button>
 
       <div
+        id={`faq-content-${item.id}`}
+        role="region"
+        aria-labelledby={`faq-btn-${item.id}`}
         className={`grid transition-all duration-300 ease-in-out ${
           isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}

@@ -60,7 +60,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
         <section className="flex flex-col items-center w-full case-study-reveal">
           {/* Details Row */}
           <div className="flex w-full border-b border-border">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 w-full">
+            <dl className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 w-full">
               {projectDetails.map((detail, index) => (
                 <div
                   key={detail.label}
@@ -86,7 +86,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   </dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
 
           {/* Metrics Row */}

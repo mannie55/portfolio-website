@@ -32,7 +32,11 @@ export function CalEmbed() {
 
   if (!mounted) {
     return (
-      <div className="min-h-[700px] rounded-[20px] bg-surface-elevated animate-pulse" />
+      <div
+        role="status"
+        aria-label="Loading scheduling calendar"
+        className="min-h-[700px] rounded-[20px] bg-surface-elevated animate-pulse"
+      />
     );
   }
 

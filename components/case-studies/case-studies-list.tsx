@@ -20,8 +20,16 @@ function splitTextIntoChars(element: HTMLElement): () => void {
   const originalHTML = element.innerHTML;
   const text = (element.textContent || "").trim();
 
+  // Set aria-label to read text cleanly
+  element.setAttribute("aria-label", text);
+
   // Clear original content
   element.innerHTML = "";
+
+  // Wrap all split text chars in aria-hidden to avoid screen readers spelling them
+  const ariaHiddenWrapper = document.createElement("span");
+  ariaHiddenWrapper.setAttribute("aria-hidden", "true");
+  ariaHiddenWrapper.className = "contents";
 
   const words = text.split(/\s+/);
   words.forEach((word, wordIndex) => {
@@ -43,16 +51,19 @@ function splitTextIntoChars(element: HTMLElement): () => void {
     });
 
     wordSpan.appendChild(wordInner);
-    element.appendChild(wordSpan);
+    ariaHiddenWrapper.appendChild(wordSpan);
 
     // Add spacing text nodes between words
     if (wordIndex < words.length - 1) {
-      element.appendChild(document.createTextNode(" "));
+      ariaHiddenWrapper.appendChild(document.createTextNode(" "));
     }
   });
 
+  element.appendChild(ariaHiddenWrapper);
+
   return () => {
     element.innerHTML = originalHTML;
+    element.removeAttribute("aria-label");
   };
 }
 

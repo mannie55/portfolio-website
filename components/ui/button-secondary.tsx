@@ -19,7 +19,7 @@ export const AButtonSecondary = ({
       aria-label={`${label}`}
     >
       <span className="relative inline-flex flex-[0_0_auto] flex-col items-start">
-        <span className="relative flex w-fit items-center whitespace-nowrap text-body-sm md:text-body font-semibold tracking-wide text-white">
+        <span className="relative flex w-fit items-center whitespace-nowrap text-body-sm md:text-body font-semibold tracking-wide text-text-dark">
           {label}
         </span>
       </span>

@@ -5,7 +5,7 @@ import Image from "next/image";
 const GOLD = "#" + "d4af37";
 const LAVENDER = "#" + "8d87ff";
 const BLUE_LIGHT = "#" + "e3e8f3";
-const NAVY = "#" + "2d3452";
+const NAVY = "#" + "171a22";
 
 const scopeItems = [
   {

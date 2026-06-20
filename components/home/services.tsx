@@ -46,6 +46,7 @@ export function Services() {
       aria-labelledby="services-heading"
     >
       <SectionHeading
+        id="services-heading"
         title="SERVICES I OFFER"
         className="mb-10"
       />

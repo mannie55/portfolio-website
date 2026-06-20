@@ -16,7 +16,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
       <div className="relative aspect-[16/9] overflow-hidden bg-surface-elevated">
         <Image
           src={study.coverImage}
-          alt={study.title}
+          alt=""
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

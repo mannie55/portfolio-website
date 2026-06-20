@@ -137,6 +137,34 @@ export function Projects({ studies }: ProjectsProps) {
     }
   };
 
+  const handleFocus = (e: React.FocusEvent<HTMLElement>) => {
+    if (window.innerWidth < 1024) return;
+    const button = e.currentTarget.querySelector(".project-card-button");
+    if (button) {
+      gsap.to(button, {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLElement>) => {
+    if (window.innerWidth < 1024) return;
+    const button = e.currentTarget.querySelector(".project-card-button");
+    if (button) {
+      gsap.to(button, {
+        opacity: 0,
+        y: 20,
+        duration: 0.3,
+        ease: "power2.inOut",
+        overwrite: "auto",
+      });
+    }
+  };
+
   if (studies.length === 0) return null;
 
   return (
@@ -166,6 +194,8 @@ export function Projects({ studies }: ProjectsProps) {
               className="group flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-20 p-4 lg:p-6 rounded-[20px] bg-surface w-full"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onFocus={handleFocus}
+              onBlur={handleBlur}
             >
               <div className="flex flex-col flex-1 w-full max-w-[504px] md:max-w-none lg:max-w-[504px] items-start gap-12 project-card-content">
                 <div className="flex flex-col items-start gap-4 w-full">

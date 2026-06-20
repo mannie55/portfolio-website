@@ -67,6 +67,52 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
     return () => window.removeEventListener("resize", handleResize);
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose?.();
+      }
+    };
+
+    const handleFocusTrap = (e: KeyboardEvent) => {
+      if (e.key !== "Tab" || !isOpen || !containerRef.current) return;
+
+      const focusableElements = containerRef.current.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled])'
+      );
+      if (focusableElements.length === 0) return;
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+          lastElement.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastElement) {
+          firstElement.focus();
+          e.preventDefault();
+        }
+      }
+    };
+
+    if (isOpen) {
+      const links = containerRef.current?.querySelectorAll<HTMLElement>('a');
+      if (links && links.length > 0) {
+        links[0].focus();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keydown", handleFocusTrap);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", handleFocusTrap);
+    };
+  }, [isOpen, onClose]);
+
   useGSAP(
     () => {
       // Skip running on initial mount when it's closed
@@ -211,6 +257,7 @@ export function NavigationOverlay({ isOpen = false, onClose }: NavigationOverlay
   return (
     <div
       ref={containerRef}
+      id="mobile-nav"
       data-testid="navigation-overlay"
       className={`fixed inset-0 w-[100vw] h-[100vh] bg-background z-[9999] overflow-hidden flex flex-col pt-[7.5rem] px-6 md:px-10 lg:px-12 ${
         isOpen ? "flex" : "hidden"

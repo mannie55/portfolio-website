@@ -140,12 +140,23 @@ const MarqueeRow = ({
 export const AssetComponent = () => {
   const inputId = useId();
   const [value, setValue] = useState("");
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
     <article 
-      className="mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-white py-4 shadow-sm"
+      className="relative mx-auto h-[16.25rem] w-[17.125rem] overflow-hidden rounded-[1.25rem] bg-white py-4 shadow-sm"
       aria-label="Asset component"
     >
+      {/* Play/Pause Toggle button */}
+      <button
+        type="button"
+        onClick={() => setIsPaused(!isPaused)}
+        className="absolute top-2 right-2 z-20 text-[0.5rem] font-bold text-slate-500 bg-slate-100 rounded px-1.5 py-0.5 hover:bg-slate-200 cursor-pointer"
+        aria-label={isPaused ? "Play animation" : "Pause animation"}
+      >
+        {isPaused ? "Play" : "Pause"}
+      </button>
+
       {/* Search Bar */}
       <form
         role="search"
@@ -188,7 +199,7 @@ export const AssetComponent = () => {
       </form>
 
       {/* Animated Rows */}
-      <div className="flex flex-col gap-3">
+      <div className={`flex flex-col gap-3 ${isPaused ? "[&_*]:[animation-play-state:paused]" : ""}`}>
         <MarqueeRow items={assetItems} direction="left" />
         <MarqueeRow items={assetItems} direction="right" />
       </div>
