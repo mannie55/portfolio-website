@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -42,13 +45,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/nnamdi_profile.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/images/og-image.jpg"],
+    images: ["/images/nnamdi_profile.png"],
   },
 };
 

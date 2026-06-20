@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Projects } from "@/components/home/projects";
 import { Hero } from "@/components/home/hero";
@@ -7,6 +8,11 @@ import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 const Process = dynamic(() => import("@/components/home/process").then((mod) => mod.Process));
 const FAQ = dynamic(() => import("@/components/home/faq").then((mod) => mod.FAQ));
+
+export const metadata: Metadata = {
+  title: "Nnamdi Ogbonna | Product Designer & Frontend Developer Portfolio",
+  description: "Helping modern businesses build credible digital experiences that earn trust, drive conversion, and power growth.",
+};
 
 export default async function Home() {
   const featuredStudies = await getFeaturedCaseStudies();
@@ -23,6 +29,23 @@ export default async function Home() {
 
         <FAQ />
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Nnamdi Ogbonna",
+            "url": "https://mannie55.github.io/portfolio-website",
+            "email": "ogbonnannamdi.pro@gmail.com",
+            "jobTitle": "Product Designer & Frontend Developer",
+            "sameAs": [
+              "https://github.com/mannie55/",
+              "https://www.linkedin.com/in/nnamdiogbonna/"
+            ]
+          }),
+        }}
+      />
     </PageContainer>
   );
 }
