@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import ContactPage from "./page";
 import { Footer } from "@/components/layout/footer";
 import { expect, test, describe, vi } from "vitest";
+import { email } from "@/lib/constants";
 
 // Mock the CalEmbed component because it imports @calcom/embed-react which might need browser APIs
 vi.mock("@/components/contact/cal-embed", () => ({
@@ -37,7 +38,7 @@ describe("ContactPage", () => {
     // Check that custom CTA button renders on contact page
     const ctaButton = screen.getByRole("link", { name: /Email me directly/i });
     expect(ctaButton).toBeInTheDocument();
-    expect(ctaButton).toHaveAttribute("href", "mailto:hello@example.com");
+    expect(ctaButton).toHaveAttribute("href", `mailto:${email}`);
     
     // Check that Footer renders (using role or content)
     const footers = screen.getAllByRole("contentinfo");

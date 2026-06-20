@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Portfolio",
   description: "Helping modern businesses build credible digital experiences that earn trust and drive growth.",
-  url: "https://portfolio.example.com",
+  url: "https://mannie55.github.io/portfolio-website",
   author: "Nnamdi Ogbonna",
   title: "Building Digital Presence That Matters",
 } as const;
@@ -19,12 +19,12 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const email = "hello@example.com";
+export const email = "ogbonnannamdi.pro@gmail.com";
 
 export const calComUrl = "https://cal.com/nnamdi-ogbonna-zli8s4/30min";
 
 export const socialLinks = [
-  { href: "https://github.com/yourusername", label: "GitHub" },
-  { href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+  { href: "https://github.com/mannie55/", label: "GitHub" },
+  { href: "https://www.linkedin.com/in/nnamdiogbonna/", label: "LinkedIn" },
   { href: `mailto:${email}`, label: "Email" },
 ] as const;

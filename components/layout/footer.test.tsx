@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Footer } from "./footer";
 import { expect, test, describe, vi } from "vitest";
+import { email } from "@/lib/constants";
 
 // Mock next/navigation so we can control usePathname dynamically
 const mockUsePathname = vi.fn();
@@ -65,7 +66,7 @@ describe("Footer Component", () => {
     // Renders email link
     const ctaButton = screen.getByRole("link", { name: /Email me directly/i });
     expect(ctaButton).toBeInTheDocument();
-    expect(ctaButton).toHaveAttribute("href", "mailto:hello@example.com");
+    expect(ctaButton).toHaveAttribute("href", `mailto:${email}`);
 
     expect(screen.getByTestId("base-footer")).toBeInTheDocument();
   });
