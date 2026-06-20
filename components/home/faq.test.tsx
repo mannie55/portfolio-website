@@ -19,26 +19,24 @@ describe("FAQ Component", () => {
   test("renders all FAQ questions", () => {
     render(<FAQ />);
     faqData.forEach((item) => {
-      expect(screen.getByText(item.question)).toBeInTheDocument();
+      const queryText = item.question.replace(/\s+/g, " ");
+      expect(screen.getByText(queryText)).toBeInTheDocument();
     });
   });
-
+ 
   test("expands and collapses items correctly", () => {
     render(<FAQ />);
     
     // First item is open by default in my implementation
     const firstItem = faqData[0];
-    const firstAnswer = screen.getByText(firstItem.answer);
-    
-    // Check if it's visible (aria-expanded would be on the button)
-    const firstButton = screen.getByText(firstItem.question).closest('button');
+    const firstButton = screen.getByText(firstItem.question.replace(/\s+/g, " ")).closest('button');
     expect(firstButton).toHaveAttribute('aria-expanded', 'true');
-
+ 
     // Click another item
     const secondItem = faqData[1];
-    const secondButton = screen.getByText(secondItem.question).closest('button');
+    const secondButton = screen.getByText(secondItem.question.replace(/\s+/g, " ")).closest('button');
     fireEvent.click(secondButton!);
-
+ 
     // Now second should be open, first closed
     expect(secondButton).toHaveAttribute('aria-expanded', 'true');
     expect(firstButton).toHaveAttribute('aria-expanded', 'false');

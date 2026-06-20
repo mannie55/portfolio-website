@@ -13,7 +13,7 @@ export const faqData: FAQItem[] = [
   },
   {
     id: "website-design-development-cost",
-    question: "How much does a website design and development cost?",
+    question: "How much does a website\n design and development cost?",
     answer: "Pricing varies depending on the project's scope, complexity, and specific requirements. I offer customized quotes after a strategy call to ensure the solution fits your needs and budget.",
   },
   {

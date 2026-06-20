@@ -56,7 +56,7 @@ export function LottieChevron({ isOpen }: LottieChevronProps) {
   }, [isOpen]);
 
   return (
-    <div className="flex h-[33px] w-[33px] items-center justify-center overflow-hidden rounded-[8px] border border-border-lighter bg-white p-2">
+    <div className="flex h-[33px] w-[33px] shrink-0 items-center justify-center overflow-hidden rounded-[8px] border border-border-lighter bg-white p-2">
       <Lottie
         lottieRef={lottieRef}
         animationData={thickenedAnimationData}
