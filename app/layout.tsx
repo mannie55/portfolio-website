@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito_Sans, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -81,6 +82,7 @@ export default function RootLayout({
         </SmoothScroller>
         <CursorFollower />
         <GlobalTextReveal />
+        <Analytics />
       </body>
     </html>
   );

@@ -2,11 +2,11 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.cal.com https://cal.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.cal.com https://cal.com https://va.vercel-analytics.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: https://cdn.sanity.io https://*.cal.com https://cal.com;
   font-src 'self' data:;
-  connect-src 'self' https://*.cal.com https://cal.com;
+  connect-src 'self' https://*.cal.com https://cal.com https://va.vercel-analytics.com;
   frame-src 'self' https://*.cal.com https://cal.com;
   object-src 'none';
   base-uri 'self';
