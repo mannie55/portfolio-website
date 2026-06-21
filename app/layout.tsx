@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Nunito_Sans, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -83,6 +84,7 @@ export default function RootLayout({
         <CursorFollower />
         <GlobalTextReveal />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
