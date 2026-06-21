@@ -44,7 +44,7 @@ export function Hero() {
     <section ref={containerRef} className="relative py-24">
       <div className="mx-auto grid grid-cols-1 gap-10 lg:flex lg:flex-row lg:items-end lg:gap-14">
         {/* Left: Author Portrait */}
-        <div className="hero-portrait order-2 lg:order-none relative h-[30rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink opacity-0">
+        <div className="hero-portrait order-2 lg:order-none relative h-[24rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink opacity-0">
           <Image
             src="/images/nnamdi_profile.png"
             alt="Portrait of Nnamdi Ogbonna"
@@ -92,7 +92,7 @@ export function Hero() {
 
             {/* Content */}
             <div className="relative z-10 flex h-full flex-col items-start justify-between gap-8 md:gap-[6.7rem] w-full">
-              <p className="max-w-[40.25rem] text-body md:text-body-lg lg:text-body-xl text-foreground-muted">
+              <p className="max-w-[40.25rem] text-body md:text-body-lg lg:text-body-xl text-text-dark">
                 {heroContent.description}
               </p>
               <AButtonSecondary label={heroContent.cta} />
