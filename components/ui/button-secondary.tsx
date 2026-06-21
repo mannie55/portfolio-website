@@ -27,6 +27,7 @@ export const AButtonSecondary = ({
         <Image
           src="/images/components/phone_icon.svg"
           alt=""
+          aria-hidden="true"
           width={30}
           height={30}
         />

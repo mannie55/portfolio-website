@@ -46,10 +46,11 @@ export function CTASection({
         <footer className="relative z-10 flex w-full flex-col items-center justify-between gap-6 pt-12 md:flex-row md:gap-0">
           <Link
             href="/"
+            aria-label="Home"
           >
             <Image 
               src="/images/components/Brand_name_dark.svg"
-              alt="Brand Logo"
+              alt="Home Brand Logo"
               width={150}
               height={30}
               className="h-4 w-auto"

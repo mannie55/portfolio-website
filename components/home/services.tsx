@@ -73,6 +73,7 @@ export function Services() {
                 <Image
                   src={service.icon}
                   alt=""
+                  aria-hidden="true"
                   width={40}
                   height={40}
                   className="h-[40px] w-[40px] object-contain"

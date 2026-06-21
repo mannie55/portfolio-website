@@ -63,7 +63,7 @@ export function CaseStudyChallenges({ block }: CaseStudyChallengesProps) {
             <div className="relative w-full max-w-[18.75rem] aspect-[300/533]">
               <Image
                 src={src}
-                alt={`StaffOS mobile screen ${index + 1}`}
+                alt={`Case study challenge screen ${index + 1}`}
                 fill
                 className="object-cover"
               />
