@@ -30,13 +30,21 @@ const thunder = localFont({
   display: "swap",
 });
 
+const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : siteConfig.url;
+
+const metadataBaseUrl = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(metadataBaseUrl),
   alternates: {
     canonical: "./",
   },
@@ -47,13 +55,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
-    images: ["/images/nnamdi_profile.png"],
+    images: ["images/nnamdi_profile.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/images/nnamdi_profile.png"],
+    images: ["images/nnamdi_profile.png"],
   },
 };
 

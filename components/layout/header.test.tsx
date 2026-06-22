@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { Header } from "./header";
 import { expect, test, describe, vi } from "vitest";
+import { siteConfig } from "@/lib/constants";
 
 // Mock next/navigation
 const mockUsePathname = vi.fn();
@@ -23,7 +24,7 @@ describe("Header Component with NavigationOverlay", () => {
     render(<Header />);
 
     // Brand logo should be rendered
-    expect(screen.getByAltText(/portfolio/i)).toBeInTheDocument();
+    expect(screen.getByAltText(new RegExp(siteConfig.name, "i"))).toBeInTheDocument();
 
     // Navigation overlay should be hidden by default
     const overlay = screen.getByTestId("navigation-overlay");

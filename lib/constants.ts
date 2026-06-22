@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Portfolio",
+  name: "Nnamdi Ogbonna | Webflow",
   description: "Helping modern businesses build credible digital experiences that earn trust and drive growth.",
   url: "https://mannie55.github.io/portfolio-website",
   author: "Nnamdi Ogbonna",

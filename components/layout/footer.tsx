@@ -59,7 +59,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-border" data-testid="base-footer">
       <div className="mx-auto flex max-w-container-xxlarge flex-col gap-4 px-page xl:px-0 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-body-sm text-muted">
-          © {new Date().getFullYear()} {siteConfig.name}
+          © {new Date().getFullYear()} {siteConfig.author}. All rights reserved.
         </p>
         <ul className="flex flex-wrap gap-4 items-center">
           {socialLinks.map(({ href, label }) => {

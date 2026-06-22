@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import ContactPage from "./page";
 import { Footer } from "@/components/layout/footer";
 import { expect, test, describe, vi } from "vitest";
-import { email } from "@/lib/constants";
+import { email, siteConfig } from "@/lib/constants";
 
 // Mock the CalEmbed component because it imports @calcom/embed-react which might need browser APIs
 vi.mock("@/components/contact/cal-embed", () => ({
@@ -43,7 +43,7 @@ describe("ContactPage", () => {
     // Check that Footer renders (using role or content)
     const footers = screen.getAllByRole("contentinfo");
     expect(footers.length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Portfolio/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(new RegExp(siteConfig.author, "i")).length).toBeGreaterThan(0);
   });
 });
 

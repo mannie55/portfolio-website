@@ -29,13 +29,17 @@ export async function generateMetadata({
     return { title: "Case Study Not Found" };
   }
 
+  const ogImage = study.coverImage.startsWith("/")
+    ? study.coverImage.slice(1)
+    : study.coverImage;
+
   return {
     title: study.title,
     description: study.summary,
     openGraph: {
       title: study.title,
       description: study.summary,
-      images: [{ url: study.coverImage, alt: study.title }],
+      images: [{ url: ogImage, alt: study.title }],
       type: "article",
       publishedTime: study.publishedAt,
     },
@@ -43,7 +47,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: study.title,
       description: study.summary,
-      images: [study.coverImage],
+      images: [ogImage],
     },
   };
 }
