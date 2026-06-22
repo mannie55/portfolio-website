@@ -4,7 +4,12 @@ import { getCaseStudySlugs } from "@/lib/case-studies";
 import { siteConfig } from "@/lib/constants";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = siteConfig.url;
+  const rawBaseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : siteConfig.url;
+  const baseUrl = rawBaseUrl.endsWith("/") ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
   const slugs = await getCaseStudySlugs();
 
   const staticRoutes: MetadataRoute.Sitemap = [
