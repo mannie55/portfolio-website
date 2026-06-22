@@ -63,6 +63,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ["images/nnamdi_profile.png"],
   },
+  verification: {
+    google: "m8D6iYi_ijbkqcsJPu9epLQueKzgov5NoIl19_OUu3I",
+  },
 };
 
 export const viewport: Viewport = {
