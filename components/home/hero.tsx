@@ -42,7 +42,7 @@ export function Hero() {
 
   return (
     <section ref={containerRef} className="relative py-24">
-      <div className="mx-auto grid grid-cols-1 gap-10 lg:flex lg:flex-row lg:items-end lg:gap-14">
+      <div className="mx-auto grid grid-cols-1 gap-10 lg:flex lg:flex-row lg:items-start lg:gap-14">
         {/* Left: Author Portrait */}
         <div className="hero-portrait order-2 lg:order-none relative h-[24rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink opacity-0">
           <Image
