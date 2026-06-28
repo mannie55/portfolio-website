@@ -8,7 +8,7 @@ export function Skills() {
         {aboutContent.skills.map((skill) => (
           <li
             key={skill}
-            className="rounded-full border border-border bg-surface px-3 py-1 text-body-sm"
+            className="rounded-full  bg-surface px-3 py-1 text-body-sm"
           >
             {skill}
           </li>

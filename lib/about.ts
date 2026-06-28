@@ -11,8 +11,12 @@ export const aboutContent = {
     "Webflow",
     "Conversion-Focused Design (CRO)",
     "Node.js",
-    "PostgreSQL",
+    "Python (Django)",
+    "Mysql/PostgreSQL",
     "Vercel / AWS",
+    "Memberstack",
+    "Make.com / Zapier",
+    "Airtable",
   ],
   approach: [
     {
