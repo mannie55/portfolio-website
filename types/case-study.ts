@@ -114,6 +114,7 @@ export type CaseStudy = {
   client?: string;
   clientLogo?: string;
   projectName?: string;
+  liveUrl?: string;
   tools: string[];
   publishedAt: string;
   featured: boolean;

@@ -30,7 +30,20 @@ export function CaseStudyHeader({ study }: CaseStudyHeaderProps) {
         {study.client ? (
           <div>
             <dt className="inline font-medium text-foreground">Client: </dt>
-            <dd className="inline">{study.client}</dd>
+            <dd className="inline">
+              {study.liveUrl ? (
+                <a
+                  href={study.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline transition-all"
+                >
+                  {study.client}
+                </a>
+              ) : (
+                study.client
+              )}
+            </dd>
           </div>
         ) : null}
         <div>

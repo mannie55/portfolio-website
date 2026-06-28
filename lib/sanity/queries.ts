@@ -20,6 +20,7 @@ type SanityCaseStudy = {
   projectOverview?: {
     clientLogo?: SanityImageSource & { alt?: string };
     projectName?: string;
+    liveUrl?: string;
     summaryHeadline?: string;
     summaryDescription?: string;
     company?: string;
@@ -63,6 +64,7 @@ const caseStudyFields = `
   projectOverview {
     clientLogo,
     projectName,
+    liveUrl,
     summaryHeadline,
     summaryDescription,
     company,
@@ -122,6 +124,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
   const clientLogo = overview?.clientLogo ? urlFor(overview?.clientLogo) : undefined;
   const client = overview?.company;
   const projectName = overview?.projectName;
+  const liveUrl = overview?.liveUrl;
   const industry = overview?.industry;
   const role = overview?.myRole;
   const projectType = overview?.projectType;
@@ -238,6 +241,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
     client,
     clientLogo,
     projectName,
+    liveUrl,
     tools,
     publishedAt: doc.publishedAt,
     featured: doc.featured ?? false,

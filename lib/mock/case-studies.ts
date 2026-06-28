@@ -9,6 +9,7 @@ export const mockCaseStudies: CaseStudy[] = [
     coverImage: "/images/case-studies/staffos_hero.png",
     supportingImage: "/images/case-studies/staffos_pricing.png",
     breadcrumbLabel: "Case study — landing page",
+    liveUrl: "https://staffos.com",
     role: "Design & development",
     industry: "HR & payroll SaaS",
     projectType: "concept project",

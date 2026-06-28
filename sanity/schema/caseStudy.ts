@@ -83,6 +83,12 @@ export const caseStudy = defineType({
           type: "string",
           validation: (rule) => rule.required(),
         }),
+        defineField({
+          name: "liveUrl",
+          title: "Live URL",
+          type: "url",
+          description: "Link to the live project/brand website (optional).",
+        }),
         
         // Part 2 — Project Summary
         defineField({
