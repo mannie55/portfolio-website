@@ -6,4 +6,7 @@ export default defineCliConfig({
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   },
   studioHost: 'nnamdiogbonna',
+  deployment: {
+    appId: 'lbdgw74wfbhf8c0xuhk4haj5',
+  },
 });
