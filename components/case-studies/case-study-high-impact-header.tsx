@@ -32,7 +32,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
           {(study.clientLogo || study.projectName || study.client) && (
             <div className="flex items-center gap-3 md:gap-4 shrink-0">
               {study.clientLogo && (
-                <div className="relative w-8 h-8 md:w-10 md:h-10 shrink-0">
+                <div className="relative w-8 h-8 md:w-20 md:h-20 shrink-0">
                   <Image
                     src={study.clientLogo}
                     alt={`${study.client || study.projectName} logo`}
@@ -123,20 +123,22 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
         className="flex flex-col lg:flex-row w-full max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-5 pt-8 px-4 lg:px-8 mt-8 lg:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden case-study-reveal"
         aria-label={`${study.client} design previews`}
       >
-        <div className="relative w-full lg:w-[29.75rem] h-[15rem] lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
-          <Image
-            src="/images/case-studies/staffos_pricing.png"
-            alt={`${study.client} pricing section preview`}
-            fill
-            className="object-contain"
-          />
-        </div>
+        {study.supportingImage && (
+          <div className="relative w-full lg:w-[29.75rem] h-[15rem] lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
+            <Image
+              src={study.supportingImage}
+              alt={`${study.client} supporting preview`}
+              fill
+              className="object-contain  object-bottom"
+            />
+          </div>
+        )}
         <div className="relative w-full lg:w-[47.875rem] h-[20rem] lg:h-[27.3125rem] lg:mt-[-1.125rem] lg:mr-[-1.0625rem]">
           <Image
             src={study.coverImage}
             alt={`${study.client} hero section preview`}
             fill
-            className="object-contain"
+            className="object-contain  object-bottom"
           />
         </div>
       </section>

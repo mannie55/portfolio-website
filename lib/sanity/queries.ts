@@ -102,10 +102,20 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
   const summaryHeadline = overview?.summaryHeadline ?? doc.title ?? "";
   const summaryDescription = overview?.summaryDescription ?? "";
   
-  // Showcase Image and Cover Image
+  // Showcase Image, Supporting Image, and Cover Image
   const showcaseImage = doc.showcaseImage ? urlFor(doc.showcaseImage) : undefined;
   const firstHeroImage = overview?.heroImages?.[0]?.image;
-  const coverImage = firstHeroImage ? urlFor(firstHeroImage) : "";
+  const secondHeroImage = overview?.heroImages?.[1]?.image;
+  
+  let supportingImage: string | undefined = undefined;
+  let coverImage = "";
+
+  if (secondHeroImage) {
+    supportingImage = firstHeroImage ? urlFor(firstHeroImage) : undefined;
+    coverImage = urlFor(secondHeroImage);
+  } else if (firstHeroImage) {
+    coverImage = urlFor(firstHeroImage);
+  }
   
   const clientLogo = overview?.clientLogo ? urlFor(overview?.clientLogo) : undefined;
   const client = overview?.company;
@@ -218,6 +228,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
     summary: summaryDescription,
     coverImage,
     showcaseImage,
+    supportingImage,
     role: role ?? "",
     industry,
     projectType,

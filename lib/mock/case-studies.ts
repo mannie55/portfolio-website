@@ -7,6 +7,7 @@ export const mockCaseStudies: CaseStudy[] = [
     summary:
       "Designing a high-converting marketing website for a UK-based HR, payroll, and employee management platform targeting fast-growing teams.",
     coverImage: "/images/case-studies/staffos_hero.png",
+    supportingImage: "/images/case-studies/staffos_pricing.png",
     role: "Design & development",
     industry: "HR & payroll SaaS",
     projectType: "concept project",

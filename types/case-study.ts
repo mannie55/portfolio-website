@@ -106,6 +106,7 @@ export type CaseStudy = {
   summary: string;
   coverImage: string;
   showcaseImage?: string;
+  supportingImage?: string;
   role: string;
   industry?: string;
   projectType?: string;
