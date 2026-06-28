@@ -167,7 +167,7 @@ export function CaseStudiesList({ studies }: CaseStudiesListProps) {
       <SectionHeading
         as="h1"
         title="Case Studies"
-        description="A selection of projects I've worked on — from problem to approach to outcome."
+        description="A selection of projects I've worked on, from problem to approach to outcome."
         className="case-studies-heading opacity-0"
       />
       <div className="mt-24">
