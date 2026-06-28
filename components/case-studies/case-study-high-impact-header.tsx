@@ -32,7 +32,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
           {(study.clientLogo || study.projectName || study.client) && (
             <div className="flex items-center gap-3 md:gap-4 shrink-0">
               {study.clientLogo && (
-                <div className="relative w-8 h-8 md:w-20 md:h-20 shrink-0">
+                <div className="relative w-15 h-15 md:w-20 md:h-20 shrink-0">
                   <Image
                     src={study.clientLogo}
                     alt={`${study.client || study.projectName} logo`}
@@ -124,7 +124,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
         aria-label={`${study.client} design previews`}
       >
         {study.supportingImage && (
-          <div className="relative w-full lg:w-[29.75rem] h-[15rem] lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
+          <div className="relative w-full lg:w-[29.75rem] h-[12rem] lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
             <Image
               src={study.supportingImage}
               alt={`${study.client} supporting preview`}
