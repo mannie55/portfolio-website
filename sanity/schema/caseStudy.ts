@@ -13,6 +13,13 @@ export const caseStudy = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "breadcrumbLabel",
+      title: "Breadcrumb Label",
+      type: "string",
+      description: "e.g. Case study — landing page, Case study — mobile app. Defaults to 'Case study — landing page'.",
+      initialValue: "Case study — landing page",
+    }),
+    defineField({
       name: "slug",
       title: "Slug",
       type: "slug",

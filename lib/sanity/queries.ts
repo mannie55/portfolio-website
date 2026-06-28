@@ -13,6 +13,7 @@ function urlFor(source: SanityImageSource) {
 type SanityCaseStudy = {
   slug: string;
   title: string;
+  breadcrumbLabel?: string;
   publishedAt: string;
   featured?: boolean;
   showcaseImage?: SanityImageSource;
@@ -55,6 +56,7 @@ type SanityCaseStudy = {
 const caseStudyFields = `
   "slug": slug.current,
   title,
+  breadcrumbLabel,
   publishedAt,
   featured,
   showcaseImage,
@@ -229,6 +231,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
     coverImage,
     showcaseImage,
     supportingImage,
+    breadcrumbLabel: doc.breadcrumbLabel ?? "Case study — landing page",
     role: role ?? "",
     industry,
     projectType,
