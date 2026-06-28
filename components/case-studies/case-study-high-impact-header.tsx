@@ -120,7 +120,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
 
       {/* Design Previews Section */}
       <section
-        className="flex flex-col lg:flex-row w-full max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-5 pt-8 px-4 lg:px-8 mt-8 lg:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden case-study-reveal"
+        className="flex flex-col lg:flex-row w-full max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-2 pt-5 px-4 lg:px-5 mt-8 lg:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden case-study-reveal"
         aria-label={`${study.client} design previews`}
       >
         {study.supportingImage && (
@@ -133,7 +133,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
             />
           </div>
         )}
-        <div className="relative w-full lg:w-[47.875rem] h-[20rem] lg:h-[27.3125rem] lg:mt-[-1.125rem] lg:mr-[-1.0625rem]">
+        <div className="relative w-full lg:w-[47.875rem] h-[12rem] lg:h-[27.3125rem] lg:mt-[-1.125rem] lg:mr-[-1.0625rem]">
           <Image
             src={study.coverImage}
             alt={`${study.client} hero section preview`}
