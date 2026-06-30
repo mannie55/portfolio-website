@@ -9,34 +9,34 @@ interface Service {
 }
 
 const services: Service[] = [
-  {
-    id: "ux-ui-design",
-    title: "UX/UI Design",
-    description:
-      "User Experience Design and User Interface Design are some of the most important skill-sets that help make an app or web-app stand out from the crowd. I ensure your designs are intuitive, compelling, and memorable makes all the difference.",
-    icon: "/images/components/figma_icon.svg",
-  },
-  {
-    id: "webflow-development",
-    title: "Website Development (WEBFLOW)",
-    description:
-      "I design and build fast, scalable, and conversion-focused websites using Webflow. From Figma to live site, I ensure clean structure, responsive design, and easy updates, so your website not only looks great but works for your business.",
-    icon: "/images/components/webflow_icon.svg",
-  },
-  {
-    id: "nextjs-development",
-    title: "Website/WebApp Development (Nextjs)",
-    description:
-      "I create interactive, visually stunning websites with Framer, perfect for startups and brands that want bold design, smooth animations, and flexibility. With Framer, I bring ideas to life quickly, blending creativity with performance.",
-    icon: "/images/components/nextjs_icon.svg",
-  },
-  {
-    id: "ongoing-support",
-    title: "Ongoing Support",
-    description:
-      "Ongoing support for your web app, including regular updates, bug fixes, performance optimization, and ongoing improvements. Ensuring your app remains secure, scalable, and up-to-date with the latest features.",
-    icon: "/images/components/support_icon.svg",
-  },
+ {
+  id: "ux-ui-design",
+  title: "UX/UI Design",
+  description:
+    "I design intuitive, user-centered interfaces that are visually engaging and easy to use. By combining thoughtful user experience with clean interface design, I create digital products that are both memorable and effective.",
+  icon: "/images/components/figma_icon.svg",
+},
+{
+  id: "webflow-development",
+  title: "Website Development (Webflow)",
+  description:
+    "I design and build fast, scalable, and conversion-focused websites using Webflow. From Figma to a fully responsive live site, I ensure a clean structure, seamless performance, and an easy-to-manage CMS, so your website works as hard as your business.",
+  icon: "/images/components/webflow_icon.svg",
+},
+{
+  id: "nextjs-development",
+  title: "Website & Web App Development (Next.js)",
+  description:
+    "I build fast, scalable, and modern websites and web applications using Next.js. Whether it's a marketing website, SaaS platform, or custom application, I focus on performance, maintainability, and a smooth user experience.",
+  icon: "/images/components/nextjs_icon.svg",
+},
+{
+  id: "ongoing-support",
+  title: "Ongoing Support & Maintenance",
+  description:
+    "Your website doesn't stop evolving after launch. I provide ongoing support, including updates, bug fixes, performance optimization, security improvements, and new feature development to keep your website running at its best.",
+  icon: "/images/components/support_icon.svg",
+},
 ];
 
 export function Services() {

@@ -64,7 +64,7 @@ describe("CaseStudiesList Component", () => {
     render(<CaseStudiesList studies={mockStudies} />);
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Case Studies");
     expect(
-      screen.getByText("A selection of projects I've worked on — from problem to approach to outcome.")
+      screen.getByText("A selection of projects I've worked on, from problem to approach to outcome.")
     ).toBeInTheDocument();
   });
 

@@ -1,7 +1,7 @@
 export const aboutContent = {
   quote: "I believe websites should do more than exist — they should communicate clearly, solve problems, and support business goals.",
   intro: "HI I'M NNAMDI",
-  bio: "I'm Nnamdi, a Fullstack developer and webflow designer based in Lagos.\n\nI got into tech in 2023. Started from the ground up: low-level programming in C, software engineering fundamentals, Python, then full-stack development. Somewhere along the way I discovered I genuinely enjoy the frontend side of things, the part where logic meets how something looks and feels. That's where I've stayed.\n\nI work across Figma, React, Next.js, Tailwind, and Webflow. Most of what I do is take a design and build it into something real, clean, functional, and easy to hand off.\n\nOutside of work, I read a lot and I exercise regularly. Both keep me sharp and honest about what it takes to actually show up and do the work.",
+  bio: "I'm Nnamdi, a fullstack developer and Webflow designer based in Lagos.\n\n  I partner with founders, businesses, and agencies to turn complex ideas into fast, modern websites that support real business growth.\n\nOutside of work, you'll usually find me reading, exercising, or exploring better ways to build digital experiences.\n\nThose habits keep me curious, disciplined, and committed to delivering thoughtful, high-quality work.",
   skills: [
     "TypeScript",
     "React / Next.js",
@@ -25,7 +25,7 @@ export const aboutContent = {
     },
     {
       title: "Problem Development",
-      description: "Most projects fail because the wrong problem gets solved perfectly. I figure out what actually needs fixing before typing any code.",
+      description: "Most projects fail because the wrong problem gets solved perfectly. I figure out what actually needs fixing before typing any code or jumping into the editor.",
     },
     {
       title: "Precision Execution",
