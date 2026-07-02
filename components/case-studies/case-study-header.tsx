@@ -36,9 +36,23 @@ export function CaseStudyHeader({ study }: CaseStudyHeaderProps) {
                   href={study.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline transition-all"
+                  className="inline-flex items-center gap-1 hover:underline transition-all group/link"
                 >
-                  {study.client}
+                  <span>{study.client}</span>
+                  <svg
+                    className="w-3.5 h-3.5 text-muted transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M6 18L18 6M18 6H9M18 6V15"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </a>
               ) : (
                 study.client

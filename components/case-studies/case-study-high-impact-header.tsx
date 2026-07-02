@@ -42,9 +42,27 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                     />
                   </div>
                 )}
-                <span className="font-heading text-h3 md:text-h2 leading-none text-foreground uppercase tracking-wider">
-                  {study.projectName || study.client}
-                </span>
+                <div className="flex items-center gap-1.5 md:gap-2">
+                  <span className="font-heading text-h3 md:text-h2 leading-none text-foreground uppercase tracking-wider">
+                    {study.projectName || study.client}
+                  </span>
+                  {study.liveUrl && (
+                    <svg
+                      className="w-4 h-4 md:w-5 md:h-5 text-foreground opacity-60 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 shrink-0"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6 18L18 6M18 6H9M18 6V15"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </div>
               </div>
             );
 
@@ -54,7 +72,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   href={study.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-opacity hover:opacity-80 block"
+                  className="transition-opacity hover:opacity-80 block group/link"
                 >
                   {content}
                 </a>
