@@ -5,6 +5,7 @@ import { Hero } from "@/components/home/hero";
 import { Services } from "@/components/home/services";
 import { PageContainer } from "@/components/layout/page-container";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
+import { siteConfig } from "@/lib/constants";
 
 const Process = dynamic(() => import("@/components/home/process").then((mod) => mod.Process));
 const FAQ = dynamic(() => import("@/components/home/faq").then((mod) => mod.FAQ));
@@ -36,7 +37,7 @@ export default async function Home() {
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Nnamdi Ogbonna",
-            "url": "https://mannie55.github.io/portfolio-website",
+            "url": siteConfig.url,
             "email": "ogbonnannamdi.pro@gmail.com",
             "jobTitle": "Fullstack developer | webflow designer",
             "sameAs": [

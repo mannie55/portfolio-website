@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Nnamdi Ogbonna | Webflow",
   description: "Helping modern businesses build credible digital experiences that earn trust and drive growth.",
-  url: "https://mannie55.github.io/portfolio-website",
+  url: "https://nnamdiogbonna.com",
   author: "Nnamdi Ogbonna",
   title: "Building Digital Presence That Matters",
 } as const;
