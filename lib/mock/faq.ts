@@ -2,28 +2,38 @@ import { FAQItem } from "@/types/faq";
 
 export const faqData: FAQItem[] = [
   {
-    id: "web-design-or-development-only",
-    question: "Do you do Web Design or Development only?",
-    answer: "I provide end-to-end services including strategic design, UI/UX, and high-quality Webflow or Next.js development. Whether you need just a design or a full-scale build, I've got you covered.",
+    id: "project-timeline",
+    question: "How long does a typical project take?",
+    answer: "Most marketing websites take 2 to 4 weeks. Larger custom sites or web apps with complex features usually take 4 to 8 weeks depending on the project scope.",
   },
   {
-    id: "responsive-website",
-    question: "Will I get a responsive website?",
-    answer: "Absolutely. Every website I build is fully responsive, ensuring it looks and performs perfectly across all devices, from large desktop monitors to the smallest mobile screens.",
+    id: "webflow-vs-nextjs",
+    question: "Webflow or Next.js, how do we decide which is best for my project?",
+    answer: "If you need a marketing website that your team can easily edit visually, we will build on Webflow. If you need a custom web application, software integrations, or complex dynamic logic, we will build on Next.js.",
   },
   {
-    id: "website-design-development-cost",
-    question: "How much does a website\n design and development cost?",
-    answer: "Pricing varies depending on the project's scope, complexity, and specific requirements. I offer customized quotes after a strategy call to ensure the solution fits your needs and budget.",
+    id: "content-management",
+    question: "Will I be able to edit the website content myself after it launches?",
+    answer: "Yes. I configure the Webflow CMS or Sanity CMS so you can easily change text, edit images, and publish new case studies or articles. I also provide a personalized video walkthrough showing you how to do it.",
   },
   {
-    id: "need-webflow-account",
-    question: "Do I need a Webflow Account?",
-    answer: "Yes, you will need your own Webflow account for hosting and maintenance. I can help you set this up and transfer the project once it's completed.",
+    id: "figma-development",
+    question: "I already have designs in Figma, can you build them?",
+    answer: "Yes. I regularly collaborate with design agencies and product teams to translate their Figma files into clean, responsive Webflow sites or Next.js code. I make sure the developed site matches your designs perfectly.",
   },
   {
-    id: "available-24-7",
-    question: "Are you available 24/7?",
-    answer: "While I'm not available 24/7, I maintain clear and consistent communication during business hours and ensure that project timelines are strictly met with regular updates.",
+    id: "seo-performance",
+    question: "Will my website be fast and optimized for search engines?",
+    answer: "Yes. I build websites with clean structure, compressed images, and fast load times. I also set up proper heading structures, meta tags, and schema markup so search engines can easily find and index your pages.",
+  },
+  {
+    id: "process",
+    question: "What does your design and development process look like?",
+    answer: "We start with a strategy call to define the problem. Then, I design the wireframes and high-fidelity layouts in Figma. Once you approve the design, I develop the responsive site on Webflow or Next.js, test it, and launch it.",
+  },
+  {
+    id: "post-launch-support",
+    question: "Do you provide support after the site goes live?",
+    answer: "Every project includes 30 days of post-launch support to resolve any bugs and answer questions. If you need ongoing maintenance, design updates, or feature additions, we can set up a monthly support agreement.",
   },
 ];
