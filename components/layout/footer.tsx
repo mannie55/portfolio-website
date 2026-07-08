@@ -11,6 +11,7 @@ const iconMap: Record<string, string> = {
   GitHub: "/images/components/github_icon.svg",
   LinkedIn: "/images/components/linkedin_icon.svg",
   Email: "/images/components/email_icon.svg",
+  X: "/images/components/X_icon.svg",
 };
 
 interface FooterCTAConfig {

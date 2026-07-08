@@ -27,4 +27,5 @@ export const socialLinks = [
   { href: "https://github.com/mannie55/", label: "GitHub" },
   { href: "https://www.linkedin.com/in/nnamdiogbonna/", label: "LinkedIn" },
   { href: `mailto:${email}`, label: "Email" },
+  { href: "https://x.com/Chris_ogbona", label: "X" },
 ] as const;
