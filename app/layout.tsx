@@ -66,6 +66,9 @@ export const metadata: Metadata = {
   verification: {
     google: "m8D6iYi_ijbkqcsJPu9epLQueKzgov5NoIl19_OUu3I",
   },
+  appleWebApp: {
+    title: "Nnamdi™",
+  },
 };
 
 export const viewport: Viewport = {
