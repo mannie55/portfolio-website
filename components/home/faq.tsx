@@ -87,6 +87,7 @@ export function FAQ() {
 
   useGSAP(
     () => {
+      // 1. FAQ cards reveal animation
       const cards = gsap.utils.toArray<HTMLElement>(".faq-card");
 
       cards.forEach((card, index) => {
@@ -114,6 +115,26 @@ export function FAQ() {
           }
         );
       });
+
+      // 2. Pin the left-side column during scroll on desktop viewports
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 1024px)", () => {
+        const leftSide = containerRef.current?.querySelector(".faq-left-side") as HTMLElement;
+        if (leftSide) {
+          ScrollTrigger.create({
+            trigger: containerRef.current,
+            start: "top 96px",
+            end: () => `bottom ${leftSide.offsetHeight + 96}`,
+            pin: leftSide,
+            pinSpacing: false,
+            invalidateOnRefresh: true,
+          });
+        }
+      });
+
+      return () => {
+        mm.revert();
+      };
     },
     { scope: containerRef }
   );
@@ -122,7 +143,7 @@ export function FAQ() {
     <section ref={containerRef} className="py-24">
       <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
         {/* Left Side: Heading and CTA */}
-        <div className="flex flex-col items-start gap-8 lg:sticky lg:top-24 lg:max-w-[25rem]">
+        <div className="faq-left-side flex flex-col items-start gap-8 lg:max-w-[25rem]">
           <SectionHeading
             title="EVERYTHING YOU NEED TO KNOW."
             description="Got questions? I've got answers. If you don't find what you're looking for, feel free to reach out."
@@ -131,7 +152,7 @@ export function FAQ() {
         </div>
 
         {/* Right Side: FAQ Accordion */}
-        <div className="flex flex-1 flex-col gap-4 lg:max-w-[50rem]">
+        <div className="faq-right-side flex flex-1 flex-col gap-4 lg:max-w-[50rem]">
           {faqData.map((item) => (
             <FAQRow
               key={item.id}
