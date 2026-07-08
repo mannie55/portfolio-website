@@ -55,13 +55,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
-    images: ["images/nnamdi_profile.png"],
+    images: ["images/banner.jpg"],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["images/nnamdi_profile.png"],
+    images: ["images/banner.jpg"],
   },
   verification: {
     google: "m8D6iYi_ijbkqcsJPu9epLQueKzgov5NoIl19_OUu3I",
