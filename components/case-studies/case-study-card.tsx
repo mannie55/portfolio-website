@@ -14,13 +14,25 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
       className="group flex flex-col h-full overflow-hidden rounded-lg border border-border bg-surface case-study-card"
     >
       <div className="relative aspect-[16/9] overflow-hidden bg-surface-elevated">
-        <Image
-          src={study.coverImage}
-          alt=""
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        {study.showcaseVideo ? (
+          <video
+            src={study.showcaseVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={study.coverImage}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <Image
+            src={study.coverImage}
+            alt=""
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        )}
       </div>
       <div className="flex flex-1 flex-col p-5 case-study-card-content">
         <div className="flex flex-wrap gap-2">

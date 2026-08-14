@@ -42,6 +42,15 @@ export const caseStudy = defineType({
       ],
     }),
     defineField({
+      name: "showcaseVideo",
+      title: "Product Showcase Video",
+      type: "file",
+      description: "Optional short video loop (mp4/webm). Will auto-play instead of the image. Keep under 3MB.",
+      options: {
+        accept: "video/mp4,video/webm",
+      },
+    }),
+    defineField({
       name: "featured",
       title: "Featured",
       type: "boolean",

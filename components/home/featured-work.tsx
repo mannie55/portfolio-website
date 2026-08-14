@@ -69,13 +69,25 @@ export function FeaturedWork({ studies }: FeaturedWorkProps) {
             </div>
             
             <div className="relative aspect-[4/3] w-full max-w-[37.875rem] flex-1 overflow-hidden rounded-lg md:aspect-auto">
-              <Image
-                src={study.coverImage}
-                alt={study.title}
-                width={606}
-                height={400}
-                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-              />
+              {study.showcaseVideo ? (
+                <video
+                  src={study.showcaseVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={study.coverImage}
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              ) : (
+                <Image
+                  src={study.coverImage}
+                  alt={study.title}
+                  width={606}
+                  height={400}
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              )}
             </div>
           </article>
         ))}

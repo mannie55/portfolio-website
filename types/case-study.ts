@@ -106,6 +106,7 @@ export type CaseStudy = {
   summary: string;
   coverImage: string;
   showcaseImage?: string;
+  showcaseVideo?: string;
   supportingImage?: string;
   breadcrumbLabel?: string;
   role: string;
@@ -128,6 +129,7 @@ export type CaseStudySummary = Pick<
   | "title"
   | "summary"
   | "coverImage"
+  | "showcaseVideo"
   | "role"
   | "client"
   | "tools"

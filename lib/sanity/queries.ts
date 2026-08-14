@@ -17,6 +17,7 @@ type SanityCaseStudy = {
   publishedAt: string;
   featured?: boolean;
   showcaseImage?: SanityImageSource;
+  showcaseVideo?: string;
   projectOverview?: {
     clientLogo?: SanityImageSource & { alt?: string };
     projectName?: string;
@@ -61,6 +62,7 @@ const caseStudyFields = `
   publishedAt,
   featured,
   showcaseImage,
+  "showcaseVideo": showcaseVideo.asset->url,
   projectOverview {
     clientLogo,
     projectName,
@@ -233,6 +235,7 @@ function mapSanityCaseStudy(doc: SanityCaseStudy): CaseStudy {
     summary: summaryDescription,
     coverImage,
     showcaseImage,
+    showcaseVideo: doc.showcaseVideo,
     supportingImage,
     breadcrumbLabel: doc.breadcrumbLabel ?? "Case study — landing page",
     role: role ?? "",

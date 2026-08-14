@@ -230,13 +230,25 @@ export function Projects({ studies }: ProjectsProps) {
               </div>
               
               <div className="relative flex-1 w-full max-w-[606px] md:max-w-none lg:max-w-[606px] aspect-[1.515] overflow-hidden rounded-lg">
-                <Image
-                  src={project.coverImage}
-                  alt={`${project.title} preview`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 606px"
-                />
+                {project.showcaseVideo ? (
+                  <video
+                    src={project.showcaseVideo}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    poster={project.coverImage}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <Image
+                    src={project.coverImage}
+                    alt={`${project.title} preview`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 606px"
+                  />
+                )}
               </div>
             </article>
           </div>
