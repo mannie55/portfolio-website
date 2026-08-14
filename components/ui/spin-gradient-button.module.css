@@ -22,10 +22,14 @@
   overflow: hidden;
 }
 
-/* oversized sheet behind the inner pill — spinning it sweeps the 1px border */
+/*
+ * Oversized gradient sheet that rotates behind the inner panel.
+ * inset: -300px makes it ~880×636 — large enough that
+ * the bright stripe sweeps smoothly even across a wide rectangle.
+ */
 .spin-gradient-button__gradient {
   position: absolute;
-  inset: -100px;
+  inset: -300px;
   background: linear-gradient(121deg, var(--sheen-bg) 38%, var(--primary) 50%, var(--sheen-bg) 61%);
   animation: spin-gradient-button-spin var(--duration) linear infinite;
 }
