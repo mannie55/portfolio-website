@@ -1,8 +1,8 @@
 /* root is inert: hosts may set transition/transform on it (reveal staggers) */
 .spin-gradient-button {
   --primary: #ffffff;
-  --pill-bg: #171A22; /* Matches design dark theme */
-  --sheen-bg: #293550; /* Matches design dark theme */
+  --pill-bg: #171A22;
+  --sheen-bg: #293550;
   --label-color: #f6f6f6;
   --duration: 4930ms;
 
@@ -16,10 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: max-content;
-  padding: 0 1.5rem;
-  height: 2.25rem;
-  border-radius: 999px;
+  width: 280px;
+  height: 36px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
@@ -28,7 +27,6 @@
   position: absolute;
   inset: -100px;
   background: linear-gradient(121deg, var(--sheen-bg) 38%, var(--primary) 50%, var(--sheen-bg) 61%);
-  /* Animation plays all the time */
   animation: spin-gradient-button-spin var(--duration) linear infinite;
 }
 
@@ -39,7 +37,7 @@
   align-items: center;
   justify-content: center;
   margin: 1px;
-  border-radius: 999px;
+  border-radius: 5px;
   background: var(--pill-bg);
 }
 
