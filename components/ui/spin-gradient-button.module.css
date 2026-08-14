@@ -1,10 +1,8 @@
 /* root is inert: hosts may set transition/transform on it (reveal staggers) */
 .spin-gradient-button {
-  --primary: #ffffff;
   --pill-bg: #171A22;
-  --sheen-bg: #293550;
   --label-color: #f6f6f6;
-  --duration: 4930ms;
+  --duration: 3s;
 
   display: inline-flex;
   text-decoration: none;
@@ -23,15 +21,23 @@
 }
 
 /*
- * Oversized gradient sheet that rotates behind the inner panel.
- * inset: -300px makes it ~880×636 — large enough that
- * the bright stripe sweeps smoothly even across a wide rectangle.
+ * Horizontal shimmer: a bright band sweeps left → right
+ * across the border, then loops. Much cleaner on rectangles
+ * than a rotation-based approach.
  */
 .spin-gradient-button__gradient {
   position: absolute;
-  inset: -300px;
-  background: linear-gradient(121deg, var(--sheen-bg) 38%, var(--primary) 50%, var(--sheen-bg) 61%);
-  animation: spin-gradient-button-spin var(--duration) linear infinite;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #293550 0%,
+    #293550 30%,
+    #ffffff 50%,
+    #293550 70%,
+    #293550 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer-sweep var(--duration) ease-in-out infinite;
 }
 
 .spin-gradient-button__inner {
@@ -65,9 +71,9 @@
   box-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
 }
 
-@keyframes spin-gradient-button-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes shimmer-sweep {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

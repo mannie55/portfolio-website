@@ -9,7 +9,7 @@ export default function SpinGradientButton() {
         <span className={styles["spin-gradient-button__inner"]}>
           <span className={styles["spin-gradient-button__label"]}>
             <span className={styles["status-dot"]}></span>
-            Accepting select projects
+            Currently taking on projects
           </span>
         </span>
       </span>
