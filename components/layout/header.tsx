@@ -9,7 +9,6 @@ import { useGSAP } from "@gsap/react";
 import { navLinks, siteConfig } from "@/lib/constants";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
 import { NavigationOverlay } from "./navigation-overlay";
-import SpinGradientButton from "@/components/ui/spin-gradient-button";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -46,9 +45,6 @@ export function Header() {
               className="h-4 md:h-7 w-auto"
             />
           </Link>
-
-          {/* Center: Open to Work Button (hidden on mobile) */}
-          <SpinGradientButton />
 
           {/* Desktop Menu Button */}
           <div className="hidden items-center gap-6 md:flex">
