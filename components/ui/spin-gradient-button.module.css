@@ -1,0 +1,75 @@
+/* root is inert: hosts may set transition/transform on it (reveal staggers) */
+.spin-gradient-button {
+  --primary: #ffffff;
+  --pill-bg: #171A22; /* Matches design dark theme */
+  --sheen-bg: #293550; /* Matches design dark theme */
+  --label-color: #f6f6f6;
+  --duration: 4930ms;
+
+  display: inline-flex;
+  text-decoration: none;
+  font: inherit;
+}
+
+.spin-gradient-button__pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 0 1.5rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* oversized sheet behind the inner pill — spinning it sweeps the 1px border */
+.spin-gradient-button__gradient {
+  position: absolute;
+  inset: -100px;
+  background: linear-gradient(121deg, var(--sheen-bg) 38%, var(--primary) 50%, var(--sheen-bg) 61%);
+  /* Animation plays all the time */
+  animation: spin-gradient-button-spin var(--duration) linear infinite;
+}
+
+.spin-gradient-button__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+  border-radius: 999px;
+  background: var(--pill-bg);
+}
+
+.spin-gradient-button__label {
+  color: var(--label-color);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.4);
+}
+
+@keyframes spin-gradient-button-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-gradient-button__gradient {
+    animation: none;
+  }
+}

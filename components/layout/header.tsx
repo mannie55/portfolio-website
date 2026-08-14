@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { navLinks, siteConfig } from "@/lib/constants";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
 import { NavigationOverlay } from "./navigation-overlay";
+import SpinGradientButton from "@/components/ui/spin-gradient-button";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -33,7 +34,7 @@ export function Header() {
       } ${
         scrollDirection === "down" && !mobileOpen ? "-translate-y-full" : "translate-y-0"
       }`}>
-        <nav ref={navRef} className="mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-2 opacity-0">
+        <nav ref={navRef} className="relative mx-auto flex max-w-container-xxlarge items-center justify-between px-page xl:px-0 py-2 opacity-0">
           {/* Brand Logo */}
           <Link href="/" className="flex-shrink-0" aria-label="Home">
             <Image
@@ -45,6 +46,11 @@ export function Header() {
               className="h-4 md:h-7 w-auto"
             />
           </Link>
+
+          {/* Centered Announcement Banner */}
+          <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <SpinGradientButton />
+          </div>
 
           {/* Desktop Menu Button */}
           <div className="hidden items-center gap-6 md:flex">
