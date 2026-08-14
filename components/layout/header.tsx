@@ -90,6 +90,11 @@ export function Header() {
             </div>
           </button>
         </nav>
+
+        {/* Mobile: banner sits right below the navbar */}
+        <div className="flex justify-center py-1.5 md:hidden">
+          <SpinGradientButton />
+        </div>
  
       </header>
       <NavigationOverlay isOpen={mobileOpen} onClose={() => setMobileOpen(false)} />
