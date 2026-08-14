@@ -10,7 +10,7 @@ export default function SpinGradientButton() {
           <span className={styles["spin-gradient-button__inner"]}>
             <span className={styles["spin-gradient-button__label"]}>
               <span className={styles["spin-gradient-button__status"]}></span>
-              Open to work
+              Available for new projects
             </span>
           </span>
         </span>
