@@ -45,11 +45,10 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
             </span>
           ))}
         </div>
-        <h2 className="mt-3 text-h6 no-reveal">
+        <h2 className="mt-8 text-h6 no-reveal">
           {study.title}
         </h2>
-        <p className="mt-2 flex-1 text-body text-muted">{study.summary}</p>
-        <p className="mt-4 text-body-xs text-muted">{study.role}</p>
+        <p className="mt-4 text-body-xs text-muted flex-1">{study.role}</p>
       </div>
     </Link>
   );

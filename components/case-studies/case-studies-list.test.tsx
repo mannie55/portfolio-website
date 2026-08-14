@@ -72,8 +72,6 @@ describe("CaseStudiesList Component", () => {
     render(<CaseStudiesList studies={mockStudies} />);
     expect(screen.getByText("Project Alpha")).toBeInTheDocument();
     expect(screen.getByText("Project Beta")).toBeInTheDocument();
-    expect(screen.getByText("First project description.")).toBeInTheDocument();
-    expect(screen.getByText("Second project description.")).toBeInTheDocument();
   });
 
   test("contains the animation target classes", () => {
