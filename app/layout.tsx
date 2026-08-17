@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { Header } from "@/components/layout/header";
+import { CardNav } from "@/components/layout/card-nav";
 import { Footer } from "@/components/layout/footer";
 import { CursorFollower } from "@/components/ui/cursor-follower";
 import { siteConfig } from "@/lib/constants";
@@ -78,6 +78,7 @@ export const viewport: Viewport = {
 
 import { SmoothScroller } from "@/components/layout/smooth-scroller";
 import { GlobalTextReveal } from "@/components/layout/global-text-reveal";
+import SideRays from "@/components/ui/side-rays";
 
 export default function RootLayout({
   children,
@@ -90,9 +91,25 @@ export default function RootLayout({
       className={`${nunitoSans.variable} ${geistMono.variable} ${thunder.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <Header />
+        {/* Full-viewport ray light — fixed behind all page content, desktop only */}
+        <div className="fixed inset-0 z-0 pointer-events-none hidden md:block" aria-hidden="true">
+          <SideRays
+            origin="top-right"
+            rayColor1="#EAB308"
+            rayColor2="#96c8ff"
+            intensity={2.0}
+            spread={2.2}
+            speed={1.8}
+            opacity={0.7}
+            tilt={-10}
+            falloff={1.6}
+            saturation={1.4}
+            blend={0.65}
+          />
+        </div>
+        <CardNav />
         <SmoothScroller>
-          <main className="flex flex-1 flex-col pt-[72px]">{children}</main>
+          <main className="flex flex-1 flex-col">{children}</main>
           <Footer />
         </SmoothScroller>
         <CursorFollower />

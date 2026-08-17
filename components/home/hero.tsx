@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { AButtonSecondary } from "@/components/ui/button-secondary";
+import SpinGradientButton from "@/components/ui/spin-gradient-button";
 import { heroContent, calComUrl } from "@/lib/constants";
 
 export function Hero() {
@@ -29,9 +30,9 @@ export function Hero() {
         0.2 // Delay of 0.2s before character animation begins
       );
 
-      // 2. Portrait and Description Box fade up smoothly
+      // 2. Badge, Portrait and Description fade up smoothly
       tl.fromTo(
-        [".hero-portrait", ".hero-description"],
+        [".hero-badge", ".hero-portrait", ".hero-description"],
         { opacity: 0, y: 50 },
         { opacity: 1, y: 0, duration: 1.0, stagger: 0.15 },
         "0.2" // Start slightly before or as text reveal finishes
@@ -41,7 +42,12 @@ export function Hero() {
   );
 
   return (
-    <section ref={containerRef} className="relative py-24">
+    <section ref={containerRef} className="relative pt-[120px] pb-16 md:pt-[140px] md:pb-24 lg:pt-[160px] lg:pb-32">
+      {/* Availability badge — always above everything on every breakpoint */}
+      <div className="hero-badge mb-8 opacity-0">
+        <SpinGradientButton />
+      </div>
+
       <div className="mx-auto grid grid-cols-1 gap-10 lg:flex lg:flex-row lg:items-start lg:gap-14">
         {/* Left: Author Portrait */}
         <div className="hero-portrait order-2 lg:order-none relative h-[24rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink opacity-0">
