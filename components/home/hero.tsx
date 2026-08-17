@@ -50,7 +50,7 @@ export function Hero() {
 
       <div className="mx-auto grid grid-cols-1 gap-10 lg:flex lg:flex-row lg:items-start lg:gap-14">
         {/* Left: Author Portrait */}
-        <div className="hero-portrait order-2 lg:order-none relative h-[24rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[39.375rem] lg:max-w-none lg:shrink opacity-0">
+        <div className="hero-portrait order-2 lg:order-none relative h-[24rem] w-full max-w-[31.25rem] md:max-w-none overflow-hidden rounded-[1.25rem] bg-gradient-to-b from-surface to-surface-elevated sm:h-[37.5rem] lg:h-[42.5625rem] lg:w-[28rem] lg:max-w-none lg:shrink-0 opacity-0">
           <Image
             src="/images/nnamdi_profile.png"
             alt="Portrait of Nnamdi Ogbonna"
@@ -58,17 +58,18 @@ export function Hero() {
             priority
             unoptimized
             className="object-cover object-top"
-            sizes="(max-width: 64rem) 100vw, 39.375rem"
+            sizes="(max-width: 64rem) 100vw, 28rem"
           />
         </div>
 
         {/* Right: Content */}
-        <div className="contents lg:flex lg:flex-1 lg:shrink-0 lg:min-w-[42rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
+        <div className="contents lg:flex lg:flex-1 lg:shrink lg:min-w-[54rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
           <h1 
-            className="hero-title order-1 lg:order-none max-w-[50rem] text-h1 font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.3em] gap-y-[0.1em] opacity-0"
+            className="hero-title order-1 lg:order-none max-w-[50rem] lg:max-w-full font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.2em] gap-y-[0.1em] opacity-0"
+            style={{ fontSize: "clamp(3rem, 7.5vw, 7.6rem)" }}
             aria-label={heroContent.headline}
           >
-            <span aria-hidden="true" className="flex flex-wrap gap-x-[0.3em] gap-y-[0.1em]">
+            <span aria-hidden="true" className="flex flex-wrap gap-x-[0.2em] gap-y-[0.1em]">
               {heroContent.headline.split(" ").map((word, i) => (
                 <span key={i} className="inline-block overflow-hidden pb-[0.05em]">
                   <span className="hero-word inline-block">
