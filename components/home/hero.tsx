@@ -42,7 +42,7 @@ export function Hero() {
   );
 
   return (
-    <section ref={containerRef} className="relative pt-[120px] pb-16 md:pt-[140px] md:pb-24 lg:pt-[160px] lg:pb-32">
+    <section ref={containerRef} className="relative pt-[100px] pb-16 md:pt-[140px] md:pb-24 lg:pt-[160px] lg:pb-32">
       {/* Availability badge — always above everything on every breakpoint */}
       <div className="hero-badge mb-8 opacity-0">
         <SpinGradientButton />

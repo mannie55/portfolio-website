@@ -120,7 +120,7 @@ export function CardNav() {
 
   return (
     /* Floating pill wrapper — centred, above everything */
-    <div className="fixed left-1/2 top-8 z-[9999] w-[90%] max-w-3xl -translate-x-1/2">
+    <div className="fixed left-1/2 top-3 md:top-8 z-[9999] w-[90%] max-w-3xl -translate-x-1/2">
       <nav
         ref={navRef}
         aria-label="Site navigation"
