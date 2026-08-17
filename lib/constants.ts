@@ -7,7 +7,7 @@ export const siteConfig = {
 } as const;
 
 export const heroContent = {
-  headline: "FROM DESIGN TO DEPLOYMENT",
+  headline: "IDEAS INTO INTERFACES THAT WIN",
   description: "I help founders launch faster and agencies scale their bandwidth by building pixel-perfect, high-performance sites in Next.js and Webflow.",
   cta: "Book a discovery call",
 } as const;
