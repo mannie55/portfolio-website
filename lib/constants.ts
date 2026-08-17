@@ -7,9 +7,9 @@ export const siteConfig = {
 } as const;
 
 export const heroContent = {
-  headline: "BUILDING DIGITAL PRESENCE THAT MATTERS",
-  description: "Helping modern businesses build credible digital experiences that earn trust and drive growth.",
-  cta: "Let's talk",
+  headline: "FROM DESIGN TO DEPLOYMENT",
+  description: "I help founders launch faster and agencies scale their bandwidth by building pixel-perfect, high-performance sites in Next.js and Webflow.",
+  cta: "Book a discovery call",
 } as const;
 
 export const navLinks = [

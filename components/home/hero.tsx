@@ -5,7 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { AButtonSecondary } from "@/components/ui/button-secondary";
-import { heroContent } from "@/lib/constants";
+import { heroContent, calComUrl } from "@/lib/constants";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -77,26 +77,12 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* Description Box */}
-          <div className="hero-description order-3 lg:order-none relative flex h-full w-full max-w-[42rem] md:max-w-none lg:max-w-[42rem] flex-auto overflow-hidden rounded-[1.25rem] bg-surface p-4 opacity-0">
-            {/* Grid Background */}
-            <div className="absolute inset-0 z-0">
-              <Image
-                src="/images/bg_grid.svg"
-                alt=""
-                fill
-                className="object-cover"
-                aria-hidden="true"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="relative z-10 flex h-full flex-col items-start justify-between gap-8 md:gap-[6.7rem] w-full">
-              <p className="max-w-[40.25rem] text-body md:text-body-lg lg:text-body-xl text-text-dark">
-                {heroContent.description}
-              </p>
-              <AButtonSecondary label={heroContent.cta} />
-            </div>
+          {/* Description & CTA */}
+          <div className="hero-description order-3 lg:order-none relative flex flex-col items-start gap-8 md:gap-10 w-full max-w-[42rem] opacity-0">
+            <p className="max-w-[40.25rem] text-body md:text-body-lg lg:text-body-xl text-white/80">
+              {heroContent.description}
+            </p>
+            <AButtonSecondary label={heroContent.cta} href={calComUrl} />
           </div>
         </div>
       </div>
