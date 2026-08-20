@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageContainer>
-      <div className="py-page lg:py-section-md">
+      <div className="pt-[100px] pb-16 md:pt-[140px] md:pb-24 lg:pt-[160px] lg:pb-32">
         <AboutContent />
       </div>
     </PageContainer>

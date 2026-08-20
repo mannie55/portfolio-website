@@ -14,7 +14,7 @@ export default async function CaseStudiesPage() {
 
   return (
     <PageContainer>
-      <div className="py-24">
+      <div className="pt-[100px] md:pt-[140px] lg:pt-[160px] pb-24">
         <CaseStudiesList studies={studies} />
       </div>
     </PageContainer>

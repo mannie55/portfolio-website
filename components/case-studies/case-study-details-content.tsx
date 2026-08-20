@@ -54,7 +54,7 @@ export function CaseStudyDetailsContent({
   );
 
   return (
-    <div ref={containerRef} className="py-24">
+    <div ref={containerRef} className="pt-[100px] md:pt-[140px] lg:pt-[160px] pb-24">
       {study.metrics ? (
         <CaseStudyHighImpactHeader study={study} />
       ) : (
