@@ -169,9 +169,6 @@ export const Process = () => {
       aria-labelledby="process-heading"
       className="relative flex flex-col items-start py-24"
     >
-      {/* Background layer using local design theme bg */}
-      <div className="absolute inset-0 z-0 bg-rhino-darkest" />
-
       <div className="relative z-10 flex w-full max-w-[1344px] flex-col gap-12">
         <SectionHeading
           id="process-heading"
