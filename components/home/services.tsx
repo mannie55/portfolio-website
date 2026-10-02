@@ -13,28 +13,28 @@ const services: Service[] = [
   id: "ux-ui-design",
   title: "UX/UI Design",
   description:
-    "I design intuitive, user-centered interfaces that are visually engaging and easy to use. By combining thoughtful user experience with clean interface design, I create digital products that are both memorable and effective.",
+    "Good design isn't just about aesthetics; it's about reducing friction and driving action. I create strategic, user-centric interfaces that align directly with your business goals—guiding visitors naturally toward conversion while building a brand identity that commands trust.",
   icon: "/images/components/figma_icon.svg",
 },
 {
   id: "webflow-development",
   title: "Website Development (Webflow)",
   description:
-    "I design and build fast, scalable, and conversion-focused websites using Webflow. From Figma to a fully responsive live site, I ensure a clean structure, seamless performance, and an easy-to-manage CMS, so your website works as hard as your business.",
+    "Your website is your best salesperson, but only if people can find it. I build blazing-fast Webflow sites engineered from the ground up for technical SEO and modern Answer Engine Optimization (AEO). The result? A pixel-perfect, highly visible site with a CMS your team will actually love using.",
   icon: "/images/components/webflow_icon.svg",
 },
 {
   id: "nextjs-development",
   title: "Website & Web App Development (Next.js)",
   description:
-    "I build fast, scalable, and modern websites and web applications using Next.js. Whether it's a marketing website, SaaS platform, or custom application, I focus on performance, maintainability, and a smooth user experience.",
+    "For complex requirements and SaaS platforms, standard builders aren't enough. I engineer robust, scalable web applications using Next.js. I handle the hard stuff—authentication, database integrations, and dynamic server rendering—delivering a secure product built to scale with your user base.",
   icon: "/images/components/nextjs_icon.svg",
 },
 {
   id: "ongoing-support",
   title: "Ongoing Support & Maintenance",
   description:
-    "Your website doesn't stop evolving after launch. I provide ongoing support, including updates, bug fixes, performance optimization, security improvements, and new feature development to keep your website running at its best.",
+    "The web moves fast, and your digital presence shouldn't be left to stagnate. I partner with you post-launch to monitor analytics, run performance audits, implement security patches, and iteratively ship new features so your platform stays competitive and continues to grow.",
   icon: "/images/components/support_icon.svg",
 },
 ];
