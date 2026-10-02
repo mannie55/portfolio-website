@@ -13,28 +13,28 @@ const services: Service[] = [
   id: "ux-ui-design",
   title: "UX/UI Design",
   description:
-    "Good design isn't just about aesthetics; it's about reducing friction and driving action. I create strategic, user-centric interfaces that align directly with your business goals—guiding visitors naturally toward conversion while building a brand identity that commands trust.",
+    "I design interfaces that are simple, clean, and make sense to your users. The goal isn't just to make things look pretty—it's to remove confusion so people naturally take the actions you want them to.",
   icon: "/images/components/figma_icon.svg",
 },
 {
   id: "webflow-development",
   title: "Website Development (Webflow)",
   description:
-    "Your website is your best salesperson, but only if people can find it. I build blazing-fast Webflow sites engineered from the ground up for technical SEO and modern Answer Engine Optimization (AEO). The result? A pixel-perfect, highly visible site with a CMS your team will actually love using.",
+    "I build Webflow sites that actually get seen. Beyond matching the design perfectly, I make sure the pages load fast, the technical SEO is set up for search engines, and you get a CMS that is genuinely easy to update.",
   icon: "/images/components/webflow_icon.svg",
 },
 {
   id: "nextjs-development",
   title: "Website & Web App Development (Next.js)",
   description:
-    "For complex requirements and SaaS platforms, standard builders aren't enough. I engineer robust, scalable web applications using Next.js. I handle the hard stuff—authentication, database integrations, and dynamic server rendering—delivering a secure product built to scale with your user base.",
+    "If your project needs more than a standard website builder, I build custom web applications using Next.js. I handle the logic, data, and custom features required to bring a more complex product or SaaS idea to life.",
   icon: "/images/components/nextjs_icon.svg",
 },
 {
   id: "ongoing-support",
   title: "Ongoing Support & Maintenance",
   description:
-    "The web moves fast, and your digital presence shouldn't be left to stagnate. I partner with you post-launch to monitor analytics, run performance audits, implement security patches, and iteratively ship new features so your platform stays competitive and continues to grow.",
+    "A website is never really finished. I stay involved after launch to keep your site updated, fix bugs, track performance, and add new features so it continues working well for your business over time.",
   icon: "/images/components/support_icon.svg",
 },
 ];
