@@ -43,9 +43,11 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
                   </div>
                 )}
                 <div className="flex items-center gap-1.5 md:gap-2">
-                  <span className="font-heading text-h3 md:text-h2 leading-none text-foreground uppercase tracking-wider">
-                    {study.projectName || study.client}
-                  </span>
+                  {!study.clientLogo && (
+                    <span className="font-heading text-h3 md:text-h2 leading-none text-foreground uppercase tracking-wider">
+                      {study.projectName || study.client}
+                    </span>
+                  )}
                   {study.liveUrl && (
                     <svg
                       className="w-4 h-4 md:w-5 md:h-5 text-foreground opacity-60 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 shrink-0"
