@@ -23,7 +23,7 @@ const NAV_CARDS = [
     bgColor: "#16213e",
     textColor: "#ffffff",
     links: [
-      { label: "Next.js Dev",   href: "/contact", ariaLabel: "Next.js development"   },
+      { label: "Next.js/Astro/Vue Dev", href: "/contact", ariaLabel: "Next.js, Astro, and Vue development" },
       { label: "Webflow Build", href: "/contact", ariaLabel: "Webflow development"   },
       { label: "Figma → Code",  href: "/contact", ariaLabel: "Figma to code service" },
     ],

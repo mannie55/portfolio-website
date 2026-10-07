@@ -25,9 +25,9 @@ const services: Service[] = [
 },
 {
   id: "nextjs-development",
-  title: "Website & Web App Development (Next.js)",
+  title: "Website & Web App Development (Next.js, Astro, Vue)",
   description:
-    "If your project needs more than a standard website builder, I build custom web applications using Next.js. I handle the logic, data, and custom features required to bring a more complex product or SaaS idea to life.",
+    "If your project needs more than a standard website builder, I build custom web applications using Next.js, Astro, or Vue. I handle the logic, data, and custom features required to bring a more complex product or SaaS idea to life.",
   icon: "/images/components/nextjs_icon.svg",
 },
 {
