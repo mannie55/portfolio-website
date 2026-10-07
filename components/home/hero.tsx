@@ -89,6 +89,30 @@ export function Hero() {
             <p className="max-w-[40.25rem] text-body md:text-body-lg lg:text-body-xl text-white/80">
               {heroContent.description}
             </p>
+
+            {/* Trust stats */}
+            <div className="flex items-center gap-6 md:gap-10">
+              {[
+                { value: "20+", label: "Websites Built" },
+                { value: "4+", label: "Years in Tech" },
+                { value: "6+", label: "Tools in Stack" },
+              ].map((stat, i) => (
+                <div key={stat.label} className="flex items-center gap-6 md:gap-10">
+                  {i > 0 && (
+                    <span className="h-10 w-px bg-white/20" aria-hidden="true" />
+                  )}
+                  <div className="flex flex-col">
+                    <span className="text-[1.75rem] md:text-[2.25rem] font-bold leading-none text-white">
+                      {stat.value}
+                    </span>
+                    <span className="mt-1 text-[0.8125rem] md:text-[0.875rem] text-white/60 leading-tight">
+                      {stat.label}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <AButtonSecondary label={heroContent.cta} href={calComUrl} />
           </div>
         </div>
