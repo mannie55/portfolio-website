@@ -157,7 +157,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
 
       {/* Design Previews Section */}
       <section
-        className="flex flex-col lg:flex-row w-full max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-2 pt-5 px-4 lg:px-5 mt-8 lg:mt-12 relative rounded-t-[1.25rem] border border-border-light overflow-hidden case-study-reveal"
+        className="flex flex-col lg:flex-row w-[calc(100%+2.5rem)] md:w-full -mx-5 md:mx-0 max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-2 pt-0 md:pt-5 px-0 md:px-4 lg:px-5 mt-8 lg:mt-12 relative rounded-none md:rounded-t-[1.25rem] border-0 md:border border-border-light overflow-hidden case-study-reveal"
         aria-label={`${study.client} design previews`}
       >
         {study.supportingImage && (

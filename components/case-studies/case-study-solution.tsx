@@ -66,7 +66,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
       {/* Image Gallery */}
       <div className="flex flex-col w-full max-w-[77.625rem] gap-1 py-8">
         {/* Top Row */}
-        <div className="flex flex-col md:flex-row items-end justify-center gap-5 px-5 pt-5 border border-border-light rounded-t-[20px] overflow-hidden bg-background/20">
+        <div className="flex flex-col md:flex-row items-end justify-center gap-5 px-0 md:px-5 pt-0 md:pt-5 border-0 md:border border-border-light rounded-none md:rounded-t-[20px] overflow-hidden bg-background/20 w-[calc(100%+2.5rem)] md:w-full -mx-5 md:mx-0">
           {block.gallery.top.map((image, index) => (
             <div 
               key={index} 
@@ -83,7 +83,7 @@ export function CaseStudySolution({ block }: CaseStudySolutionProps) {
           ))}
         </div>
         {/* Bottom Row */}
-        <div className="flex flex-col md:flex-row items-start justify-center gap-5 px-5 pb-5 border border-border-light rounded-b-[20px] overflow-hidden bg-background/20">
+        <div className="flex flex-col md:flex-row items-start justify-center gap-5 px-0 md:px-5 pb-0 md:pb-5 border-0 md:border border-border-light rounded-none md:rounded-b-[20px] overflow-hidden bg-background/20 w-[calc(100%+2.5rem)] md:w-full -mx-5 md:mx-0">
           {block.gallery.bottom.map((image, index) => (
             <div 
               key={index} 
