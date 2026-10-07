@@ -157,11 +157,11 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
 
       {/* Design Previews Section */}
       <section
-        className="flex flex-col lg:flex-row w-[calc(100%+2.5rem)] md:w-full -mx-5 md:mx-0 max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-2 pt-0 md:pt-5 px-0 md:px-4 lg:px-5 mt-8 lg:mt-12 relative rounded-none md:rounded-t-[1.25rem] border-0 md:border border-border-light overflow-hidden case-study-reveal"
+        className="flex flex-col lg:flex-row w-[calc(100%+2.5rem)] md:w-full -mx-5 md:mx-0 max-w-container-xxlarge lg:h-[28.1875rem] items-end justify-center gap-1 lg:gap-2 pt-0 md:pt-5 px-0 md:px-4 lg:px-5 mt-8 lg:mt-12 relative rounded-none md:rounded-t-[1.25rem] border-0 md:border border-border-light overflow-hidden case-study-reveal"
         aria-label={`${study.client} design previews`}
       >
         {study.supportingImage && (
-          <div className="relative w-full lg:w-[29.75rem] h-[12rem] lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
+          <div className="relative w-full lg:w-[29.75rem] h-auto lg:h-[23.9375rem] lg:ml-[-1.0625rem] aspect-[1.24]">
             <Image
               src={study.supportingImage}
               alt={`${study.client} supporting preview`}
@@ -170,7 +170,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
             />
           </div>
         )}
-        <div className="relative w-full lg:w-[47.875rem] h-[12rem] lg:h-[27.3125rem] lg:mt-[-1.125rem] lg:mr-[-1.0625rem]">
+        <div className="relative w-full lg:w-[47.875rem] h-auto lg:h-[27.3125rem] lg:mt-[-1.125rem] lg:mr-[-1.0625rem] aspect-[1.75] lg:aspect-auto">
           <Image
             src={study.coverImage}
             alt={`${study.client} hero section preview`}
