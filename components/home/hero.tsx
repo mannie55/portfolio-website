@@ -66,7 +66,7 @@ export function Hero() {
         <div className="contents lg:flex lg:flex-1 lg:shrink lg:min-w-[54rem] lg:flex-col lg:items-start lg:gap-8 lg:gap-10">
           <h1 
             className="hero-title order-1 lg:order-none max-w-[50rem] lg:max-w-full font-bold leading-[0.95] text-white uppercase flex flex-wrap gap-x-[0.2em] gap-y-[0.1em] opacity-0"
-            style={{ fontSize: "clamp(3rem, 7.5vw, 7.6rem)" }}
+            style={{ fontSize: "clamp(3rem, 7.5vw, 7.6rem0)" }}
             aria-label={heroContent.headline}
           >
             <span aria-hidden="true" className="flex flex-wrap gap-x-[0.2em] gap-y-[0.1em]">
