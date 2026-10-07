@@ -166,7 +166,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
               src={study.supportingImage}
               alt={`${study.client} supporting preview`}
               fill
-              className="object-contain  object-bottom"
+              className="object-cover lg:object-contain object-bottom"
             />
           </div>
         )}
@@ -175,7 +175,7 @@ export function CaseStudyHighImpactHeader({ study }: CaseStudyHighImpactHeaderPr
             src={study.coverImage}
             alt={`${study.client} hero section preview`}
             fill
-            className="object-contain  object-bottom"
+            className="object-cover lg:object-contain object-bottom"
           />
         </div>
       </section>
